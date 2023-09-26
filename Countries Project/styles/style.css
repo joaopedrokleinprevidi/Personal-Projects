@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* 
+Desktop: 992px até 1200px.
+Grandes telas: acima de 1200px. 
+
+    CSS PARA DESKTOP E TV
+*/
+
+@media screen and (min-width: 993px){ /* DEFINE MEDIA QUERY PARA TELAS GRANDES E DESKTOP */
+
+body { /* DEFINE CORPO DA PÁGINA */
+    flex-direction: row;
+}
+
+#accordion1 { background-image: url("../imagens/index/normal/canada-toronto_medio.jpg"); }
+#accordion2 { background-image: url("../imagens/index/normal/china-pequim_medio.jpg"); }
+#accordion3 { background-image: url("../imagens/index/normal/espanha-barcelona_medio.jpg"); }
+#accordion4 { background-image: url("../imagens/index/normal/eua-newyork_medio.jpg"); }
+#accordion5 { background-image: url("../imagens/index/normal/frança-paris_medio.jpg"); }
+#accordion6 { background-image: url("../imagens/index/normal/grecia-atenas_medio.jpg"); }
+#accordion7 { background-image: url("../imagens/index/normal/italia-roma_medio.jpg"); }
+#accordion8 { background-image: url("../imagens/index/normal/mexico-cidadedemexico_medio.jpg"); }
+
+
+span.first {
+
+
+    top: 15%;
+}
+
+.accordion:hover {
+    flex-basis: 75vw;
+}
+
+
+
+   }   /* ESTA LINHA: FECHA MEDIA QUERY DE (MIN 993PX) , TELAS GRANDES */

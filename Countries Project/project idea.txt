@@ -1,0 +1,61 @@
+
+project idea (idéia do projeto) {
+
+Este será um projeto para apresentar países mais famosos e informações úteis para quem quer ir viajar para algum deles.
+
+Serão 6 países ao todo, em diferentes continentes do mundo, porém serão os países mais visitados.
+
+Segundo o chat GPT, temos a seguir os países e seus locais mais visitados pelo mundo:
+
+-França: Conhecida por sua cultura rica, arquitetura icônica e gastronomia sofisticada, a França atrai milhões de visitantes todos os anos para destinos como Paris, a Torre Eiffel, o Louvre e regiões como a Provença.
+-Espanha: Com suas praias ensolaradas, cidades vibrantes e uma rica herança cultural, a Espanha é popular entre os turistas que buscam história, arte, culinária e vida noturna. Destinos como Barcelona, Madri, Sevilha e Ibiza são especialmente procurados.
+-Estados Unidos: Oferecendo uma grande variedade de atrações, desde metrópoles urbanas até parques nacionais deslumbrantes, os Estados Unidos atraem turistas interessados em explorar cidades como Nova York, Los Angeles, Las Vegas e os parques nacionais como o Grand Canyon.
+-China: A China combina uma rica herança cultural com paisagens impressionantes e uma história milenar. Destinos populares incluem a Grande Muralha, Pequim, Xangai, a Cidade Proibida e os Guerreiros de Terracota em Xi'an.
+-Itália: Com uma rica história, arte renomada e uma cozinha deliciosa, a Itália atrai visitantes para cidades como Roma, Veneza, Florença e regiões pitorescas como a Toscana.
+-México: Com praias paradisíacas, cidades coloniais encantadoras e uma cultura vibrante, o México é um destino popular para turistas. Locais como Cancún, Cidade do México, Playa del Carmen e sítios arqueológicos como Chichén Itzá são atrações famosas.
+Lembre-se de que as classificações podem variar com o tempo e dependendo das fontes de dados utilizadas, mas esses países geralmente se mantêm entre os mais visitados no mundo.
+
+Adicionaremos grécia também a esta contagem porque eu acho grécia legal, heheh.
+E se a preguiça não bater, teremos o canadá também.
+
+Então são estes, sete países ao todo, que serão colocados no site.
+1- França (paris)
+2- Espanha (barcelona)
+3- Estados Unidos (new york)
+4- China (pequim)
+5- Itália (roma)
+6- México (cidade de mexico)
+7- Grécia (atenas)
+8- Canada (toronto)
+
+}
+
+
+
+project step by step (passo a passo do projeto) {
+
+
+Módulo 1- Será feito uma página inicial contendo um accordion de imagens, exibindo a cidade mais famosa de cada um dos 7 países. {
+Oque é um Accordion de Imagens? https://www.youtube.com/watch?v=YdJAwTJBSus&list=PLYgzkrmJnLwo8IDD2v7RP_oyE3yzc1fY4&index=22
+1.1 A página inicial será feita com flexbox, e haverá entre o topo e o centro da página, um background-color quase transparente junto de letras semitranspartentes, com o seguinte título: "Saiba mais sobre o seu destino!" 
+1.2 Ao passar o mouse sobre algum dos accordion's, o título sumirá, e irá aparecer outro texto no centro da imagem que foi expandida, também com um background-color e letras semitransparentes, com o seguinte texto: "Nome do país(em português) ... Nome do país(na língua nativa do país)" Um abaixo do outro. No CSS também indicaremos que a imagem é clicável utilizando a seguinte propriedade: cursor: pointer;
+1.3 Ao clicar na imagem, irá ser carregado outra página, que levará a uma página com mais informações do país em que o usuário selecionou.
+}
+
+
+Módulo 2- Cada imagem deste accordion terá um link, que levará para sua respectiva página, aonde terá mais informações sobre o país selecionado. {
+2.1 Entre essas informações teremos, na seguinte sequência:
+2.2 // 1 section: um pouco sobre a cultura do país.
+2.3 // 2 section: um pouco sobre a história do país 
+2.4 // 3 section: cidades mais visitadas no país 
+2.5 // 4 section: 2/3 imagens dos pontos turísticos mais famosos das cidades mais famosas (ao passar o mouse por cima terá um efeito de blur minimo indicando o nome da cidade e o nome do ponto turístico)
+2.6 // 5 section: média de preço de passagem e embaixo uma grid contendo os melhores sites de venda de passagens.
+2.7 // 6 section: rodapé contendo informações do criador e um botão para voltar.
+}
+
+Módulo 3- Após o término de todo o HTML E CSS, iremos criar uma função para a 5 section do módulo 2. {
+3.1 Essa função permitirá que o usuário transforme o valor da passagem(que por padrão estará em R$), em sua moeda local.
+3.2 Criando uma section group permitindo que o usuário escolha um tipo de moeda.
+3.3 E usando uma estrutura de decisão para validar oque acontecerá com a moeda escolhida.
+3.4 Cada estrutura de decisão para cada respectivo país terá um calculo diferente, transformando o VALOR TOTAL da passagem de REAIS para a MOEDA LOCAL escolhida.
+}

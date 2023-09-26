@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/* Pequenas telas: até 600px.
+Celular: de 600px até 768px.
+Tablet: 769px até 992px.
+
+CSS PARA DISPOSITIVOS MÓVEIS
+
+*/
+
+@font-face {
+    font-family: 'CrimsomText'; 
+    src: url("../fontes/index/CrimsonText-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-size: normal;
+}
+
+@font-face {
+    font-family: "Slabo";
+    src: url("../fontes/index/Slabo27px-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-size: normal
+}
+
+@font-face {
+    font-family: "TiltPrism";
+    src: url("../fontes/index/TiltPrism-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-size: normal;
+}
+
+@font-face {
+    font-family: "TulpenOne";
+    src: url("../fontes/index/TulpenOne-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-size: normal;
+}
+
+:root{
+
+    --fonte0: 'CrimsomText';
+    --fonte1: 'Slabo';
+    --fonte2: 'TiltPrism';
+    --fonte3: 'TulpenOne';
+}
+
+@keyframes changeWidth {
+    0%  { transform: scaleX(0.0); }
+    50% { transform: scaleX(0.50); }
+    100% {  transform: scaleX(1); }
+}
+
+@keyframes lowWidth {
+    0%  { transform: scale(1); }
+    50% { transform: scale(0.50); }
+    100% {  transform: scale(0.0); }
+}
+
+@media all { /* ABRINDO MEDIA QUERY  */
+
+body { /* CORPO DA PÁGINA */
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    height: 100vh;
+
+    flex-direction: column;
+}
+
+span.first { /* CAIXA DE INSTRUÇÃO PRO USUÁRIO */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+
+    width: 400px;
+    
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    padding: 5px;
+    margin: 0px;
+
+    background-color: rgba(255, 255, 255, 0.432);
+    backdrop-filter: blur(2.5px);
+    border: 2px solid rgba(255, 255, 255, 0.522);
+    color: black;
+    font-size: 21px;
+    font-family: var(--fonte0);
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.664);
+}
+
+body:hover > span.first { /* EFEITO: CAIXA DE INSTRUÇÃO SOME AO USUÁRIO PASSAR O DEDO NA TELA */
+    display: none;
+    animation: lowWidth 800ms linear;
+}
+
+/* DEFINIÇÃO DE IMAGENS PEQUENAS: PAÍSES E SUAS RESPECTIVAS CIDADES */
+#accordion1 { background-image: url("../imagens/index/small/canada-toronto_pequeno.jpg"); }
+#accordion2 { background-image: url("../imagens/index/small/china-pequim_pequeno.jpg"); }
+#accordion3 { background-image: url("../imagens/index/small/espanha-barcelona_pequeno.jpg"); }
+#accordion4 { background-image: url("../imagens/index/small/eua-newyork_pequeno.jpg"); }
+#accordion5 { background-image: url("../imagens/index/small/frança-paris_pequeno.jpg"); }
+#accordion6 { background-image: url("../imagens/index/small/grecia-atenas_pequeno.jpg"); }
+#accordion7 { background-image: url("../imagens/index/small/italia-roma_pequeno.jpg"); }
+#accordion8 { background-image: url("../imagens/index/small/mexico-cidadedemexico_pequeno.jpg"); }
+
+/* CONFIGURAÇÃO DAS IMAGENS E SEUS RESPECTIVOS EFEITOS */
+.accordion {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    border: 1px solid white;
+    display: flex;
+    flex: 1 1 12.5vh;
+    transition: all 300ms cubic-bezier(0.075, 0.150, 0.300, 1);
+}
+
+/* EFEITO AO PASSAR O MOUSE SOBRE AS IMAGENS */
+.accordion:hover {
+    flex-basis: 55vh;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CAIXA DE INSTRUÇÃO: INFORMANDO QUAL PAÍS É O SELECIONADO */
+.confignames {
+    display: none;
+}
+
+/* CONFIGURANDO EFEITO DA CAIXA DE INSTRUÇÃO QUE DIZ QUAL É O PAÍS SELECIONADO: ESTA CAIXA APARECERÁ SOMENTE QUANDO PASSAR O MOUSE PERANTE UMA IMAGEM */
+.accordion:hover > .confignames {
+        background-color: rgba(255, 255, 255, 0.432);
+        backdrop-filter: blur(1px);
+        border: 2px solid rgba(255, 255, 255, 0.522);
+
+        font-family: var(--fonte1);
+        font-size: 23px;
+        color: rgba(0, 0, 0, 0.910);
+        text-shadow: 4px 4px 4px rgba(255, 255, 255, 0.500);
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        flex: 0 1 200px;
+
+        animation: changeWidth 300ms cubic-bezier(0.400, 0.700, 0.800, 1);
+}
+
+.accordion:hover > .confignames:hover {
+    backdrop-filter: blur(3px);
+    text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.625);
+    color: rgb(0, 0, 0);
+    transition: all 600ms cubic-bezier(0.400, 0.700, 0.800, 1);
+
+    .namecity {
+        opacity: 0%;
+        transition: all 600ms linear;
+    }
+}
+
+
+/* CONFIGURAÇÃO NOME DAS CIDADES */
+.namecity {
+    font-size: 13px;
+    color: black;
+    font-family: var(--fonte4);
+    margin-bottom: 5px;
+}
+
+/* INSERINDO ICONE DE LOCALIZAÇÃO BEFORE (ANTES) DO NOME DAS CIDADES */
+.namecity::before {
+    content: '\1F4F7' /* content: '\1F4CD' */
+}
+
+ } /* ESTA LINHA: FECHANDO A MEDIA QUERY DE 600PX ATÉ 992PX (TELAS MENORES) */
