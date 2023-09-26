@@ -149,8 +149,9 @@ main {
     margin-bottom: 50px;
 }
 
-#section_notas > #itens_notas > .pnotas {
+#itens_notas > .pnotas {
     font-size: 13px;
+    text-align: right;
 }
 
 

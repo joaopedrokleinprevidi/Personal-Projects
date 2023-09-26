@@ -34,12 +34,12 @@
 
             <section id="section_notas">
                 <section class="flexsection"  id="itens_notas">
-                    <label class="pnotas" for="nota1">Nota 01</label>
-                    <input type="number" name="nota1" id="notaum" required placeholder="0.00"> <br>
-                    <label class="pnotas" for="nota2">Nota 02</label>
-                    <input type="number" name="nota2" id='notadois' required placeholder="0.00"> <br>
-                    <label class="pnotas" for="nota3">Nota 03</label>
-                    <input type="number" name="nota3" id='nota3' required placeholder="0.00"> <br>
+                    <label class="pnotas" for="nota1">01-Nota</label>
+                    <input class="boxnotas" type="number" name="nota1" id="notaum" required placeholder="0.00"> <br>
+                    <label class="pnotas" for="nota2">02-Nota</label>
+                    <input class="boxnotas" type="number" name="nota2" id='notadois' required placeholder="0.00"> <br>
+                    <label class="pnotas" for="nota3">03-Nota</label>
+                    <input class="boxnotas" type="number" name="nota3" id='nota3' required placeholder="0.00"> <br>
                     <button onclick="media()">Enviar</button> <br>
                     <p id="p">Média: 0</p>
                 </section>
@@ -59,8 +59,9 @@
         function media(){
             var nota1 = parseFloat(document.getElementById('notaum').value)
             var nota2 = parseFloat(document.getElementById('notadois').value)
-        
-            var media = (nota1 + nota2) / 2;
+            var nota3= parseFloat(document.getElementById('nota3').value)
+
+            var media = (nota1 + nota2 + nota3) / 3;
 
             var p = document.querySelector('#p');
             if (media === 10){
