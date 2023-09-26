@@ -4,39 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notas</title>
-    <style>
-
-        body{
-            height: 98vh;
-            width: 98vw;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-
-        main {
-            background-color: lightgreen;
-
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="estilos/styles.css">
 </head>
 <body>
-    <section>
-        <main>
+    <header>
+        <menu>
+            <div id="div_menu"><img id="img_menu" src="imagens/logo-school-edited.png" alt="logo"></div>
+            <div id="textmenu">
+                <h1 class="textmenu" id="tit_menu">Elisa Tramontina</h1>
+                <h2 class="textmenu" id="subtit_menu">Escola Estadual de Ensino Médio</h2>
+            </div>
             
+        </menu>
+            <nav id="nav">
+                    <p id="nav1"><a class="linkmenu" href="#" target="_self">Pagina Inicial</a></p>
+                    <p id="nav2"><a class="linkmenu" href="notas.html" target="_self">Notas</a></p>
+            </nav>
+    </header>
+
+
+        <main>
+
+
+            <section class="flexsection">
+                <h1 id="h1notas">Calculadora de Média Escolar <br>
+                <h2 id="h2notas">Olá! Seja bem vindo a área do Aluno!</h2>   </h1>
+                
+            </section>
+
+            <section class="flexsection"  id="notas">
                 <label for="nota1">Primeira nota</label>
                 <input type="number" name="nota1" id="notaum" required placeholder="0.00"> <br>
                 <label for="nota2">Segunda nota</label>
                 <input type="number" name="nota2" id='notadois' required placeholder="0.00"> <br>
                 <button onclick="media()">Enviar</button> <br>
                 <p id="p">Média: 0</p>
-                
+            </section>  
         </main>
-    </section>
-
+    
+        <footer class="footer">
+            <h1 id="contact">Contato</h1>
+            <span id="hihihi">
+                <p class="pfooter"><span id="img01"></span> Email: <a class="linkfooter" href="https://mail.google.com/mail/u/1/?ogbl#inbox?compose=VpCqJVDwKCwGgCldSpSNcVBqksKPWpSFffhZgnLLrWTWxNCHxMqhXvCVPcfXrfXtjNLkxrg" target="_blank" rel="external">escolaelisa@lottinet.com.br</a></p>
+                <p class="pfooter"><span id="img02"></span> Telefone: (54) 3461-1736</a></p>
+                <p class="pfooter"><span id="img03"></span> Facebook: <a class="linkfooter" href="https://www.facebook.com/pages/Escola-Elisa-Tramontina/613666995375531" target="_blank" rel="external">www.facebook.com/EscolaElisaTramontina</a></p>
+                <p class="pfooter"><span id="img04"></span> Instagram: <a class="linkfooter" href="https://www.instagram.com/escolaelisatramontina.oficial/" target="_blank" rel="external">@escolaelisatramontina.oficial</a></p>
+            </span>
+    </footer>
     <script>
         function media(){
             var nota1 = parseFloat(document.getElementById('notaum').value)
