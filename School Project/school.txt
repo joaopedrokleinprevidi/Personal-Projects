@@ -1,0 +1,61 @@
+<menu>
+Elisa Tramontina
+Escola Estadual de Ensino Médio
+[LOGO]
+<nav>
+- Pagina inicial
+- Notas
+
+</nav>
+</menu>
+
+<main>
+
+-Quem somos? 
+A instituição de ensino foi fundada em 14 de abril de 1969 e inicialmente era chamada de Escola Reunida da Zona Pizzoli. Hoje a escola é a maior do município, com mais de mil alunos matriculados do 1º ao 9º ano do Ensino Fundamental e do 1º ao 3º ano do Ensino Médio.
+
+[IMAGEM]
+
+-Qual a nossa formação?
+Somos uma escola de ensino fundamental e médio. O aluno aprenderá todas as matérias obrigatórias do ensino fundamental e médio, iniciando os estudos com 7 anos no ensino fundamental, e saindo daqui com 18 anos com o ensino completo. Pronto para iniciar a educação superior em alguma universidade.
+
+-Nosso objetivo
+Crescer cada vez mais como uma instituição que vem trazendo o melhor ao aluno, seja desde conforto a aprendizado, sempre deixando o aluno ciente e motivando-o a estudar cada vez mais e crescer como pessoa, para atingir seus objetivos pessoais e profissionais, e no meio de tudo isso se se entendendo cada vez mais e se conhecendo aos poucos.
+
+-Um pouco sobre nós
+Na nossa escola você poderá desfrutar de:
+[LISTA
+Alimentação escolar para os alunos
+Água filtrada
+Água da rede pública
+Energia da rede pública
+Esgoto da rede pública
+Lixo destinado à coleta periódica
+Acesso à Internet
+Banda larga
+FIM LISTA]
+[VÍDEO] https://www.youtube.com/watch?v=Hjc5e9itdIQ
+
+
+
+Nosso endereço:
+[LOCALIZAÇÃO] https://www.google.com/maps/place/R.+Jos%C3%A9+Raimundo+Carloto,+329+-+Vila+Nova,+Carlos+Barbosa+-+RS,+95185-000,+Brasil/@-29.292806,-51.504043,17z/data=!4m6!3m5!1s0x951c19dd6b0ef68b:0x79148c7177034ed1!8m2!3d-29.2907942!4d-51.5054385!16s%2Fg%2F11gfgmgw_m?hl=pt-BR&entry=ttu
+
+</main>
+
+
+<footer>
+Endereço: Rua Jose Raimundo Carlotto 329, 329
+Vila Nova
+Carlos Barbosa - RS
+CEP: 95185-000
+
+Email para contato: escolaelisa@lottinet.com.br
+Telefone: (54) 3461-1736
+</footer>
+
+
+--SEGUNDA PÁGINA--
+
+Em uma nova página:
+criar uma interação para inserir notas e calcular uma média com js e mostrar em uma tabela

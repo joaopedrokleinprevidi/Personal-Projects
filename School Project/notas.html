@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+    <style>
+
+        body{
+            height: 98vh;
+            width: 98vw;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        main {
+            background-color: lightgreen;
+
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <main>
+            
+                <label for="nota1">Primeira nota</label>
+                <input type="number" name="nota1" id="notaum" required placeholder="0.00"> <br>
+                <label for="nota2">Segunda nota</label>
+                <input type="number" name="nota2" id='notadois' required placeholder="0.00"> <br>
+                <button onclick="media()">Enviar</button> <br>
+                <p id="p">Média: 0</p>
+                
+        </main>
+    </section>
+
+    <script>
+        function media(){
+            var nota1 = parseFloat(document.getElementById('notaum').value)
+            var nota2 = parseFloat(document.getElementById('notadois').value)
+        
+            var media = (nota1 + nota2) / 2;
+
+            var p = document.querySelector('#p');
+            if (media === 10){
+                
+                p.textContent = "Aprovado com nota máxima! Média: " + media;
+            }if (media >= 7){
+                
+                p.textContent = "Aprovado! Média: " + media;
+            }else {
+                
+                p.textContent = "Reprovado! Média: " + media;
+            }
+        }
+       
+    </script>
+</body>
+</html>
