@@ -23,7 +23,7 @@
     </header>
 
 
-        <main>
+        <main id="main_notas">
 
 
             <section class="flexsection">
@@ -32,13 +32,17 @@
                 
             </section>
 
-            <section class="flexsection"  id="notas">
-                <label for="nota1">Primeira nota</label>
-                <input type="number" name="nota1" id="notaum" required placeholder="0.00"> <br>
-                <label for="nota2">Segunda nota</label>
-                <input type="number" name="nota2" id='notadois' required placeholder="0.00"> <br>
-                <button onclick="media()">Enviar</button> <br>
-                <p id="p">Média: 0</p>
+            <section id="section_notas">
+                <section class="flexsection"  id="itens_notas">
+                    <label class="pnotas" for="nota1">Nota 01</label>
+                    <input type="number" name="nota1" id="notaum" required placeholder="0.00"> <br>
+                    <label class="pnotas" for="nota2">Nota 02</label>
+                    <input type="number" name="nota2" id='notadois' required placeholder="0.00"> <br>
+                    <label class="pnotas" for="nota3">Nota 03</label>
+                    <input type="number" name="nota3" id='nota3' required placeholder="0.00"> <br>
+                    <button onclick="media()">Enviar</button> <br>
+                    <p id="p">Média: 0</p>
+                </section>
             </section>  
         </main>
     
