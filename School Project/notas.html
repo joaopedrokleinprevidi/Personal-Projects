@@ -27,20 +27,22 @@
 
 
             <section class="flexsection">
-                <h1 id="h1notas">Calculadora de Média Escolar <br>
+                <h1 id="h1notas">Calculadora de Média Escolar Anual <br>
                 <h2 id="h2notas">Olá! Seja bem vindo a área do Aluno!</h2>   </h1>
                 
             </section>
 
             <section id="section_notas">
                 <section class="flexsection"  id="itens_notas">
-                    <label class="pnotas" for="nota1">Primeira-nota</label>
-                    <input class="boxnotas" type="number" name="nota1" id="notaum" required placeholder="0.00"> <br>
-                    <label class="pnotas" for="nota2">Segunda-nota</label>
-                    <input class="boxnotas" type="number" name="nota2" id='notadois' required placeholder="0.00"> <br>
-                    <label class="pnotas" for="nota3">Terceira-nota</label>
-                    <input class="boxnotas" type="number" name="nota3" id='nota3' required placeholder="0.00"> <br>
-                    <div id="div_nota"><button class="button_nota"  onclick="media()">Enviar</button> <br></div>
+                    <label class="pnotas" for="nota1">Primeiro bimestre</label>
+                    <input class="boxnotas" type="number" min="0" max="10" name="nota1" id='notaum' placeholder="0.00" required> <br>
+                    <label class="pnotas" for="nota2">Segundo bimestre</label>
+                    <input class="boxnotas" type="number" min="0" max="10" name="nota2" id='notadois' placeholder="0.00" required> <br>
+                    <label class="pnotas" for="nota3">Terceiro bimestre</label>
+                    <input class="boxnotas" type="number" min="0" max="10" name="nota3" id='notatres' placeholder="0.00" required> <br>
+                    <label class="pnotas" for="nota4">Quarto bimestre</label>
+                    <input class="boxnotas" type="number" min="0" max="10" name="nota4" id='notaquatro' placeholder="0.00" required>
+                    <div id="div_nota"><button class="button_nota" onclick="media()">Enviar</button> <br></div>
                     <p id="mediap">Média: 0</p>
                 </section>
             </section>  
@@ -59,20 +61,23 @@
         function media(){
             var nota1 = parseFloat(document.getElementById('notaum').value)
             var nota2 = parseFloat(document.getElementById('notadois').value)
-            var nota3= parseFloat(document.getElementById('nota3').value)
+            var nota3 = parseFloat(document.getElementById('notatres').value)
+            var nota4 = parseFloat(document.getElementById('notaquatro').value)
 
-            var media = (nota1 + nota2 + nota3) / 3;
+            var media = (nota1 + nota2 + nota3 + nota4) / 4;
 
-            var p = document.querySelector('#p');
-            if (media === 10){
-                
-                p.textContent = "Aprovado com nota máxima! Média: " + media;
-            }if (media >= 7){
-                
-                p.textContent = "Aprovado! Média: " + media;
+            var p = document.querySelector('#mediap');
+            
+            if (media > 10 || media < 0){
+                p.textContent = "Por favor, digite um número entre 0 e 10."
+            }else if (isNaN(media)){
+                p.textContent = "Digite o resultado de seus bimestres!"
+            } else if (media === 10){
+                p.textContent = "Aprovado com nota máxima! Média: " + media.toFixed(1);
+            }else if (media >= 7){
+                p.textContent = "Aprovado! Média: " + media.toFixed(2);
             }else {
-                
-                p.textContent = "Reprovado! Média: " + media;
+                p.textContent = "Reprovado! Média: " + media.toFixed(2);
             }
         }
        

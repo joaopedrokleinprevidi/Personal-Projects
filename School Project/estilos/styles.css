@@ -143,11 +143,20 @@ main {
     
 }
 
+.boxnotas {
+    width: 90%;
+}
+
+.boxnotas:hover {
+    opacity: 92%;
+}
+
 #itens_notas {
     width: 200px;
-    height: 230px;
+    height: 265px;
     background-color: lightblue;
     margin-bottom: 50px;
+    border-radius: 10px;
 
     display: flex;
     flex-direction: column;
@@ -156,17 +165,31 @@ main {
 
 #itens_notas > .pnotas {
     font-size: 13px;
-    text-align: right;
+    
 }
 
-#button_nota {
-    padding: 15px;
+
+#div_nota {
+    margin-top: 15px;
+}
+
+.button_nota {
+    padding: 2px;
+}
+
+.button_nota:hover {
+    padding: 3px;
+    opacity: 90%;
+    transition: .5s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #mediap {
+    width: 270px;
+    margin-top: 25px;
     text-align: center;
     position: relative;
-    translate: -10px;
+    translate: -10px -10px;
+    font-size: 13px;
 }
 
 section > h1 {
