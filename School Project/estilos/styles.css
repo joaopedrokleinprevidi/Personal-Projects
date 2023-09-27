@@ -159,6 +159,10 @@ main {
     text-align: right;
 }
 
+#button_nota {
+    padding: 15px;
+}
+
 #mediap {
     text-align: center;
     position: relative;
