@@ -180,7 +180,7 @@ main {
 .button_nota:hover {
     padding: 3px;
     opacity: 90%;
-    transition: .5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: .1s all linear;
 }
 
 #mediap {
@@ -206,7 +206,8 @@ section > h1 {
 }
 
 section > #h1notas {
-    background: linear-gradient(to right, #e4fffd, #e6fffc);
+    background: linear-gradient(to right, #e4fffd, #e4fffd45);
+    width: 100%;
     text-align: center;
     padding: 8px;
     position: relative;

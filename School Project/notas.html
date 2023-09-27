@@ -68,10 +68,12 @@
 
             var p = document.querySelector('#mediap');
             
-            if (media > 10 || media < 0){
-                p.textContent = "Por favor, digite um número entre 0 e 10."
+            if (nota1 < 0 || nota2 < 0 || nota3 < 0 || nota4 < 0){
+                p.textContent = "Digite números apenas entre 0 e 10."
+            }else if (media > 10 || media < 0){
+                p.textContent = "Digite números apenas entre 0 e 10."
             }else if (isNaN(media)){
-                p.textContent = "Digite o resultado de seus bimestres!"
+                p.textContent = "Digite os resultados de seus bimestres!"
             } else if (media === 10){
                 p.textContent = "Aprovado com nota máxima! Média: " + media.toFixed(1);
             }else if (media >= 7){
