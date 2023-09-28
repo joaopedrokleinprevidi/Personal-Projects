@@ -34,7 +34,7 @@
             <form method="post" action="form.js">
 
                 <label for="people">Qual é você?</label>
-                <select name="people" id="input-people">
+                <select name="people" class="inputs" id="input-people">
                     <option value="Aluno">Aluno</option>
                     <option value="Pai">Pai</option>
                     <option value="Mãe">Mãe</option>
@@ -44,45 +44,45 @@
                 </select> <br>
 
                 <label for="nome">Nome</label>
-                <input type="text" name="nome" id="input-nome" required> <br>
+                <input type="text" name="nome" class="inputs" id="input-nome" required> <br>
 
                 <label for="age">Idade</label>
-                <input type="number" name="age" id="input-idade" required> <br>
+                <input type="number" name="age" class="inputs" id="input-idade" required> <br>
 
-                <p>Sexo:</p>
-                <input type="radio" name="sexo-m" id="input-sexoM" value="Masculino" required>
-                <label for="sexo-m">Masculino</label>
-                <br><input type="radio" name="sexo-f" id="input-sexoF" value="Feminino" required>
-                <label for="sexo-f">Feminino</label> <br>
+                
+                <p>Gênero:</p> <input type="radio" name="sexo-m"  class="input-sex" id="input-sexoM" value="Masculino" required>
+                <label for="sexo-m" class="input-sex" >Masculino</label>
+                <input type="radio" name="sexo-f"  class="input-sex" id="input-sexoF" value="Feminino" required>
+                <label for="sexo-f" class="input-sex" >Feminino</label> <br>
 
 
                 <label for="email">Email</label>
-                <input type="email" name="email" id="input-email" required> <br>
+                <input type="email" name="email" class="inputs" id="input-email" required> <br>
 
                 <label for="fone">Telefone</label>
-                <input type="tel" name="fone" id="input-telefone" required> <br>
+                <input type="tel" name="fone" class="inputs" id="input-telefone" required> <br>
 
                 <label for="dtnasc">Data de Nascimento</label>
-                <input type="date" name="dtnasc" id="input-nascimento" required> <br>
+                <input type="date" name="dtnasc" class="inputs" id="input-nascimento" required> <br>
 
                 <label for="ensino">Selecione o seu ensino:</label>
-                <select name="ensino" id="input-ensino">
+                <select name="ensino" class="inputs" id="input-ensino">
                     <option value="Fundamental">Ensino Fundamental</option>
                     <option value="Médio">Ensino Médio</option>
                     <option value="Superior">Ensino Superior</option>
                 </select> <br>
 
                 <label for="stage">Em qual ano de estudo você se encontra?</label>
-                <input type="text" name="stage" id="input-stage"> <br>
+                <input type="text" name="stage" class="inputs" id="input-stage"> <br>
 
                 <label for="brothers">Quantos irmãos você possui?</label>
-                <input type="number" name="brothers" id="input-brothers" required> <br>
+                <input type="number" name="brothers" class="inputs" id="input-brothers" required> <br>
 
                 <label for="kid">Quantos filhos você possui?</label>
-                <input type="number" name="kid" id="input-kid"> <br>
+                <input type="number" name="kid" class="inputs" id="input-kid"> <br>
 
                 <label for="peso">Peso</label>
-                0<input type="range" min="0" max="200" name="peso" id="input-peso" required>100 <br>
+                0<input type="range" class="inputs" min="0" max="150" name="peso" id="input-peso" required>150 <br>
             </form>
         </section>
 
