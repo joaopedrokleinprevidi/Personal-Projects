@@ -1,0 +1,290 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Titulo';
+    src: url('files/UnifrakturMaguntia/UnifrakturMaguntia-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Texto';
+    src:url('files/Raleway/Raleway-Italic-VariableFont_wght.ttf') format('truetype'), url('../fontes/Raleway/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: light, normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rewudu';
+    src: url('files/Ruwudu-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+}
+
+@font-face {
+    font-family: 'Reboto';
+    src: url('files/Roboto-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+}
+
+:root {
+    --fonte0: 'Titulo', cursive, monospace, sans-serif;
+    --fonte1: 'Texto', sans-serif;
+    --cor1: #13F1F2;
+    --cor2: #14BEFC;
+    --cor3: #1E7BE6;
+    --cor4: #1443FC;
+    --cor5: #2113F2;
+
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100vw;
+}
+
+
+menu > #div_icon > #icon_header {
+    width: 140px;
+    height: 140px;
+}
+
+menu {
+    padding: 15px;
+    height: 125px;
+
+    background: linear-gradient(#00bbff, white); 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header > menu > span > .textmenu {
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: var(--fonte0);
+    color: var(--cor3);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+
+    padding-top: 20px;
+}
+
+#tit_menu {
+    font-size: 2.5em;
+}
+
+header > nav {
+    background-color: #e4fffd;
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+
+.linkmenu {
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.466);
+    background-color: #fcfbfb;
+    color:#1443FC;
+    
+    padding: 4px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.linkmenu:hover{
+    text-decoration: underline #1443FC;
+    color:var(--cor2);
+    background-color: #dbfffc83;
+    padding: 6px;
+    border-radius: 8px;
+    
+    transition: 0.2s;
+}
+
+
+main {
+    background-color: #e4fffd;
+    min-width: 80vw;
+    max-width: 1000px;
+
+    height: 400px;
+    
+    margin: auto;
+}
+
+#div-tit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > #div-tit > #principal-tit {
+    font-size: 1.8em;
+    padding: 15px;
+}
+
+.tit-main {
+    font-family: var(--fonte1);
+    color:#0099ff;
+    text-indent: 40px;
+    font-size: 1.3em;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.562);
+
+    background: linear-gradient(to right, #e4fffd, transparent);
+    border-radius: 50px;
+    padding: 2.5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background: linear-gradient(to bottom, transparent, #00bbff); 
+
+    width: 100%;
+    height: 100%;
+    
+    font-family: 'Rewudu';
+}
+
+#contact {
+
+
+    padding: 10px 10px 5px 0px;
+
+    font-family: 'Reboto';
+    font-size: 1.5em;
+    margin: auto;
+    text-align: center;
+    color: black;
+    text-shadow: 1px 1px 2px  rgba(255, 225, 225, 0.493);
+    
+}
+
+.pfooter {
+    text-align: left;
+    line-height: 25px;
+    font-family: 'Reboto';
+    color: black;
+    text-shadow: 1px 1px 2px  rgba(255, 255, 255, 0.493);
+    
+
+}
+
+.linkfooter {
+    font-size: 14px;
+    color:#1050ff;
+    text-decoration: underline rgba(145, 10, 255, 0.753);
+}
+
+.linkfooter:hover {
+    padding: 3px;
+    color: rgb(98, 0, 255);
+    text-decoration: none;
+    background-color: #f6f6f6;
+    transition: .5s;
+}
+
+#hihihi {
+    width: 410px;
+    
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+    padding: 20px 20px 20px 60px;
+    border-top: 1px solid white;
+    
+
+    background: linear-gradient(to bottom, var(--cor0), #00bbff); 
+    
+}
+
+#img01 {
+    background-image: url(files/logo-email\ -\ Copia.png);
+
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+
+    background-size: cover;
+
+    position:relative;
+    bottom: -7px;
+}
+
+#img02 {
+    background-image: url(files/icon-celphone\ -\ Copia.png);
+
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    background-size: cover;
+
+    position: relative;
+    bottom: -7px;
+}
+
+#img03 {
+    background-image: url(files/logo-facebook\ -\ Copia.jpg);
+
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    background-size: cover;
+
+    position: relative;
+    bottom: -7px;
+}
+
+#img04 {
+    background-image: url(files/logo-instagram\ -\ Copia.jpg);
+
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    background-size: cover;
+
+    position: relative;
+    bottom: -7px;
+}

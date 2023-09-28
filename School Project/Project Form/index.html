@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <menu>
+            <div id="div_icon"><img src="files/logo-school-edited.png" id="icon_header" alt="Icone"></div>
+            <span>
+                <h1 id="tit_menu" class="textmenu">Elisa Tramontina</h1>
+                <h2 id="subtit-menu" class="textmenu">Escola Estadual de Ensino Médio</h2>
+            </span>
+        </menu>
+        <nav id="nav">
+            <p id="nav1"><a class="linkmenu" href="#" target="_self">Pagina Inicial</a></p>
+            <p id="nav2"><a class="linkmenu" href="#" target="_self">Notas</a></p>
+        </nav>
+    </header>
+    
+    <main>
+
+        <span id="div-tit">
+            <h1 id="principal-tit" class="tit-main">Formulário de Pesquisa</h1>
+            <h2 class="tit-main">Primeiro, diga a nós quem você é.</h2>
+        </span>
+
+        <section class="box-form"> 
+            <form method="post" action="form.js">
+
+                <label for="people">Qual é você?</label>
+                <select name="people" id="input-people">
+                    <option value="Aluno">Aluno</option>
+                    <option value="Pai">Pai</option>
+                    <option value="Mãe">Mãe</option>
+                    <option value="Parente">Parente</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Outro">Outro</option>
+                </select> <br>
+
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="input-nome" required> <br>
+
+                <label for="age">Idade</label>
+                <input type="number" name="age" id="input-idade" required> <br>
+
+                <p>Sexo:</p>
+                <input type="radio" name="sexo-m" id="input-sexoM" value="Masculino" required>
+                <label for="sexo-m">Masculino</label>
+                <br><input type="radio" name="sexo-f" id="input-sexoF" value="Feminino" required>
+                <label for="sexo-f">Feminino</label> <br>
+
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="input-email" required> <br>
+
+                <label for="fone">Telefone</label>
+                <input type="tel" name="fone" id="input-telefone" required> <br>
+
+                <label for="dtnasc">Data de Nascimento</label>
+                <input type="date" name="dtnasc" id="input-nascimento" required> <br>
+
+                <label for="ensino">Selecione o seu ensino:</label>
+                <select name="ensino" id="input-ensino">
+                    <option value="Fundamental">Ensino Fundamental</option>
+                    <option value="Médio">Ensino Médio</option>
+                    <option value="Superior">Ensino Superior</option>
+                </select> <br>
+
+                <label for="stage">Em qual ano de estudo você se encontra?</label>
+                <input type="text" name="stage" id="input-stage"> <br>
+
+                <label for="brothers">Quantos irmãos você possui?</label>
+                <input type="number" name="brothers" id="input-brothers" required> <br>
+
+                <label for="kid">Quantos filhos você possui?</label>
+                <input type="number" name="kid" id="input-kid"> <br>
+
+                <label for="peso">Peso</label>
+                0<input type="range" min="0" max="200" name="peso" id="input-peso" required>100 <br>
+            </form>
+        </section>
+
+        <section>
+            <span id="div-tit">
+                <h2 class="tit-main">Oque você acha da nossa escola?</h2>
+            </span>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <h1 id="contact">Contato</h1>
+        <span id="hihihi">
+            <p class="pfooter"><span id="img01"></span> Email: <a class="linkfooter" href="https://mail.google.com/mail/u/1/?ogbl#inbox?compose=VpCqJVDwKCwGgCldSpSNcVBqksKPWpSFffhZgnLLrWTWxNCHxMqhXvCVPcfXrfXtjNLkxrg" target="_blank" rel="external">escolaelisa@lottinet.com.br</a></p>
+            <p class="pfooter"><span id="img02"></span> Telefone: (54) 3461-1736</a></p>
+            <p class="pfooter"><span id="img03"></span> Facebook: <a class="linkfooter" href="https://www.facebook.com/pages/Escola-Elisa-Tramontina/613666995375531" target="_blank" rel="external">www.facebook.com/EscolaElisaTramontina</a></p>
+            <p class="pfooter"><span id="img04"></span> Instagram: <a class="linkfooter" href="https://www.instagram.com/escolaelisatramontina.oficial/" target="_blank" rel="external">@escolaelisatramontina.oficial</a></p>
+        </span>
+</footer>
+</body>
+</html>
