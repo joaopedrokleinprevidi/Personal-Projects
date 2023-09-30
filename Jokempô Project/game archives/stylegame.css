@@ -57,6 +57,12 @@ header > section > .imagens-header {
     translate: 0px -20px;
 }
 
+header > section > .imagens-header:hover {
+    width: 301px;
+    cursor: pointer;
+    border-bottom: 2px solid rgb(237, 237, 237);
+}
+
 
 #body-main > section#interface {
     display: flex;
