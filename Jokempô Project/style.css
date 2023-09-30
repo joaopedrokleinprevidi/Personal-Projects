@@ -58,3 +58,7 @@ header > #button-jogar {
 header > #button-jogar:hover {
     background-color: rgb(255, 152, 152);
 }
+
+main {
+    display: none;
+}

@@ -1,6 +1,15 @@
-var jokempo = parseInt(prompt("[JOKEMPO] Digite 1 para [PEDRA], 2 para [PAPEL] ou 3 para [TESOURA]."));
+var buttonJogar = document.querySelector('#button-jogar');
+
+function playGame() {
+    window.location = "http://127.0.0.1:5500/Jokemp%C3%B4%20Project/game%20archives/game.html";
+}
+
+
+/*
+ var jokempo = parseInt(prompt("[JOKEMPO] Digite 1 para [PEDRA], 2 para [PAPEL] ou 3 para [TESOURA]."));
 var maquina = parseInt(Math.random() * 3);
-    /*
+  */    
+/*
     RESULTADOS MÁQUINA: 
     0 == PEDRA
     1 == PAPEL
@@ -8,6 +17,7 @@ var maquina = parseInt(Math.random() * 3);
     */
 
     // Empate!
+  
 if(jokempo == 1 && maquina == 0){
     console.log("Você jogou: PEDRA")
     console.log("A máquina jogou: PEDRA")
@@ -48,4 +58,4 @@ if(jokempo == 1 && maquina == 0){
     console.log("Você jogou: TESOURA")
     console.log("A máquina jogou: PAPEL")
     console.log("Resultado: Parabéns, você venceu!")
-};
+}; 
