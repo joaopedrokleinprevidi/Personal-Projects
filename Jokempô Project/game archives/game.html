@@ -16,9 +16,9 @@
         
 
         <section>
-            <img src="../images/Pedra.png" class="imagens-header" alt="Pedra">
-            <img src="../images/Papel.png"  class="imagens-header" alt="Papel">
-            <img src="../images/Tesoura.png" class="imagens-header" alt="Tesoura">
+            <img src="../images/Pedra.png" id="selectPedra" onclick="usuarioPedra()" class="imagens-header" alt="Pedra">
+            <img src="../images/Papel.png"  id="selectPapel" onclick="usuarioPapel()" class="imagens-header" alt="Papel">
+            <img src="../images/Tesoura.png" id="selectTesoura" onclick="usuarioTesoura()" class="imagens-header" alt="Tesoura">
         </section>
     </header>
 
@@ -27,11 +27,13 @@
         <section id="interface">
             <p id="win" class="interface-itens">Vítorias: 0</p>
             <p id="defeat" class="interface-itens">Derrotas: 0</p>
+            <p id="empate" class="interface-itens">Empates: 0</p>
             <p id="score" class="interface-itens">Score: 0</p>
             <button class="interface-itens" id="button-resetInterface" onclick="resetInterface()">Restart</button>
         </section>
         <hr size="1">
     </main>
 
+    <script src="../script.js"></script>
 </body>
 </html>
