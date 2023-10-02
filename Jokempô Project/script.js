@@ -37,6 +37,7 @@ function resetInterface(){
 //to cagado de sono e a lógica aqui tá faiando, deixo contigo joão do futuro! tu é foda!
 }
 
+
 function usuarioPedra() {
     var jokempo = 1;
     if (maquina == 0){
