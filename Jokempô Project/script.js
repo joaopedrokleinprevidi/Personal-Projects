@@ -11,7 +11,7 @@ var selectPapel = document.querySelector("#selectPapel");
 var selectTesoura = document.querySelector("#selectTesoura");
 
 var playMaquina = document.querySelector("#playMaquina");
-var sectionMaquina = document.querySelector ("#maquina");
+var sectionMaquina = document.querySelector("#maquina");
 
 var win = 0;
 var defeat = 0;
@@ -42,22 +42,26 @@ function resetInterface(){
 }
 
 function displayMaquina(){
-    sectionMaquina.style = "display: flex; flex-direction: row; justify-content: center; align-items: center;"
+    sectionMaquina.classList.remove('#maquina') //tira o display none
+    sectionMaquina.classList.add('.maquinaAlterado'); //deixa visivel com flexbox centralizado
+    playMaquina.classList.remove('#playMaquina'); //tira o display none
+    playMaquina.classList.add('.playMaquinaAlterado'); //deixa visivel 
 }
+// falta corrigir isto, pois n está pegando 100%
 
 function maquinaPedra(){
     displayMaquina();
-    playMaquina.outerHTML = <img src="../images/Pedra.png"></img> 
+    playMaquina.outerHTML = "<img src='../images/Pedra.png'></img>"
 }
 
 function maquinaPapel(){
     displayMaquina();
-    playMaquina.outerHTML = <img src="../images/Papel.png"></img> 
+    playMaquina.outerHTML = "<img src='../images/Papel.png'></img>"
 }
 
 function maquinaTesoura(){
     displayMaquina();
-    playMaquina.outerHTML = <img src="../images/Tesoura.png"></img> 
+    playMaquina.outerHTML = "<img src='../images/Tesoura.png'></img>" 
 }
 
 
@@ -69,10 +73,12 @@ function usuarioPedra() {
 
     }
     else if (maquina == 1){
+        maquinaPapel();
         defeat = defeat + 1;
         defeatHTML.textContent = "Derrota: " + defeat;
     }
     else if (maquina == 2){
+        maquinaTesoura();
         win = win + 1;
         winHTML.textContent = "Vitória: " + win;
         score = score + 1;
@@ -81,17 +87,21 @@ function usuarioPedra() {
 }
 
 function usuarioPapel(){
+    
  if(maquina == 0){
+    maquinaPedra();
     win = win + 1;
     winHTML.textContent = "Vitória: " + win;
     score = score + 1;
     scoreHTML.textContent = "Score: " + score;
  }
  else if (maquina == 1){
+    maquinaPapel();
     empate = empate + 1;
     empateHTML.textContent = "Empate: " + empate;
  }
  else if(maquina == 2){
+    maquinaTesoura();
     defeat = defeat + 1;
     defeatHTML.textContent = "Derrota: " + derrota;
  }
@@ -99,22 +109,24 @@ function usuarioPapel(){
 
 function usuarioTesoura(){
     if(maquina == 0){
+        maquinaPedra();
         defeat = defeat + 1;
         defeatHTML.textContent = "Derrota: " + derrota;
      }
      else if (maquina == 1){
+        maquinaPapel();
         win = win + 1;
         winHTML.textContent = "Vitória: " + win;
         score = score + 1;
         scoreHTML.textContent = "Score: " + score;
      }
      else if(maquina == 2){
+        maquinaTesoura();
         empate = empate + 1;
         empateHTML.textContent = "Empate: " + empate;
      }
 }
 
-//tem q fazer no html aparecer oque a máquina jogou !
   console.log("Maquina: " + maquina);
   console.log("Empate: "+ empate);
   console.log("Derrota: " + defeat);
@@ -127,6 +139,4 @@ function usuarioTesoura(){
     1 == PAPEL
     2 == TESOURA
     */
-
-    // Empate!
 

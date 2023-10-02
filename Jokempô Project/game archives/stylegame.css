@@ -96,19 +96,20 @@ header > section > .imagens-header:hover {
 }
 
 #body-main > section#maquina {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: none;
+}
 
+#body-main > section.maquinaAlterado {
+    display: flex; flex-direction: row; justify-content: center; align-items: center;
     position: relative;
     translate: 0px -100px;
-
-    
 }
 
 #body-main > section#maquina > #playMaquina {
     display: none;
+}
+
+#body-main > section#maquina > .playMaquinaAlterado {
     width: 150px;
     height: 150px;
     
