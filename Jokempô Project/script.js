@@ -10,8 +10,8 @@ var selectPedra = document.querySelector("#selectPedra");
 var selectPapel = document.querySelector("#selectPapel");
 var selectTesoura = document.querySelector("#selectTesoura");
 
-var playMaquina = document.querySelector("#playMaquina");
-var sectionMaquina = document.querySelector("#maquina");
+var playMaquina = document.querySelector(".playMaquina");
+var sectionMaquina = document.querySelector(".maquina");
 
 var win = 0;
 var defeat = 0;
@@ -38,31 +38,33 @@ function resetInterface(){
     winHTML.textContent = "Vitória: " + win;
     scoreHTML.textContent = "Score: " + score;
 // tem q ver isso aqui, pq tá bugando
-// tu da reset e ok, ele reseta, mas se tu continuar jogando ele volta como tava antes
-
+// tu da reset e ok, ele reseta, mas se tu continuar jogando ele volta como tava ante
 }
+console.log("Vitória: " + win)
+console.log("Derrota: " + defeat)
 
 function displayMaquina(){
-    sectionMaquina.classList.remove('#maquina') //tira o display none
-    sectionMaquina.classList.add('.maquinaAlterado'); //deixa visivel com flexbox centralizado
-    playMaquina.classList.remove('#playMaquina'); //tira o display none
-    playMaquina.classList.add('.playMaquinaAlterado'); //deixa visivel 
+    sectionMaquina.classList.remove('maquina') //tira o display none
+    sectionMaquina.classList.add('maquinaAlterado'); //deixa visivel com flexbox centralizado
+    playMaquina.classList.remove('playMaquina'); //tira o display none
+    playMaquina.classList.add('playMaquinaAlterado'); //deixa visivel
 }
-// falta corrigir isto, pois n está pegando 100%
+
 
 function maquinaPedra(){
     displayMaquina();
-    playMaquina = 'images/Pedra.png'
+    playMaquina.src = "../images/Pedra.png"
+    console.log(playMaquina.src);
 }
 
 function maquinaPapel(){
     displayMaquina();
-    playMaquina.innerHTML = "<img src='images/Papel.png'></img>"
+    playMaquina.src = "../images/Papel.png"
 }
 
 function maquinaTesoura(){
     displayMaquina();
-    playMaquina.innerHTML = "<img src='images/Papel.png'></img>" 
+    playMaquina.src = "../images/Tesoura.png" 
 }
 
 function usuarioPedra() {
@@ -132,7 +134,6 @@ function usuarioTesoura(){
   console.log("Derrota: " + defeat);
   console.log("Vitória: " + win);
   console.log("Score: " + score);
-  console.log(sectionMaquina.classList.length);
 
 /*
     RESULTADOS MÁQUINA: 

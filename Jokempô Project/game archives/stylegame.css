@@ -95,7 +95,7 @@ header > section > .imagens-header:hover {
     cursor: pointer;
 }
 
-#body-main > section#maquina {
+#body-main > section.maquina {
     display: none;
 }
 
@@ -105,7 +105,7 @@ header > section > .imagens-header:hover {
     translate: 0px -100px;
 }
 
-#body-main > section#maquina > #playMaquina {
+#body-main > section.maquina > .playMaquina {
     display: none;
 }
 
