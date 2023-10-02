@@ -64,6 +64,8 @@ function maquinaTesoura(){
     playMaquina.outerHTML = "<img src='../images/Tesoura.png'></img>" 
 }
 
+displayMaquina();
+maquinaTesoura();
 
 function usuarioPedra() {
     if (maquina == 0){

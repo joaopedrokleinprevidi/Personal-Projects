@@ -99,7 +99,7 @@ header > section > .imagens-header:hover {
     display: none;
 }
 
-#body-main > section.maquinaAlterado {
+.maquinaAlterado {
     display: flex; flex-direction: row; justify-content: center; align-items: center;
     position: relative;
     translate: 0px -100px;
@@ -109,7 +109,7 @@ header > section > .imagens-header:hover {
     display: none;
 }
 
-#body-main > section#maquina > .playMaquinaAlterado {
+.playMaquinaAlterado {
     width: 150px;
     height: 150px;
     
