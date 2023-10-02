@@ -47,18 +47,18 @@ hr {
     width: 513px;
 
     position: relative;
-    translate: 0px -392px;
+    translate: 0px -342px;
 }
 
 header > section > .imagens-header {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     position: relative;
     translate: 0px -20px;
 }
 
 header > section > .imagens-header:hover {
-    width: 301px;
+    width: 251px;
     cursor: pointer;
     border-bottom: 2px solid rgb(237, 237, 237);
 }
@@ -70,7 +70,7 @@ header > section > .imagens-header:hover {
     justify-content: center;
 
     position: relative;
-    translate: 0px -372px;
+    translate: 0px -322px;
 }
 
 #body-main > section#interface > .interface-itens {
@@ -93,4 +93,25 @@ header > section > .imagens-header:hover {
     background-color: rgb(227, 227, 227);
 
     cursor: pointer;
+}
+
+#body-main > section#maquina {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    translate: 0px -100px;
+
+    
+}
+
+#body-main > section#maquina > #playMaquina {
+    display: none;
+    width: 150px;
+    height: 150px;
+    
+    margin: 0px;
+    padding: 0px;
 }
