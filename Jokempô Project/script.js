@@ -23,13 +23,14 @@ var defeatHTML = document.querySelector('#defeat');
 var empateHTML = document.querySelector('#empate');
 var scoreHTML = document.querySelector('#score');
 
+console.log(playMaquina);
 
 var maquina = parseInt(Math.random() * 3);
 
 function resetInterface(){
     var win = 0;
     var defeat = 0;
-    var empate = 0;
+    var empate = 0
     var score = 0;
 
     empateHTML.textContent = "Empate: " + empate;
@@ -51,21 +52,18 @@ function displayMaquina(){
 
 function maquinaPedra(){
     displayMaquina();
-    playMaquina.outerHTML = "<img src='../images/Pedra.png'></img>"
+    playMaquina = 'images/Pedra.png'
 }
 
 function maquinaPapel(){
     displayMaquina();
-    playMaquina.outerHTML = "<img src='../images/Papel.png'></img>"
+    playMaquina.innerHTML = "<img src='images/Papel.png'></img>"
 }
 
 function maquinaTesoura(){
     displayMaquina();
-    playMaquina.outerHTML = "<img src='../images/Tesoura.png'></img>" 
+    playMaquina.innerHTML = "<img src='images/Papel.png'></img>" 
 }
-
-displayMaquina();
-maquinaTesoura();
 
 function usuarioPedra() {
     if (maquina == 0){
@@ -105,7 +103,7 @@ function usuarioPapel(){
  else if(maquina == 2){
     maquinaTesoura();
     defeat = defeat + 1;
-    defeatHTML.textContent = "Derrota: " + derrota;
+    defeatHTML.textContent = "Derrota: " + defeat;
  }
 }
 
@@ -113,7 +111,7 @@ function usuarioTesoura(){
     if(maquina == 0){
         maquinaPedra();
         defeat = defeat + 1;
-        defeatHTML.textContent = "Derrota: " + derrota;
+        defeatHTML.textContent = "Derrota: " + defeat;
      }
      else if (maquina == 1){
         maquinaPapel();
@@ -134,6 +132,7 @@ function usuarioTesoura(){
   console.log("Derrota: " + defeat);
   console.log("Vitória: " + win);
   console.log("Score: " + score);
+  console.log(sectionMaquina.classList.length);
 
 /*
     RESULTADOS MÁQUINA: 
