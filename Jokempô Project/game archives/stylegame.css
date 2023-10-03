@@ -52,14 +52,21 @@ hr {
     translate: 0px -332px;
 }
 
-header > section > .imagens-header {
+header > section.img_flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+header > section.img_flex > .div_img > .imagens-header {
     width: 250px;
     height: 250px;
     position: relative;
     translate: 0px -20px;
 }
 
-header > section > .imagens-header:hover {
+header > section.img_flex > .div_img > .imagens-header:hover {
     width: 251px;
     cursor: pointer;
     border-bottom: 2px solid rgb(237, 237, 237);
@@ -119,27 +126,47 @@ header > section > .imagens-header:hover {
     padding: 0px;
 }
 
-.positionLoading {
-    display: inline-block;
-}
-
 .loading {
     width: 40px;
     height: 40px;
-    border: 10px solid rgb(130, 130, 130);
-    border-top-color: rgb(94, 94, 94, 0.1);
+    border: 10px solid rgb(255, 152, 152, 0.1);
+    border-top-color: rgb(252, 165, 165);
     border-radius: 50%;
-}
 
-/* .loadingPedra {
+    z-index: 2;
     position: relative;
-    translate: -300px -200px;
+    translate: 0px 140px;
 }
 
-.loadingPapel {
-
+.loadingPedraFalse {
+    display: none;
 }
-.loadingTesoura {
 
+.loadingPapelFalse {
+    display: none;
 }
-*/
+
+.loadingTesouraFalse {
+    display: none;
+}
+
+
+
+.loadingPedraTrue {
+    display: flex;
+    align-items: center;
+    justify-content: center;        
+}
+
+.loadingPapelTrue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadingTesouraTrue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

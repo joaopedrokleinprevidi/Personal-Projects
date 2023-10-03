@@ -4,6 +4,14 @@ function playGame() {
     window.location = "http://127.0.0.1:5500/Jokemp%C3%B4%20Project/game%20archives/game.html";
 }
 
+var loading_all = document.querySelector(".loading_all");
+function loading_false(){
+    loading_all.classList.remove('loadingPedraTrue')
+    loading_all.classList.remove('loadingPapelTrue')
+    loading_all.classList.remove('loadingTesouraTrue')
+    }
+    loading_false();
+
 
 
 var selectPedra = document.querySelector("#selectPedra");
@@ -45,13 +53,41 @@ function resetInterface(){
 console.log("Vitória: " + win)
 console.log("Derrota: " + defeat)
 
+function clickUsuario_loading(){
+    if (usuarioPedra()){
+        loading_all.classList.remove("loadingPapelFalse");
+        loading_all.classList.add("loadingPapelTrue");
+
+        loading_all.classList.remove("loading")
+    }
+}
+/*
+
+1- Deixa invisível tudo == OK
+2- IF:
+Se usuário clicar in (usuarioPedra()){
+    mostra loadingPapel && loadingTesoura
+}
+Se usuário clicar in (usuarioPapel()){
+    mostra loadingPedra && loadingTesoura
+}
+Se usuário clicar in (usuárioTesoura()){
+    mostra loadingPedra && loadingPapel
+}
+
+TEM q colocar essa função em cada jogada
+
+3- após tudo acima estiver ok. Criar animação loading
+4- Vou ter que fazer uma verificação, de caso a animação esteja OK, sumir todos os loading
+5- Ao usuário clicar novamente em uma opção, isso tem que estar pegando corretamente
+*/
+
 function displayMaquina(){
     sectionMaquina.classList.remove('maquina') //tira o display none
     sectionMaquina.classList.add('maquinaAlterado'); //deixa visivel com flexbox centralizado
     playMaquina.classList.remove('playMaquina'); //tira o display none
     playMaquina.classList.add('playMaquinaAlterado'); //deixa visivel
 }
-
 
 function maquinaPedra(){ 
     displayMaquina();
@@ -71,6 +107,7 @@ function maquinaTesoura(){
 
 function usuarioPedra() {
     if (MaquinaG() == 0){
+        clickUsuario_loading();
         maquinaPedra();
         empate = empate + 1;
         empateHTML.textContent = "Empate: " + empate;

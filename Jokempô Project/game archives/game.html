@@ -15,10 +15,19 @@
             </section>
         
 
-        <section>
-            <img src="../images/Pedra.png" id="selectPedra" onclick="usuarioPedra()" class="imagens-header" alt="Pedra">
-            <img src="../images/Papel.png"  id="selectPapel" onclick="usuarioPapel()" class="imagens-header" alt="Papel">
-            <img src="../images/Tesoura.png" id="selectTesoura" onclick="usuarioTesoura()" class="imagens-header" alt="Tesoura">
+        <section class="img_flex">
+            <div class="div_img">
+                <div class="loading_all" class="loadingPedraTrue" class="loadingPedraFalse"><span class="loading"></span></div>
+                <img src="../images/Pedra.png" id="selectPedra" onclick="usuarioPedra()" class="imagens-header" alt="Pedra">
+            </div>
+            <div class="div_img">
+                <div class="loading_all" class="loadingPapelTrue" class="loadingPapelFalse"><span class="loading"></span></div>
+                <img src="../images/Papel.png"  id="selectPapel" onclick="usuarioPapel()" class="imagens-header" alt="Papel">
+            </div>
+            <div class="div_img">
+                <div class="loading_all" class="loadingTesouraTrue" class="loadingTesouraFalse"><span class="loading"></span></div>
+                <img src="../images/Tesoura.png" id="selectTesoura" onclick="usuarioTesoura()" class="imagens-header" alt="Tesoura">
+            </div>
         </section>
     </header>
 
@@ -37,12 +46,6 @@
             <p id="p-maquina">A maquina jogou: </p>
             <img src="" class="playMaquina" class="playMaquinaAlterado" alt="">
         </section>
-        <span class="positionLoading">
-            <span class="loading" class="loadingMão" class="loadingPedra" class="loadingPapel"></span>
-        </span>
-        <span class="positionLoading">
-            <span class="loading" class="loadingMão" class="loadingPedra" class="loadingPapel"></span>
-        </span>
     </main>
 
     <script src="../script.js"></script>
