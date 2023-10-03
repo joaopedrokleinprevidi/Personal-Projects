@@ -11,7 +11,7 @@ function loading_false(){
     loading_all.classList.remove('loadingTesouraTrue')
     }
     loading_false();
-
+// da uma zoiada nisso aqui
 
 
 var selectPedra = document.querySelector("#selectPedra");
@@ -59,11 +59,11 @@ function clickUsuario_loading(){
         loading_all.classList.add("loadingPapelTrue");
 
         loading_all.classList.remove("loading")
-    }
+    } //da uma zoiada nisso aqui tbm
 }
 /*
 
-1- Deixa invisível tudo == OK
+1- Deixa invisível tudo 
 2- IF:
 Se usuário clicar in (usuarioPedra()){
     mostra loadingPapel && loadingTesoura
