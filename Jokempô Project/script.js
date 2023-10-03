@@ -23,8 +23,6 @@ var defeatHTML = document.querySelector('#defeat');
 var empateHTML = document.querySelector('#empate');
 var scoreHTML = document.querySelector('#score');
 
-console.log(playMaquina);
-
 var maquina = parseInt(Math.random() * 3);
 
 function resetInterface(){
