@@ -14,7 +14,7 @@ function loading_false(){
     loading_all.classList.add('loadingTesouraFalse')
     }
     loading_false();
-
+    console.log("É pra estar tudo false: " + loading_all.classList)
 
 var selectPedra = document.querySelector("#selectPedra");
 var selectPapel = document.querySelector("#selectPapel");
@@ -40,10 +40,10 @@ return aleatorio;
 MaquinaG();
 
 function resetInterface(){
-    var win = 0;
-    var defeat = 0;
-    var empate = 0
-    var score = 0;
+    win = 0;
+    defeat = 0;
+    empate = 0
+    score = 0;
 
     empateHTML.textContent = "Empate: " + empate;
     defeatHTML.textContent = "Derrota: " + defeat;
@@ -55,37 +55,123 @@ function resetInterface(){
 console.log("Vitória: " + win)
 console.log("Derrota: " + defeat)
 
+
+function displayMaquina(){
+    sectionMaquina.classList.remove('maquina') //tira o display none
+    sectionMaquina.classList.add('maquinaAlterado'); //deixa visivel com flexbox centralizado
+    playMaquina.classList.remove('playMaquina'); //tira o display none
+    playMaquina.classList.add('playMaquinaAlterado'); //deixa visivel
+}
+
+function maquinaPedra(){ 
+    displayMaquina();
+    playMaquina.src = "../images/Pedra.png"
+}
+
+function maquinaPapel(){
+    displayMaquina();
+    playMaquina.src = "../images/Papel.png"
+}
+
+function maquinaTesoura(){
+    displayMaquina();
+    playMaquina.src = "../images/Tesoura.png" 
+}
+
+
+function usuarioPedra() {
+    if (MaquinaG() == 0){
+        maquinaPedra();
+        empate = empate + 1;
+        empateHTML.textContent = "Empate: " + empate;
+    }
+    else if (MaquinaG() == 1){
+        maquinaPapel();
+        defeat = defeat + 1;
+        defeatHTML.textContent = "Derrota: " + defeat;
+    }
+    else if (MaquinaG() == 2){
+        maquinaTesoura();
+        win = win + 1;
+        winHTML.textContent = "Vitória: " + win;
+        score = score + 1;
+        scoreHTML.textContent = "Score: " + score;
+    }
+    return true;
+}
+
+function usuarioPapel(){
+    if(MaquinaG() == 0){
+            maquinaPedra();
+            win = win + 1;
+            winHTML.textContent = "Vitória: " + win;
+            score = score + 1;
+            scoreHTML.textContent = "Score: " + score;
+    }
+    else if (MaquinaG() == 1){
+            maquinaPapel();
+            empate = empate + 1;
+            empateHTML.textContent = "Empate: " + empate;
+    }
+    else if(MaquinaG() == 2){
+            maquinaTesoura();
+            defeat = defeat + 1;
+            defeatHTML.textContent = "Derrota: " + defeat;
+    }
+    return true;
+}
+
+function usuarioTesoura(){
+    if(MaquinaG() == 0){
+        maquinaPedra();
+        defeat = defeat + 1;
+        defeatHTML.textContent = "Derrota: " + defeat;
+     }
+     else if (MaquinaG() == 1){     
+        maquinaPapel();
+        win = win + 1;
+        winHTML.textContent = "Vitória: " + win;
+        score = score + 1;
+        scoreHTML.textContent = "Score: " + score;
+     }
+     else if(MaquinaG() == 2){
+        maquinaTesoura();
+        empate = empate + 1;
+        empateHTML.textContent = "Empate: " + empate;
+     }
+     return true;
+}
+
 function clickUsuario_loading(){
-    if (usuarioPedra()){
+    if (usuarioPedra() == true){
         loading_all.classList.remove("loadingPapelFalse");
         loading_all.classList.add("loadingPapelTrue");
 
         loading_all.classList.remove("loadingTesouraFalse");
         loading_all.classList.add("loadingTesouraTrue");
-        loading_all.style = "z-index: 2;"
+        console.log("usuarioPedra(PapelTrue, TesouraTrue):" + loading_all.className)
     }
-    else if (usuarioPapel()){
-        
+    else if (usuarioPapel() == true){
         loading_all.classList.remove("loadingPedraFalse");
         loading_all.classList.add("loadingPedraTrue");
 
         loading_all.classList.remove("loadingTesouraFalse");
         loading_all.classList.add("loadingTesouraTrue");
-        loading_all.style = "z-index: 2;"
+        console.log("usuarioPapel(PedraTrue, TesouraTrue):" + loading_all.className)
     }
-    else if (usuarioTesoura()){
-        
+    else if (usuarioTesoura() == true){
         loading_all.classList.remove("loadingPedraFalse");
         loading_all.classList.add("loadingPedraTrue");
 
         loading_all.classList.remove("loadingPapelFalse");
         loading_all.classList.add("loadingPapelTrue");
-        loading_all.style = "z-index: 2;"
+        console.log("usuarioTesoura(PedraTrue, PapelTrue):" + loading_all.className)
     }
     else {
-        console.log("Deu bug aqui");
+        console.log("Deu bug aqui na função " + loading_all.classList); 
     }
 }
+
 /*
 
 1- Deixa invisível tudo - OK
@@ -107,89 +193,11 @@ TEM q colocar essa função em cada jogada
 5- Ao usuário clicar novamente em uma opção, isso tem que estar pegando corretamente
 */
 
-function displayMaquina(){
-    sectionMaquina.classList.remove('maquina') //tira o display none
-    sectionMaquina.classList.add('maquinaAlterado'); //deixa visivel com flexbox centralizado
-    playMaquina.classList.remove('playMaquina'); //tira o display none
-    playMaquina.classList.add('playMaquinaAlterado'); //deixa visivel
-}
-
-function maquinaPedra(){ 
-    displayMaquina();
-    playMaquina.src = "../images/Pedra.png"
-    console.log(playMaquina.src);
-}
-
-function maquinaPapel(){
-    displayMaquina();
-    playMaquina.src = "../images/Papel.png"
-}
-
-function maquinaTesoura(){
-    displayMaquina();
-    playMaquina.src = "../images/Tesoura.png" 
-}
-
-function usuarioPedra() {
-    if (MaquinaG() == 0){
-        maquinaPedra();
-        empate = empate + 1;
-        empateHTML.textContent = "Empate: " + empate;
-    }
-    else if (MaquinaG() == 1){
-        maquinaPapel();
-        defeat = defeat + 1;
-        defeatHTML.textContent = "Derrota: " + defeat;
-    }
-    else if (MaquinaG() == 2){
-        maquinaTesoura();
-        win = win + 1;
-        winHTML.textContent = "Vitória: " + win;
-        score = score + 1;
-        scoreHTML.textContent = "Score: " + score;
-    }
-}
-
-function usuarioPapel(){
- if(MaquinaG() == 0){
-        maquinaPedra();
-        win = win + 1;
-        winHTML.textContent = "Vitória: " + win;
-        score = score + 1;
-        scoreHTML.textContent = "Score: " + score;
- }
- else if (MaquinaG() == 1){
-        maquinaPapel();
-        empate = empate + 1;
-        empateHTML.textContent = "Empate: " + empate;
- }
- else if(MaquinaG() == 2){
-        maquinaTesoura();
-        defeat = defeat + 1;
-        defeatHTML.textContent = "Derrota: " + defeat;
- }
-}
-
-function usuarioTesoura(){
-    if(MaquinaG() == 0){
-        maquinaPedra();
-        defeat = defeat + 1;
-        defeatHTML.textContent = "Derrota: " + defeat;
-     }
-     else if (MaquinaG() == 1){     
-        maquinaPapel();
-        win = win + 1;
-        winHTML.textContent = "Vitória: " + win;
-        score = score + 1;
-        scoreHTML.textContent = "Score: " + score;
-     }
-     else if(MaquinaG() == 2){
-        maquinaTesoura();
-        empate = empate + 1;
-        empateHTML.textContent = "Empate: " + empate;
-     }
-}
 clickUsuario_loading();
+
+
+
+
 
   console.log("Maquina: " + MaquinaG());
   console.log("Empate: "+ empate);
