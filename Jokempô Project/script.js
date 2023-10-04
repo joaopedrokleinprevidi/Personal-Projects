@@ -6,12 +6,14 @@ function playGame() {
 
 var loading_all = document.querySelector(".loading_all");
 function loading_false(){
-    loading_all.classList.remove('loadingPedraTrue')
-    loading_all.classList.remove('loadingPapelTrue')
-    loading_all.classList.remove('loadingTesouraTrue')
+    loading_all.classList.remove('loadingPedraTrue');
+    loading_all.classList.remove('loadingPapelTrue');
+    loading_all.classList.remove('loadingTesouraTrue');
+    loading_all.classList.add('loadingPedraFalse')
+    loading_all.classList.add('loadingPapelFalse')
+    loading_all.classList.add('loadingTesouraFalse')
     }
     loading_false();
-// da uma zoiada nisso aqui
 
 
 var selectPedra = document.querySelector("#selectPedra");
@@ -58,12 +60,35 @@ function clickUsuario_loading(){
         loading_all.classList.remove("loadingPapelFalse");
         loading_all.classList.add("loadingPapelTrue");
 
-        loading_all.classList.remove("loading")
-    } //da uma zoiada nisso aqui tbm
+        loading_all.classList.remove("loadingTesouraFalse");
+        loading_all.classList.add("loadingTesouraTrue");
+        loading_all.style = "z-index: 2;"
+    }
+    else if (usuarioPapel()){
+        
+        loading_all.classList.remove("loadingPedraFalse");
+        loading_all.classList.add("loadingPedraTrue");
+
+        loading_all.classList.remove("loadingTesouraFalse");
+        loading_all.classList.add("loadingTesouraTrue");
+        loading_all.style = "z-index: 2;"
+    }
+    else if (usuarioTesoura()){
+        
+        loading_all.classList.remove("loadingPedraFalse");
+        loading_all.classList.add("loadingPedraTrue");
+
+        loading_all.classList.remove("loadingPapelFalse");
+        loading_all.classList.add("loadingPapelTrue");
+        loading_all.style = "z-index: 2;"
+    }
+    else {
+        console.log("Deu bug aqui");
+    }
 }
 /*
 
-1- Deixa invisível tudo 
+1- Deixa invisível tudo - OK
 2- IF:
 Se usuário clicar in (usuarioPedra()){
     mostra loadingPapel && loadingTesoura
@@ -107,7 +132,6 @@ function maquinaTesoura(){
 
 function usuarioPedra() {
     if (MaquinaG() == 0){
-        clickUsuario_loading();
         maquinaPedra();
         empate = empate + 1;
         empateHTML.textContent = "Empate: " + empate;
@@ -127,7 +151,6 @@ function usuarioPedra() {
 }
 
 function usuarioPapel(){
-    
  if(MaquinaG() == 0){
         maquinaPedra();
         win = win + 1;
@@ -166,6 +189,7 @@ function usuarioTesoura(){
         empateHTML.textContent = "Empate: " + empate;
      }
 }
+clickUsuario_loading();
 
   console.log("Maquina: " + MaquinaG());
   console.log("Empate: "+ empate);

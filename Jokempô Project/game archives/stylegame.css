@@ -133,9 +133,12 @@ header > section.img_flex > .div_img > .imagens-header:hover {
     border-top-color: rgb(252, 165, 165);
     border-radius: 50%;
 
-    z-index: 2;
     position: relative;
     translate: 0px 140px;
+}
+
+.loading-all {
+    z-index: 1;
 }
 
 .loadingPedraFalse {
