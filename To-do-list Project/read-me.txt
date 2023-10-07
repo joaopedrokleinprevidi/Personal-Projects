@@ -1,0 +1,34 @@
+Projeto To-do-List
+Oque é este projeto?
+==
+Um projeto no qual o usuário poderá interagir com 5 listas diferentes.
+Este projeto terá as seguintes funcionalidades:
+Escolher diferentes listas, de 1 a 5;
+Renomear o nome das listas;
+Adicionar lista. (Começará com 3, máximo de 5)
+Remover lista. (Caso o usuário adicione o máximo[5], ele pode remover 2.)
+Dentro das listas terão as funcionalidades:
+Adicionar;
+Marcar; (alterar cor)
+Remover;
+Editar;
+
+Lógica :
+==
+1 Parte: (principal index)
+
+Um index principal contendo 3 listas.
+O usuário poderá adicionar mais 2 listas. Fechando um total de 5.
+E poderá remover essas 2 listas. 
+{
+Cada lista receberá um AddEventListener('click'); que levará o usuário para a determinada lista selecionada. Ou seja, um index diferente.
+Todas as listas conterão o mesmo estilo e funcionalidades. Mas cada uma pode ter diferentes alterações feita pelo usuário.
+
+Botão de adicionar listas {
+    Este botão terá uma classList que deixará visível uma lista com um clique, e duas listas com dois cliques.
+}
+Botão de remover listas {
+    Este botão terá uma classList que deixará invisível uma lista com um clique, e duas listas com dois cliques.
+}
+
+}
