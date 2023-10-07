@@ -14,7 +14,7 @@ var listaAtual = 4;
 
 button_adicionar.addEventListener('click', ()=> {
     if (listaAtual == 6){
-        console.log("Você já adicionou o máximo de listas")
+        alert("Você já adicionou o máximo de listas")
     }else {
     var newLista = document.createElement('div');
     newLista.classList.add('lists');
@@ -26,7 +26,7 @@ button_adicionar.addEventListener('click', ()=> {
 
 button_remover.addEventListener('click', ()=> {
     if (listaAtual == 4){
-        console.log("Você já removeu o máximo de listas")
+        alert("Você já removeu o máximo de listas")
     } else {
     var removeLista = pai_lists.lastChild;
     if (removeLista) {
