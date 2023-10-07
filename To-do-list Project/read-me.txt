@@ -31,4 +31,10 @@ Botão de remover listas {
     Este botão terá uma classList que deixará invisível uma lista com um clique, e duas listas com dois cliques.
 }
 
-}
+} ! CONCLUIDO
+
+2 Parte:
+Cada respectiva lista chamara um diferente arquivo de HTML ou seja, outra página
+Cada lista vai ter o mesmo conteúdo HTML e o mesmo ESTILO 
+por este motivo, o usuário conseguirá fazer diferentes alterações em cada uma das listas 
+Ex: uma lista de supermercado, e outra de 
