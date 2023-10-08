@@ -37,4 +37,20 @@ Botão de remover listas {
 Cada respectiva lista chamara um diferente arquivo de HTML ou seja, outra página
 Cada lista vai ter o mesmo conteúdo HTML e o mesmo ESTILO 
 por este motivo, o usuário conseguirá fazer diferentes alterações em cada uma das listas 
-Ex: uma lista de supermercado, e outra de 
+Ex: uma lista de supermercado, e outra de afazeres
+
+Cada lista conterá um botão de "Add", este botão abrirá um "painel" na qual o usuário irá interagir;
+Podendo alterar e disfrutar das seguintes funcionalidades:
+
+Inserir um nome ao item;
+Inserir uma cor ao item; (Opcional)
+Inserir uma hora para despertar e lembrar o usuário; (Opcional)
+Inserir uma data para conclusão do item; (Opcional)
+Inserir valor(preço); (Opcional)
+Botão concluido;
+
+Cada lista conterá um botão de "Remove", este botão removerá o ultimo item adicionado.
+
+Cada lista conterá um botão de "Edit", este botão editará um item já adicionado. Abrirá o painel e novamente para o usuário e permitirá que ele altere oque ele já tinha colocado.
+
+
