@@ -2,6 +2,11 @@ var pai_lists = document.querySelector('#pai_lists');
 
 var button_adicionar = document.querySelector('#button_adicionar');
 var button_remover = document.querySelector('#button_remover');
+var list1 = document.querySelector('#list1');
+var list2 = document.querySelector('#list2');
+var list3 = document.querySelector('#list3');
+var lists = document.querySelector('.lists');
+
 
 /* 
 criar uma variavel lista atual recebendo o valor 3.
@@ -19,10 +24,19 @@ button_adicionar.addEventListener('click', ()=> {
     var newLista = document.createElement('div');
     newLista.classList.add('lists');
     newLista.innerHTML = "Lista " + listaAtual;
-    pai_lists.appendChild(newLista);
+    var insert = pai_lists.appendChild(newLista);
+    insert.classList.add('lists')
+    insert.classList.add(`list${listaAtual}`) 
+    insert.addEventListener('click', () => {
+        if (insert.classList.contains("list4")) {
+            window.location = "http://127.0.0.1:5500/To-do-list%20Project/HTML/lista4.html";
+        }   
+        if (insert.classList.contains("list5")) {
+            window.location = "http://127.0.0.1:5500/To-do-list%20Project/HTML/lista5.html";
+        }})
+    console.log(insert.classList);
     listaAtual++;
-}
-})
+}});
 
 button_remover.addEventListener('click', ()=> {
     if (listaAtual == 4){
@@ -34,4 +48,24 @@ button_remover.addEventListener('click', ()=> {
         listaAtual--;
     }
 }
+})
+
+list1.addEventListener('click', ()=> {
+    window.location = "http://127.0.0.1:5500/To-do-list%20Project/HTML/lista1.html";
+})
+
+list2.addEventListener('click', ()=> {
+    window.location = "http://127.0.0.1:5500/To-do-list%20Project/HTML/lista2.html"
+})
+
+list3.addEventListener('click', ()=> {
+    window.location = "http://127.0.0.1:5500/To-do-list%20Project/HTML/lista3.html"
+})
+
+lists.addEventListener('click', ()=> {
+    var documentListAtual = document.querySelector(`.list${listaAtual}`);
+    if(documentListAtual.classList.contains("list4"))
+        window.location = "http://127.0.0.1:5500/To-do-list%20Project/HTML/lista4.html"
+    if(documentListAtual.classList.contains("list5"))
+        window.location = "http://127.0.0.1:5500/To-do-list%20Project/HTML/lista5.html"   
 })
