@@ -7,12 +7,18 @@ pai_painel.classList.remove('pai_painel-flex');
 
 adicionar_button.addEventListener('click', ()=> {
 
+    //verificando se o painel já existe, pra nao duplicar
+    var painel_filho = document.querySelector('.painel_filho-config');
+
+    if (!painel_filho){
+        //Se não existir, criar
+
     //deixando o pai_painel visivel com flexbox ao usuário clicar
     pai_painel.classList.add('pai_painel-flex');
 
     //criando o elemento filho do pai_painel
     //dando classe de css com suas configurações
-    var painel_filho = document.createElement("div");
+    painel_filho = document.createElement("div");
     painel_filho.classList.add('painel_filho-config');
     pai_painel.appendChild(painel_filho);
 
@@ -23,10 +29,10 @@ adicionar_button.addEventListener('click', ()=> {
     buttonCancel.classList.add('buttonCancel-config');
     buttonCancel.classList.add('buttonCancel-config:hover');
     painel_filho.appendChild(buttonCancel);
-
-
-
-
-
-
-})
+    //adicionando evento de click ao botao de fechar painel
+    buttonCancel.addEventListener('click', ()=>{
+        pai_painel.classList.remove('pai_painel-flex');
+        pai_painel.removeChild(painel_filho);
+    })
+    
+}})
