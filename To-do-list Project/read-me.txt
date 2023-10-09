@@ -58,4 +58,38 @@ Cada lista conterá um botão de "Remove", este botão removerá o ultimo item a
 
 Cada lista conterá um botão de "Edit", este botão editará um item já adicionado. Abrirá o painel e novamente para o usuário e permitirá que ele altere oque ele já tinha colocado.
 
+Lógica {
+    Pai flex [ 
+        pai-filho(
+            buttonFecharPainel, input:text:name)]
+}
+
+mas vou criar um objeto(function) para armazenar o valor de cada input do pai-filho.
+talvez eu tenha que usar localStorage no final
+ou Cookies ?? um save no navegador que fica na propria maquina do usuario
+
+terei que criar mais dois painel-filho. Um para o botão fechar, e um para o botão enviar.
+Isto para eu conseguir posicionar cada um corretamente na tela.
+Já que o painel filho principal (contendo os itens de input) receberá um display: flex.
+
+Então a lógica deve ficar da seguinte maneira :
+Lógica {
+    Pai flex [
+        pai-filhoFechar ( 
+            buttonFecharPainel );
+
+        pai-filho principal ( 
+            inputs aqui, dados do item! );
+
+        pai-filhoSubmit (
+            buttonEnviarDados );
+    ];
+};
+
+// calma lá, fudeu UHAXDUASDHUASDHUASD
+o pai flex recebe apenas o flex box, ok?
+o painel-filho, recebe as cores, e o tamanho do painel ... !
+isto para ficar corretinho!!! centralizado e colorido... 
+
+
 
