@@ -1,4 +1,9 @@
 Projeto To-do-List
+
+Qual o intuito deste projeto?
+==
+Aprender bastante sobre DOM, fixando o conteúdo na prática.
+
 Oque é este projeto?
 ==
 Um projeto no qual o usuário poderá interagir com 5 listas diferentes.

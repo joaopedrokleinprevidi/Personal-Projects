@@ -36,3 +36,7 @@ adicionar_button.addEventListener('click', ()=> {
     })
     
 }})
+
+// ler este código com mais calma e tentar entende-lo cabo a rabo
+// pedir para o chat gpt me explicar o código também, pra concluir se eu realmente entendi
+// (Opcional) pedir para alguém olhar o código e me dizer oque achou
