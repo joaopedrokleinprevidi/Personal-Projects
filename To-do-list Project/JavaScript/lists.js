@@ -2,6 +2,7 @@ var adicionar_button = document.querySelector('#adicionar_button');
 var remover_button = document.querySelector('#remover_button');
 var editar_button = document.querySelector('#editar_button');
 var pai_painel = document.querySelector('.pai_painel');
+var main_html = document.querySelector('#main_html');
 pai_painel.classList.remove('pai_painel-flex');
 
 
@@ -35,16 +36,15 @@ adicionar_button.addEventListener('click', ()=> {
     buttonCancel.classList.add('buttonCancel-config');
     buttonCancel.classList.add('buttonCancel-config:hover');
     painel_filhoButton.appendChild(buttonCancel);
-    //adicionando evento de click ao botao de fechar painel
-    buttonCancel.addEventListener('click', ()=>{
+    //criando funçao para por no botao
+    function buttonC(){
         pai_painel.classList.remove('pai_painel-flex');
         pai_painel.removeChild(painel_filho);
-        pai_painel.removeChild(painel_filhoButton);
-        pai_painel.removeChild(painel_filhoSubmit);
-    })
-
-
-
+        painel_filho.removeChild(painel_filhoButton);
+        painel_filho.removeChild(painel_filhoSubmit);
+    };
+    //adicionando evento de click ao botao de fechar painel
+    buttonCancel.addEventListener('click', buttonC);
 
 
     //criando input pra digitar nome
@@ -56,16 +56,11 @@ adicionar_button.addEventListener('click', ()=> {
     input_text.setAttribute("for", "name");
     input_text.setAttribute("class", "input_text-configs");
     //definindo evento de input ao usuario digitar e armazenando valor
-   /* var nomeArmazenado;
+    var nomeArmazenado;
     input_text.addEventListener('input', function(){
         nomeArmazenado = this.value;
     })
-
-    //exemplo de exibindo o valor, testando se esta funcionando o armazenamento
-    function exibirValor(){
-        alert("O valor inserido é: " + nomeArmazenado);
-    }
-    exibirValor(); */
+     
     //debugando o código abaixo
     var consoleInput = input_text.getAttribute("class");
     console.log(consoleInput);
@@ -83,6 +78,25 @@ adicionar_button.addEventListener('click', ()=> {
     buttonSubmit.classList.add("buttonSubmit-config:hover");
     buttonSubmit.innerHTML = "Concluído";
     painel_filhoSubmit.appendChild(buttonSubmit);
+    buttonSubmit.addEventListener('click', ()=> {
+        if(nomeArmazenado == undefined){
+            buttonC();
+        }
+        else{
+        function exibirValor(){
+            var pai_itemList = document.createElement("div");
+            pai_itemList.classList.add("pai_itemList-config");
+            main_html.appendChild(pai_itemList)
+            var itemList = document.createElement("div");
+            pai_itemList.appendChild(itemList);
+            itemList.classList.add('itemList-config');
+            itemList.innerHTML = nomeArmazenado.charAt(0).toUpperCase() + nomeArmazenado.slice(1);
+            buttonC();
+
+            //nomeArmazenado
+        }
+        exibirValor();
+    }})
     
 
 }})
