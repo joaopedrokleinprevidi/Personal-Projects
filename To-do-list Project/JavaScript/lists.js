@@ -101,3 +101,8 @@ adicionar_button.addEventListener('click', ()=> {
 
 }})
 
+
+//preciso usar o localStorage para que o conteúdo fique salvo mesmo se o usuario carregar, voltar, ou fechar a página.
+//preciso estilizar o itemList-config para deixar ele mais bonito
+//preciso definir word-wrap (quebra de linha) caso a linha seja maior que o container pai
+//preciso verificar erros e bugs nas interações e funcionalidades, ver se acho bugs, e corrigilos
