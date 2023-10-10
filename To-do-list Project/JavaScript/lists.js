@@ -19,14 +19,14 @@ adicionar_button.addEventListener('click', ()=> {
 
     //criando o elemento filho do pai_painel (principal == inputs here)
     //dando classe de css com suas configurações
-    var painel_filho = document.createElement("div");
+    var painel_filho = document.createElement("span");
     painel_filho.classList.add('painel_filho-config');
     pai_painel.appendChild(painel_filho);
 
     
     //criando o elemento filho do pai painel == button "div"
     //dando class com flexbox ao elemento pai do botão
-    var painel_filhoButton = document.createElement("div");
+    var painel_filhoButton = document.createElement("span");
     painel_filho.appendChild(painel_filhoButton);
     painel_filhoButton.classList.add('painel_filhoButton-config')
     //criando elemento para "fechar" pai_painel
@@ -69,7 +69,7 @@ adicionar_button.addEventListener('click', ()=> {
     painel_filho.appendChild(input_text);
 
     //criando botao
-    var painel_filhoSubmit = document.createElement("div");
+    var painel_filhoSubmit = document.createElement("span");
     painel_filhoSubmit.classList.add("painel_filhoSubmit-config")
     painel_filho.appendChild(painel_filhoSubmit);
 

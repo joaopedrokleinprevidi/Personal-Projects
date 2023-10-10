@@ -46,6 +46,10 @@ main > .pai_painel-flex{
     justify-content: center;
     align-items: center;
 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -54,7 +58,8 @@ main > .pai_painel-flex{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(153, 249, 249);
+    background-color: rgba(153, 249, 249, 0.950);
+    border: 1px solid rgb(255, 84, 150);
     width: 250px;
     height: 400px;
     margin: 10px;
@@ -74,8 +79,6 @@ main > .pai_painel-flex{
     width: 17px;
     height: 17px;
     background-color: white;
-
-    
 }
 
 .buttonCancel-config:hover {
@@ -118,7 +121,7 @@ tem que criar css
 
 .itemList-config {
     height: 100%;
-    width: 50vw;
+    width: 60vw;
     
     background-color:azure;
     
