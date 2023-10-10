@@ -117,11 +117,12 @@ tem que criar css
 }
 
 .itemList-config {
-    height: 30px;
+    height: 100%;
     width: 50vw;
     
     background-color:azure;
     
+    word-wrap: break-word;
     margin: 10px;
     padding: 10px;
 }

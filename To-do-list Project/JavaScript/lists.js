@@ -5,7 +5,7 @@ var pai_painel = document.querySelector('.pai_painel');
 var main_html = document.querySelector('#main_html');
 pai_painel.classList.remove('pai_painel-flex');
 
-
+var arrayItens_Pai = [];
 adicionar_button.addEventListener('click', ()=> {
 
     //verificando se o painel já existe, pra nao duplicar
@@ -84,25 +84,51 @@ adicionar_button.addEventListener('click', ()=> {
         }
         else{
         function exibirValor(){
+            //criando elemento pai da lista para definir flexbox
             var pai_itemList = document.createElement("div");
             pai_itemList.classList.add("pai_itemList-config");
             main_html.appendChild(pai_itemList)
+            //criando elemento lista e dando config do css para ele
             var itemList = document.createElement("div");
             pai_itemList.appendChild(itemList);
             itemList.classList.add('itemList-config');
-            itemList.innerHTML = nomeArmazenado.charAt(0).toUpperCase() + nomeArmazenado.slice(1);
+            
+            //redifinindo variavel nome para ela receber seu valor e sempre a primeira letra ser em maíuscula
+            nomeArmazenado = nomeArmazenado.charAt(0).toUpperCase() + nomeArmazenado.slice(1);
+            
+            //array pai, vai realizar a contagem total dos itens da lista, ele irá receber todos os novos itens da lista
+            //array filho vai ser criado um novo toda vez que for adicionado um item a lista, este array conterá as informações do item
+
+            //atribuindo ao array filho todas as informações do novo item da lista
+            
+            var arrayItem = [nomeArmazenado];
+                //   itemList.textContent = arrayItem;
+            //atribuindo o filho array(novo item) ao array pai para realizar a contagem da lista.
+            arrayItens_Pai.push(arrayItem);
+
+            //exibindo na tela a contagem do array pai (sequencia dos itens da lista)
+            
+            for (i = 1; i <= arrayItens_Pai.length; i++){
+                itemList.textContent = i + "- " + arrayItem;
+            }
+
+
+            //fechando o painel de config de item da lista, e removendo filhos criados para evitar bugs e a aplicação fluir corretamente
             buttonC();
 
-            //nomeArmazenado
         }
         exibirValor();
     }})
     
-
 }})
+
+    // preciso remover o último filho (item_list) da div pai (pai_itemList) toda vez que clicar no botão "Remover";
+    // preciso remover o ultimo item do ArrayItens_pai
+    // para assim evitar bugs e remover corretamente, acho eu
+
+
 
 
 //preciso usar o localStorage para que o conteúdo fique salvo mesmo se o usuario carregar, voltar, ou fechar a página.
 //preciso estilizar o itemList-config para deixar ele mais bonito
-//preciso definir word-wrap (quebra de linha) caso a linha seja maior que o container pai
 //preciso verificar erros e bugs nas interações e funcionalidades, ver se acho bugs, e corrigilos
