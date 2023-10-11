@@ -127,15 +127,21 @@ adicionar_button.addEventListener('click', ()=> {
         }
         exibirValor();
     }})
-    
-    remover_button.addEventListener("click", ()=> {
-    if (pai_itemList.lastChild){
-    arrayItens_Pai.pop();
-    cont--;
-    pai_itemList.removeChild(pai_itemList.lastChild);
+
 };
 })
+
+
+var selectItemList = document.querySelector('.itemList-config');
+var selectPaiItemList = document.querySelector('.pai_itemList-config')
+
+remover_button.addEventListener("click", ()=> {
+if (pai_itemList.lastChild){
+arrayItens_Pai.pop();
+cont--;
+pai_itemList.removeChild(pai_itemList.lastChild);
 }})
+
 
 // pode ser erro na remoção dos itens da array
 // ou na lógica, ou na sintaxe
