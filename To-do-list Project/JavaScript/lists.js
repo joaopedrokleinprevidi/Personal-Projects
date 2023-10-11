@@ -5,7 +5,19 @@ var pai_painel = document.querySelector('.pai_painel');
 var main_html = document.querySelector('#main_html');
 pai_painel.classList.remove('pai_painel-flex');
 
+
+//criando elemento pai da function exibirValor() para definir flexbox para todos os itens da lista
+var pai_itemList = document.createElement("div");
+pai_itemList.classList.add("pai_itemList-config");
+main_html.appendChild(pai_itemList)
+
+var itemListElement = document.querySelectorAll('.itemList-config')
+
+//criando array e contagem dos elementos da lista
 var arrayItens_Pai = [];
+var cont = 1;
+
+
 adicionar_button.addEventListener('click', ()=> {
 
     //verificando se o painel já existe, pra nao duplicar
@@ -62,8 +74,6 @@ adicionar_button.addEventListener('click', ()=> {
     })
      
     //debugando o código abaixo
-    var consoleInput = input_text.getAttribute("class");
-    console.log(consoleInput);
 
     painel_filho.appendChild(label_inputText);
     painel_filho.appendChild(input_text);
@@ -78,16 +88,15 @@ adicionar_button.addEventListener('click', ()=> {
     buttonSubmit.classList.add("buttonSubmit-config:hover");
     buttonSubmit.innerHTML = "Concluído";
     painel_filhoSubmit.appendChild(buttonSubmit);
+
+
     buttonSubmit.addEventListener('click', ()=> {
         if(nomeArmazenado == undefined){
             buttonC();
         }
         else{
         function exibirValor(){
-            //criando elemento pai da lista para definir flexbox
-            var pai_itemList = document.createElement("div");
-            pai_itemList.classList.add("pai_itemList-config");
-            main_html.appendChild(pai_itemList)
+
             //criando elemento lista e dando config do css para ele
             var itemList = document.createElement("div");
             pai_itemList.appendChild(itemList);
@@ -105,12 +114,11 @@ adicionar_button.addEventListener('click', ()=> {
                 //   itemList.textContent = arrayItem;
             //atribuindo o filho array(novo item) ao array pai para realizar a contagem da lista.
             arrayItens_Pai.push(arrayItem);
-
             //exibindo na tela a contagem do array pai (sequencia dos itens da lista)
             
-            for (i = 1; i <= arrayItens_Pai.length; i++){
-                itemList.textContent = i + "- " + arrayItem;
-            }
+            //sipa eu tenha q por um for aqui depois em
+            itemList.textContent = cont + "- " + arrayItem;
+            cont++;
 
 
             //fechando o painel de config de item da lista, e removendo filhos criados para evitar bugs e a aplicação fluir corretamente
@@ -120,7 +128,22 @@ adicionar_button.addEventListener('click', ()=> {
         exibirValor();
     }})
     
+    var selectPaiItemList = document.querySelector(".pai_itemList-config");
+    
+    remover_button.addEventListener("click", ()=> {
+    if (pai_itemList.lastChild){
+    arrayItens_Pai.pop();
+    cont--;
+    pai_itemList.removeChild(pai_itemList.lastElementChild); 
+};
+})
+
 }})
+
+// pode ser erro na remoção dos itens da array
+
+
+
 
     // preciso remover o último filho (item_list) da div pai (pai_itemList) toda vez que clicar no botão "Remover";
     // preciso remover o ultimo item do ArrayItens_pai

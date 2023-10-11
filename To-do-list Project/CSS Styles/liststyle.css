@@ -115,6 +115,7 @@ tem que criar css
 
 .pai_itemList-config {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
