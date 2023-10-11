@@ -132,12 +132,16 @@ adicionar_button.addEventListener('click', ()=> {
     if (pai_itemList.lastChild){
     arrayItens_Pai.pop();
     cont--;
-    pai_itemList.removeChild(pai_itemList.lastElementChild); 
+    pai_itemList.removeChild(pai_itemList.lastChild);
 };
 })
 }})
 
 // pode ser erro na remoção dos itens da array
+// ou na lógica, ou na sintaxe
+// '-'
+// eu sei que tu consegue cara! tu é foda menor, e tu vai arruma isso aí nem que tu quebra a tua cabeça em 15 pedaço , MAS TU VAI PORRA
+// pede ajuda pros teus amigo pora
 
 
 
