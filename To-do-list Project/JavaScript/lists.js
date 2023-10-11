@@ -128,8 +128,6 @@ adicionar_button.addEventListener('click', ()=> {
         exibirValor();
     }})
     
-    var selectPaiItemList = document.querySelector(".pai_itemList-config");
-    
     remover_button.addEventListener("click", ()=> {
     if (pai_itemList.lastChild){
     arrayItens_Pai.pop();
@@ -137,7 +135,6 @@ adicionar_button.addEventListener('click', ()=> {
     pai_itemList.removeChild(pai_itemList.lastElementChild); 
 };
 })
-
 }})
 
 // pode ser erro na remoção dos itens da array
