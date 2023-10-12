@@ -50,6 +50,8 @@ button_remover.addEventListener('click', ()=> {
 }
 })
 
+
+//index === definindo local para cada click
 list1.addEventListener('click', ()=> {
     window.location = "http://127.0.0.1:5500/To-do-list%20Project/HTML/lista1.html";
 })
