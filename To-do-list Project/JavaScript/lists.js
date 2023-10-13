@@ -18,7 +18,19 @@ var arrayItens_Pai = [];
 var cont = 1;
 
 
+//refatorar todo o código seguindo as seguintes intruções: 
+// provavelmente apenas a parte de criar o painel ficará exatamente igual
+// o resto ou eu mudarei polindo e ajustando(ex, botao de add, botao de remove), ou será excluido(ex: code do botao de edit)
+// vamo lá ne meu guri, tu é foda!!! sempre continue de cabeça erguida e marcha nos estudo
+// todo plantio tem sua colheita, então apenas plante !
 
+/* 
+0- Arrumar o read me e deixar corretamente, revisar o código, polir ele, e colocar anotações mais instrutivas
+1- Colocar um span dentro da div do ItemList, de maneira que fique um botão de editar e remover do lado dos itens da lista
+1.1- Criar os botões(AddEventListener) de editar e remover dentro do addEventListener do botão adicionar
+2- Fazer todo o código dentro de uma função, pra dessa maneira evitar os bugs por escopo, como estou fazendo apenas pelo DOM. Fica mais complicado esta questão. Por isso tudo em apenas um escopo.
+2.1- Ficará mais intuito, e mais fácil de escrever, por estar no mesmo escopo, poderei criar uma função para abrir o painel e economizar linhas de código
+*/
 
 adicionar_button.addEventListener('click', () => {
 
