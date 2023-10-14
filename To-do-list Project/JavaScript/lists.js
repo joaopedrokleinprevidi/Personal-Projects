@@ -26,6 +26,8 @@ var cont = 1;
 
 //eu realmente preciso refatorar todo o código, pois como estou fazendo 100% pelo dom, preciso fazer tudo em apenas um escopo. Ou seja, ter um escopo global (adicionar) e dentro desse escopo criar outras funções para evitar escrever mais código atoa.
 //seguindo essa linha de raciocínio eu não encontrarei problemas de escopo. Preciso apenas entender melhor a parte da lógica. Pesquisar e pensar mais claramente no que eu estou elaborando, e daí sim depois que estiver claro na mente, digitar o código. 
+//começar a fazer elaboração de cada projeto em um caderno ou no read me. Separando entre ideia, o porquê do projeto, e o passo a passo do projeto na lógica. Isso para eu começar a criar uma percepção melhor e afiar minha lógica, para desta maneira começar a aprender mais sobre o ciclo de desenvolvimento de softwares.
+
 
 /* 
 0- Arrumar o read me e deixar corretamente, revisar o código, polir ele, e colocar anotações mais instrutivas
