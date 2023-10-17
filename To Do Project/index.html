@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="tituloSite">To Do List</h1>
+        <h2 id="subTituloSite">Adicione seus itens</h2>
+        <form class="displayNoneFormListHeader formListHeader">
+                <div class="containersInput">
+                    <label for="nome" class="label">Nome: </label>
+                    <input type="text" name="nome" id="nameInput" class="inputsForm" required>
+                </div>
+                <div class="containersInput">
+                    <label for="color" class="label">Cor: </label>
+                    <input type="color" name="color" id="colorInput" value="#BFBFBF" class="inputsForm">
+                </div>
+                <div class="containersInput">
+                    <label for="value" class="label">Preço: </label>
+                    <input type="number" name="value" id="valueInput" class="inputsForm" placeholder="Opcional">
+                </div>
+                <div class="containersInput">
+                    <label for="hour" class="label">Horário: </label>
+                    <input type="time" name="hour" id="hourInput" class="inputsForm">
+                </div>
+                <div class="containersInput" id="containerInputSelectRadioAlarm">
+                    <p>Despertar alarme?</p>
+                    <label for="select">Sim</label>
+                    <input type="radio" name="select" id="selectInputYes" class="inputsForm selectInput" value="Sim" checked>
+                    <label for="selectNo">Não</label>
+                    <input type="radio" name="select" id="selectInputNo" class="inputsForm selectInput" value="Não">
+                </div>
+                <div class="containersInput">
+                    <label for="date" class="label">Data estipulada: </label>
+                    <input type="date" name="date" id="dateInput" class="inputsForm">
+                </div>
+        </form>
+
+        <button id="adicionarBotão">Adicionar</button>
+    </header>
+
+    <main>
+        <div id="itensContainer">
+
+        </div>
+    </main>
+
+</body>
+</html>

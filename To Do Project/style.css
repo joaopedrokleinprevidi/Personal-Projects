@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(156, 156, 244);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+header > h1#tituloSite {
+    color: rgb(120, 255, 255);
+    padding: 5px;
+}
+
+header > h2#subTituloSite {
+    color: rgb(120, 255, 255);
+    margin: 0px 0px 20px 0px;
+}
+
+header > .displayNoneFormListHeader { 
+    display: none;
+}
+
+header > .formListHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+header > .formListHeader > .containersInput {
+    margin: 5px;
+}
+
+header > .formListHeader > #containerInputSelectRadioAlarm > p {
+    display: inline-block;
+    padding: 3px 0px;
+    margin: 0px;
+}
+
+header > .formListHeader > .containersInput > #colorInput {
+    margin-left: 15px;
+    width: 166px;
+}
+
+header > .formListHeader > .containersInput > #valueInput {
+    margin-left: 3px;
+}
+
+header > .formListHeader > .containersInput > #hourInput {
+    width: 155px;
+}
+
+header > .formListHeader > .containersInput > #dateInput {
+    width: 106px;
+}
+
+header > #adicionarBotão {
+    padding: 2px 4px;
+    margin: 15px 0px 10px 0px;
+    
+}
+
