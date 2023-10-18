@@ -69,7 +69,7 @@ header > .formListHeader > .containersInput > #dateInput {
     width: 106px;
 }
 
-header > #adicionarBotão {
+header > #adicionarButton {
     padding: 2px 4px;
     margin: 15px 0px 10px 0px;
     
@@ -109,7 +109,7 @@ main > div#ListItensContainer > .divItemList > .buttonsItemList {
     
 }
 
-main > div#ListItensContainer > .divItemList > #feitoButton {
+main > div#ListItensContainer > .divItemList > .feitoButton {
     background-color: #ffffff00;
     border: none;
     background-image: url('archives/Concluido.png');
@@ -119,12 +119,12 @@ main > div#ListItensContainer > .divItemList > #feitoButton {
     height: 25px;
 }
 
-main > div#ListItensContainer > .divItemList > #feitoButton:hover {
+main > div#ListItensContainer > .divItemList > .feitoButton:hover {
     border: 1px solid rgba(255, 255, 255, 0);
     cursor: pointer;
 }
 
-main > div#ListItensContainer > .divItemList > #editarButton {
+main > div#ListItensContainer > .divItemList > .editarButton {
     background-color: #ffffff00;
     border: none;
     background-image: url('archives/Editar.png');
@@ -137,12 +137,12 @@ main > div#ListItensContainer > .divItemList > #editarButton {
     transform: translatey(-1px);
 }
 
-main > div#ListItensContainer > .divItemList > #editarButton:hover {
+main > div#ListItensContainer > .divItemList > .editarButton:hover {
     border: 1px solid #ffffff00;
     cursor: pointer;
 }
 
-main > div#ListItensContainer > .divItemList > #removerButton {
+main > div#ListItensContainer > .divItemList > .removerButton {
     background-color: #ffffff00;
     border: none;
     background-image: url('archives/Remover.png');
@@ -152,7 +152,7 @@ main > div#ListItensContainer > .divItemList > #removerButton {
     height: 23px;   
 }
 
-main > div#ListItensContainer > .divItemList > #removerButton:hover {
+main > div#ListItensContainer > .divItemList > .removerButton:hover {
     border: 1px solid #ffffff00;
     cursor: pointer;
 }
