@@ -72,7 +72,17 @@ header > .formListHeader > .containersInput > #dateInput {
 header > #adicionarButton {
     padding: 2px 4px;
     margin: 15px 0px 10px 0px;
-    
+    cursor: pointer;
+}
+
+header > #submitButton {
+    padding: 2px 4px;
+    margin: 15px 0px 10px 0px;
+    cursor: pointer;
+}
+
+header > .esconderButton {
+    display: none;
 }
 
 main > div#ListItensContainer {

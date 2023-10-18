@@ -11,7 +11,7 @@
     <header>
         <h1 id="tituloSite">To Do List</h1>
         <h2 id="subTituloSite">Adicione seus itens</h2>
-        <form class="displayNoneFormListHeader formListHeader">
+        <form class="displayNoneFormListHeader formListHeader selectForm">
                 <div class="containersInput">
                     <label for="nome" class="label">Nome: </label>
                     <input type="text" name="nome" id="nameInput" class="inputsForm" required>
@@ -39,9 +39,11 @@
                     <label for="date" class="label">Data estipulada: </label>
                     <input type="date" name="date" id="dateInput" class="inputsForm">
                 </div>
+                <button type="submit" class="submitButton esconderButton">Concluido</button>
         </form>
+        <button class="adicionarButton esconderButton">Adicionar</button>
 
-        <button id="adicionarButton">Adicionar</button>
+        
     </header>
 
     <main>
