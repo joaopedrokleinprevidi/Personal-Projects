@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+body {
+    width: 98vw;
+    height: 98vh;
+}
+
 header {
     background-color: rgb(156, 156, 244);
 
@@ -67,6 +72,42 @@ header > .formListHeader > .containersInput > #dateInput {
 header > #adicionarBotão {
     padding: 2px 4px;
     margin: 15px 0px 10px 0px;
+    
+}
+
+main > div#ListItensContainer {
+    margin: 20px 0px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main > div#ListItensContainer > .divItemList {
+    width: 60vw;
+    height: 100%;
+    background-color:rgb(226, 255, 255);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    border-radius: 4px;
+    border: 1px solid rgb(207, 255, 255);
+    word-wrap: break-word;
+    margin: 5px;
+    padding: 10px;
+
+    text-align: justify;
+}
+
+main > div#ListItensContainer > .divItemList > p {
+    flex: 1;
+    font-size: 0.9rem;    
+}
+
+main > div#ListItensContainer > .divItemList > .buttonsItemList {
+    margin-left: 0.4rem;
     
 }
 
