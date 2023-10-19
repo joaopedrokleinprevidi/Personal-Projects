@@ -1,6 +1,7 @@
 var selectButtonSubmit = document.querySelector('.submitButton');
 var selectAdicionarButton = document.querySelector('.adicionarButton');
 var selectForm = document.querySelector(".selectForm");
+var selectFeitoButton = document.querySelector('.feitoButton');
 var selectInputName = document.querySelector("#nameInput");
 var selectInputColor = document.querySelector("#colorInput");
 var selectInputValue = document.querySelector("#valueInput");
@@ -11,18 +12,28 @@ var inputSelectNo = document.querySelector("#inputSelectNo");
 var selectInputDate = document.querySelector("#dateInput");
 var selectDivListContainer = document.querySelector("#ListItensContainer");
 
+var cont = 1;
+var arrayItensObject = [];
+
 function criarItem(){
-    //criando item da lista e atribuindo valor nome + css pra td
     
+    //criando item da lista e atribuindo valor nome + css pra td
     var DivItemList = document.createElement("div");
-    DivItemList.classList.add("divItemList", "itemListConcluido");
+    DivItemList.classList.add("divItemList");
     selectDivListContainer.appendChild(DivItemList);
 
-    var nomeArmazenado = selectInputName.value;
+    var itemObject = {
+        position: cont,
+        nome: selectInputName.value
+    };  
+    itemObject.nome = itemObject.nome.charAt(0).toUpperCase() + itemObject.nome.slice(1);
 
     var p_ValoresItem = document.createElement("p");
-    p_ValoresItem.innerHTML = nomeArmazenado;
+    p_ValoresItem.innerHTML = cont + "- " + itemObject.nome;
     DivItemList.appendChild(p_ValoresItem);
+    
+    arrayItensObject.push(itemObject);
+    cont++;
 
     //criando botoes para adicionar/editar/remover
     var feitoButton = document.createElement("button");
@@ -38,33 +49,44 @@ function criarItem(){
     DivItemList.appendChild(removerButton);
 }
 
+function submitButton(e){
+    e.preventDefault();
+    criarItem();
+    selectForm.classList.remove('formListHeader');
+    selectForm.classList.add('displayNoneFormListHeader');
+    selectAdicionarButton.classList.remove('esconderButton');
+    selectForm.reset();
+}
 
+document.addEventListener('click', (e)=>{
+    const targetEl = e.target;
+    const parentEl = targetEl.closest('div');
+
+    if(targetEl.classList.contains('feitoButton')){
+        console.log('clicou para finalizar');
+        parentEl.classList.toggle('itemListConcluido');
+    };
+
+    if(targetEl.classList.contains('removerButton')){
+        console.log('clicou para remover');
+        parentEl.remove()
+        arrayItensObject.pop();
+        cont--;
+
+    }
+})
 
 selectAdicionarButton.classList.remove('esconderButton')
 selectForm.classList.remove('formListHeader');
 selectForm.classList.add('displayNoneFormListHeader');
 
-
-
 selectAdicionarButton.addEventListener('click', ()=>{
-
 //remove botao de adicionar, aparece painel e botao de submit
 selectAdicionarButton.classList.add('esconderButton');
 selectForm.classList.add('formListHeader');
-selectForm.classList.remove('displayNoneFormListHeader');
 selectButtonSubmit.classList.remove('esconderButton');
-
-//se o botao de submit for clicado, cria item da lista
-selectForm.addEventListener('submit', (e)=> {
-        e.preventDefault();
-        
-        criarItem(); 
-
-        selectForm.classList.remove('formListHeader');
-        selectForm.classList.add('displayNoneFormListHeader');
-        selectAdicionarButton.classList.remove('esconderButton');
-        selectForm.reset();
-    })
-console.log(selectInputName.value);
 })
 
+//se o botao de submit for clicado, cria item da lista
+selectForm.addEventListener('submit', submitButton)
+console.log(selectInputName.value);
