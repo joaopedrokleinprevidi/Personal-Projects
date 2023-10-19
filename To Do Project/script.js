@@ -72,6 +72,7 @@ document.addEventListener('click', (e) => {
         parentEl.remove()
         arrayItensObject.pop();
         cont--;
+        //erro no contador caso eu remova item que nao seja o ultimo da lista (tirar contador?)
 
     }
 })
