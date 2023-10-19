@@ -15,8 +15,8 @@ var selectDivListContainer = document.querySelector("#ListItensContainer");
 var cont = 1;
 var arrayItensObject = [];
 
-function criarItem(){
-    
+function criarItem() {
+
     //criando item da lista e atribuindo valor nome + css pra td
     var DivItemList = document.createElement("div");
     DivItemList.classList.add("divItemList");
@@ -25,13 +25,13 @@ function criarItem(){
     var itemObject = {
         position: cont,
         nome: selectInputName.value
-    };  
+    };
     itemObject.nome = itemObject.nome.charAt(0).toUpperCase() + itemObject.nome.slice(1);
 
     var p_ValoresItem = document.createElement("p");
     p_ValoresItem.innerHTML = cont + "- " + itemObject.nome;
     DivItemList.appendChild(p_ValoresItem);
-    
+
     arrayItensObject.push(itemObject);
     cont++;
 
@@ -49,7 +49,7 @@ function criarItem(){
     DivItemList.appendChild(removerButton);
 }
 
-function submitButton(e){
+function submitButton(e) {
     e.preventDefault();
     criarItem();
     selectForm.classList.remove('formListHeader');
@@ -58,16 +58,16 @@ function submitButton(e){
     selectForm.reset();
 }
 
-document.addEventListener('click', (e)=>{
+document.addEventListener('click', (e) => {
     const targetEl = e.target;
     const parentEl = targetEl.closest('div');
 
-    if(targetEl.classList.contains('feitoButton')){
+    if (targetEl.classList.contains('feitoButton')) {
         console.log('clicou para finalizar');
         parentEl.classList.toggle('itemListConcluido');
     };
 
-    if(targetEl.classList.contains('removerButton')){
+    if (targetEl.classList.contains('removerButton')) {
         console.log('clicou para remover');
         parentEl.remove()
         arrayItensObject.pop();
@@ -80,11 +80,11 @@ selectAdicionarButton.classList.remove('esconderButton')
 selectForm.classList.remove('formListHeader');
 selectForm.classList.add('displayNoneFormListHeader');
 
-selectAdicionarButton.addEventListener('click', ()=>{
-//remove botao de adicionar, aparece painel e botao de submit
-selectAdicionarButton.classList.add('esconderButton');
-selectForm.classList.add('formListHeader');
-selectButtonSubmit.classList.remove('esconderButton');
+selectAdicionarButton.addEventListener('click', () => {
+    //remove botao de adicionar, aparece painel e botao de submit
+    selectAdicionarButton.classList.add('esconderButton');
+    selectForm.classList.add('formListHeader');
+    selectButtonSubmit.classList.remove('esconderButton');
 })
 
 //se o botao de submit for clicado, cria item da lista
