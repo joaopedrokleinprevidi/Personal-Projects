@@ -50,6 +50,7 @@ function renderizarItens() {
     const fragmento = document.createDocumentFragment()
     selectDivListContainer.innerHTML = ''
 
+    //percorrendo todos os index do lista de itens
     for( let index in listaDeItens ) {
         const item = listaDeItens[index]
         const cardItem = criarElemento( index, item.nome )
@@ -70,22 +71,12 @@ function criarElemento( index, nomeInputEvent ) {
     //data set serve para criar o proprio atributo, em vez de ter que passar de funçao em funçao...
     DivItemList.dataset('index', index)
 
-    //var itemObject = {
-    //    position: cont,
-    //    nome: selectInputName.value
-    //};
-
     const nomeEstilizado = nomeInputEvent.charAt(0).toUpperCase() + nomeInputEvent.slice(1);
-
-    //console.dir(itemObject);
 
     var p_ValoresItem = document.createElement("p");
     p_ValoresItem.innerHTML = nomeEstilizado;
     p_ValoresItem.setAttribute('name', 'nome')
     DivItemList.appendChild(p_ValoresItem);
-
-    //arrayItensObject.push(itemObject);
-    //cont++;
 
     //criando botoes para adicionar/editar/remover
     var feitoButton = document.createElement("button");
