@@ -7,8 +7,8 @@
 }
 
 body {
-    width: 98vw;
-    height: 98vh;
+    width: 100vw;
+    height: 100vh;
 }
 
 header {
@@ -87,11 +87,13 @@ header > .esconderButton {
 }
 
 main > div#ListItensContainer {
-    margin: 20px 0px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 62vw;
+    margin: auto;
+    background-color: rgb(120, 255, 255);
 }
 
 main > div#ListItensContainer > .divItemList {
@@ -99,12 +101,15 @@ main > div#ListItensContainer > .divItemList {
     height: 100%;
     background-color:rgb(226, 255, 255);
     
+    font-family: 'Raleway';
+    font-size: 10px;
+
     display: flex;
     align-items: center;
     justify-content: space-around;
 
     border-radius: 4px;
-    border: 1px solid rgb(207, 255, 255);
+    border: 1px solid rgb(180, 255, 255);
     word-wrap: break-word;
     margin: 5px;
     padding: 10px;
@@ -169,8 +174,6 @@ main > div#ListItensContainer > .divItemList > .removerButton:hover {
 }
 
 
-main > div#ListItensContainer > .itemListConcluido {
-    background-color: rgb(0, 222, 0);
-    transition: 1s;
+.divItemConcluido {
+    background-color: lightgreen;
 }
-

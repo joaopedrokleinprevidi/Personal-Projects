@@ -14,24 +14,24 @@ var selectDivListContainer = document.querySelector("#ListItensContainer");
 
 var cont = 1;
 var arrayItensObject = [];
+let colorFeitoButton = false;
 
 const listaDeItens = {}
-
-function salvarItem( nome ) {
-    const index = `item-${cont}`
-
-    listaDeItens[index] = { nome }
-
-    cont += 1
-}
-
-function atualizarItem ( index, nome ) { listaDeItens[index] = { nome } }
 
 function criarItem( evento ) {
 
     const nomeInputEvent = evento.target.nome.value
+    const colorInputEvent = evento.target.color.value
 
-    salvarItem(nomeInputEvent)
+    salvarItem(nomeInputEvent, colorInputEvent)
+}
+
+function salvarItem( nome, color ) { //recebe valores da funçao criarItem()
+    const index = `item-${cont}`
+
+    listaDeItens[index] = { nome, color }
+
+    cont += 1
 }
 
 function editarItem( DivItemList ) {
@@ -39,12 +39,16 @@ function editarItem( DivItemList ) {
     selectButtonSubmit.classList.add('submitButton')
     
     const nomeInput = DivItemList.name.value
+    const colorInput = DivItemList.color.value
     
     selectForm.name.value = nomeInput
+    selectForm.color.value = colorInput
     
     selectForm.classList.add('formListHeader');
     selectAdicionarButton.classList.add('esconderButton');
 }
+
+function atualizarItem ( index, nome, color ) { listaDeItens[index] = { nome, color } } //vai ser usado para editar
 
 function renderizarItens() {
     const fragmento = document.createDocumentFragment()
@@ -53,7 +57,7 @@ function renderizarItens() {
     //percorrendo todos os index do lista de itens
     for( let index in listaDeItens ) {
         const item = listaDeItens[index]
-        const cardItem = criarElemento( index, item.nome )
+        const cardItem = criarElemento( index, item.nome, item.color )
 
         fragmento.appendChild(cardItem)
     }
@@ -61,15 +65,15 @@ function renderizarItens() {
     selectDivListContainer.appendChild(fragmento);
 }
 
-function criarElemento( index, nomeInputEvent ) {
+function criarElemento( index, nomeInputEvent, colorInputEvent ) {
 
     //criando item da lista e atribuindo valor nome + css pra td
     var DivItemList = document.createElement("div");
     DivItemList.classList.add("divItemList");
-    DivItemList.classList.add(`itemCount${cont}`)
+    DivItemList.style.backgroundColor = colorInputEvent;
 
     //data set serve para criar o proprio atributo, em vez de ter que passar de funçao em funçao...
-    DivItemList.dataset('index', index)
+    //DivItemList.dataset('index', index)
 
     const nomeEstilizado = nomeInputEvent.charAt(0).toUpperCase() + nomeInputEvent.slice(1);
 
@@ -90,6 +94,7 @@ function criarElemento( index, nomeInputEvent ) {
     
     DivItemList.append(feitoButton, editarButton, removerButton);
     
+
     editarButton.addEventListener('click', () => editarItem(DivItemList) )
 
     return DivItemList
@@ -108,12 +113,20 @@ function submitButton( evento ) {
 }
 
 document.addEventListener('click', (e) => {
-    const targetEl = e.target;
+    var targetEl = e.target;
     const parentEl = targetEl.closest('div');
 
     if (targetEl.classList.contains('feitoButton')) {
+        const selectFeitoButton = document.querySelector('.feitoButton');
         console.log('clicou para finalizar');
-        parentEl.classList.toggle('itemListConcluido');
+        selectFeitoButton.addEventListener('click', () => {
+            if(targetEl.style.backgroundColor === colorInputEvent){
+                targetEl.style.backgroundColor = 'lightgreen'
+            }else{
+                targetEl.style.backgroundColor = colorInputEvent
+            }
+        })
+        //isso começou a dar bug, resolver.
     };
 
     if (targetEl.classList.contains('removerButton')) {
@@ -122,10 +135,6 @@ document.addEventListener('click', (e) => {
         arrayItensObject.pop();
         console.dir(parentEl);
         }
-   // 
-   // if (targetEl.classList.contains('editarButton')) {
-        //
-    //}
 })
 
 selectAdicionarButton.classList.remove('esconderButton')
@@ -142,11 +151,13 @@ selectAdicionarButton.addEventListener('click', () => {
 //se o botao de submit for clicado, cria item da lista
 selectForm.addEventListener('submit', submitButton)
 
-
+/*
 selectButtonSubmit.addEventListener('click', enviarFormularioParaEdicao)
 
 function enviarFormularioParaEdicao( evento ) {
     evento.preventDefault();
 
     const nomeInput = selectForm.nome.value
+    const colorInput = selectForm.color.value
 }
+*/
