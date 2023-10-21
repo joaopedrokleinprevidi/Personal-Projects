@@ -65,15 +65,19 @@ function renderizarItens() {
     selectDivListContainer.appendChild(fragmento);
 }
 
+function corAlterada ( alvo, corAlterada ) { 
+    alvo.style.backgroundColor = corAlterada
+};
+
 function criarElemento( index, nomeInputEvent, colorInputEvent ) {
 
     //criando item da lista e atribuindo valor nome + css pra td
     var DivItemList = document.createElement("div");
     DivItemList.classList.add("divItemList");
-    DivItemList.style.backgroundColor = colorInputEvent;
+    corAlterada( DivItemList, colorInputEvent );
 
     //data set serve para criar o proprio atributo, em vez de ter que passar de funçao em funçao...
-    //DivItemList.dataset('index', index)
+    //DivItemList.dataset('index', index) comentei pq estava dando erro '-'
 
     const nomeEstilizado = nomeInputEvent.charAt(0).toUpperCase() + nomeInputEvent.slice(1);
 
@@ -117,15 +121,9 @@ document.addEventListener('click', (e) => {
     const parentEl = targetEl.closest('div');
 
     if (targetEl.classList.contains('feitoButton')) {
-        const selectFeitoButton = document.querySelector('.feitoButton');
         console.log('clicou para finalizar');
-        selectFeitoButton.addEventListener('click', () => {
-            if(targetEl.style.backgroundColor === colorInputEvent){
-                targetEl.style.backgroundColor = 'lightgreen'
-            }else{
-                targetEl.style.backgroundColor = colorInputEvent
-            }
-        })
+        parentEl.setAttribute("style", "background-color: lightgreen;");    
+
         //isso começou a dar bug, resolver.
     };
 
@@ -160,4 +158,19 @@ function enviarFormularioParaEdicao( evento ) {
     const nomeInput = selectForm.nome.value
     const colorInput = selectForm.color.value
 }
+*/
+
+
+
+
+
+/* 
+BUGS : 
+Ao excluir um item, ele some, mas quando vc adiciona outro, o item excluido volta a acontecer.
+Ou seja ta renderizando a lista toda vez q cria, e é excluido a div no momento q clica no botao remover, mas o obj nao ta sendo excluido tbm
+
+Ao concluir uma tarefa, ela fica verde, mas ao adicionar outra, volta a cor normal
+Novamente mesmo erro, nao esta sendo alterado a cor no objeto em si, e toda vez q clica no botao Submit esta sendo renderizado a lista com os seus valores definidos por padrao ( no objeto )
+
+valeuu"!!!!
 */
