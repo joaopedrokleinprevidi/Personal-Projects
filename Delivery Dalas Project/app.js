@@ -6,11 +6,13 @@ import ingredientes from './ingredientes.js';
 //console.log(Array.isArray(ingredientes));
 
 //console.log(ingredientes[0])
-
+var ingredientes = ['água', 'mel', 'sal', 'mostarda'];
 manipulador.capitalizarObjetos(ingredientes, 'nome');
+manipulador.capitalizarObjetos(ingredientes[1])
+
+
 
 /*
-var ingredientes = ['água', 'mel', 'sal', 'mostarda'];
 var resultadoCapitalizado = manipulador.capitalizar(ingredientes);
 var resultadoOrdenacao = manipulador.ordenar(resultadoCapitalizado);
 var resultadoCaixaAlta = manipulador.caixaAlta(ingredientes);

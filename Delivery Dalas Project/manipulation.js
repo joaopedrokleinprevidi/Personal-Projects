@@ -2,8 +2,23 @@ function capitalizarObjetos( colecao, atributo ) {
     console.log(typeof colecao[0]);
     if ( typeof colecao[0] == 'object' ) {
         var resultado = colecao.map( function( objeto ){ 
+            var letraInicial = objeto[atributo].charAt(0).toUpperCase() + objeto[atributo].slice(1);
+            objeto[atributo] = letraInicial;
             
+            return objeto;
         })
+
+        console.log(resultado);
+    }
+    else {
+       var resultado = colecao.map ( function( string ) {
+            var letraInicial =  string[atributo].chartAt(0).toUpperCase + string[atributo].slice(1);
+            string[atributo] = letraInicial;
+
+            return string;
+       })
+
+       console.log(resultado);
     }
 }
 

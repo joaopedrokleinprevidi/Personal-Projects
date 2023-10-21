@@ -1,14 +1,14 @@
 var ingredientes = [
     {
-        nome: 'Alface',
+        nome: 'alface',
         valor: 2.5
     },
     {
-        nome: 'Tomate',
+        nome: 'tomate',
         valor: 3.5
     },
     {
-        nome: 'Batata palha',
+        nome: 'batata palha',
         valor: 2
     }
 ];
