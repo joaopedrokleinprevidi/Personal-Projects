@@ -1,3 +1,12 @@
+function capitalizarObjetos( colecao, atributo ) {
+    console.log(typeof colecao[0]);
+    if ( typeof colecao[0] == 'object' ) {
+        var resultado = colecao.map( function( objeto ){ 
+            
+        })
+    }
+}
+
 function capitalizar(vetor) {
     var ingredientesModificado = []
 
@@ -27,5 +36,6 @@ function caixaAlta ( vetor ) {
 export default {
     capitalizar: capitalizar,
     ordenar: ordenar,
-    caixaAlta: caixaAlta
-}
+    caixaAlta: caixaAlta,
+    capitalizarObjetos: capitalizarObjetos
+};
