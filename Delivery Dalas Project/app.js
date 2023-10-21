@@ -8,7 +8,7 @@ import ingredientes from './ingredientes.js';
 //console.log(ingredientes[0])
 var ingredientes = ['água', 'mel', 'sal', 'mostarda'];
 manipulador.capitalizarObjetos(ingredientes, 'nome');
-manipulador.capitalizarObjetos(ingredientes[1])
+manipulador.capitalizarObjetos(ingredientes)
 
 
 
