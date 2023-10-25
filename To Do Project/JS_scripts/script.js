@@ -48,7 +48,7 @@ function editarItem( DivItemList ) {
     selectAdicionarButton.classList.add('esconderButton');
 }
 
-function atualizarItem ( index, nome, color ) { listaDeItens[index] = { nome, color } } //vai ser usado para editar
+function atualizarItem ( index, nome ) { listaDeItens[index] = { nome } } //vai ser usado para editar
 
 function renderizarItens() {
     const fragmento = document.createDocumentFragment()
@@ -57,7 +57,7 @@ function renderizarItens() {
     //percorrendo todos os index do lista de itens
     for( let index in listaDeItens ) {
         const item = listaDeItens[index]
-        const cardItem = criarElemento( index, item.nome, item.color )
+        const cardItem = criarElemento( index, item.nome )
 
         fragmento.appendChild(cardItem)
     }
@@ -69,7 +69,7 @@ function corAlterada ( alvo, corAlterada ) {
     alvo.style.backgroundColor = corAlterada
 };
 
-function criarElemento( index, nomeInputEvent, colorInputEvent ) {
+function criarElemento( index, nomeInputEvent) {
 
     //criando item da lista e atribuindo valor nome + css pra td
     var DivItemList = document.createElement("div");
