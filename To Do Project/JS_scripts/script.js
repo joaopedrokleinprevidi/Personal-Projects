@@ -120,6 +120,13 @@ document.addEventListener('click', (e) => {
     var targetEl = e.target;
     const parentEl = targetEl.closest('div');
 
+    if (targetEl.classList.contains('removerButton')) {
+        console.log('clicou para remover');
+        parentEl.remove()
+        arrayItensObject.pop();
+        console.dir(parentEl);
+        }
+
     if (targetEl.classList.contains('feitoButton')) {
         console.log('clicou para finalizar');
         parentEl.setAttribute("style", "background-color: lightgreen;");    
@@ -127,12 +134,7 @@ document.addEventListener('click', (e) => {
         //isso começou a dar bug, resolver.
     };
 
-    if (targetEl.classList.contains('removerButton')) {
-        console.log('clicou para remover');
-        parentEl.remove()
-        arrayItensObject.pop();
-        console.dir(parentEl);
-        }
+
 })
 
 selectAdicionarButton.classList.remove('esconderButton')
