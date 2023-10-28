@@ -5,52 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="./JS_scripts/script.js" defer></script>
+    <script type="module" src="./JS_scripts/dom.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1 id="tituloSite">To Do List</h1>
-        <h2 id="subTituloSite">Adicione seus itens</h2>
-        <form class="displayNoneFormListHeader formListHeader selectForm">
+    <header class="invisibleFormListHeader">
+        <h1 class="tituloSite">To Do List</h1>
+        <h2 class="subTituloSite">Adicione seus itens</h2>
+        
+        <form class="formListHeader editItensFormListHeader">
                 <div class="containersInput">
                     <label for="nome" class="label">Nome: </label>
-                    <input type="text" name="nome" id="nameInput" class="inputsForm" required>
+                    <input type="text" id="nome" class="nameInput inputsForm" required>
                 </div>
+
                 <div class="containersInput">
                     <label for="color" class="label">Cor: </label>
-                    <input type="color" name="color" id="colorInput" value="#FFFFFF" class="inputsForm">
+                    <input type="color" id="color" class="colorInput inputsForm" value="#FFFFFF">
                 </div>
+
                 <div class="containersInput">
                     <label for="value" class="label">Preço: </label>
-                    <input type="number" name="value" id="valueInput" class="inputsForm" placeholder="Opcional">
+                    <input type="number" id="value" class="inputsForm valueInput" placeholder="Opcional">
                 </div>
+
                 <div class="containersInput">
                     <label for="hour" class="label">Horário: </label>
-                    <input type="time" name="hour" id="hourInput" class="inputsForm">
+                    <input type="time" id="hour" class="hourInput" class="inputsForm">
                 </div>
-                <div class="containersInput" id="containerInputSelectRadioAlarm">
+
+                <div class="containersInput" class="containerInputSelectRadioAlarm">
                     <p>Despertar alarme?</p>
-                    <label for="select">Sim</label>
-                    <input type="radio" name="select" id="selectInputYes" class="inputsForm selectInput" value="Sim" checked>
-                    <label for="selectNo">Não</label>
-                    <input type="radio" name="select" id="selectInputNo" class="inputsForm selectInput" value="Não">
+                    <label name="selector" for="selectYes">Sim</label>
+                    <input type="radio" id="selectYes" name="selector" class="inputsForm selectInput" value="Sim">
+
+                    <label name="selector" for="selectNo">Não</label>
+                    <input type="radio" id="selectNo" name="selector" class="inputsForm selectInput" value="Não">
                 </div>
+
                 <div class="containersInput">
                     <label for="date" class="label">Data estipulada: </label>
-                    <input type="date" name="date" id="dateInput" class="inputsForm">
+                    <input type="date" id="date" class="dateInput" class="inputsForm">
                 </div>
-                <div id="paiContainerSubmitButton"><button type="submit" class="submitButton esconderButton">Concluido</button></div>
-        </form>
-        <button class="adicionarButton esconderButton">Adicionar</button>
-
+                
+                <button type="submit" id="submitCreateItens" class="submitButtonCreateItens styleButtons">Concluido</button>
+                <button type="submit" id="submitEditItens" class="submitButtonEditItens styleButtons">Editar</button>
+            </form>
+            
+            <button type="submit" id="" class="adicionarButton styleButtons">Adicionar</button>
         
     </header>
 
     <main>
-        <div id="ListItensContainer">
+        <div class="ListItensContainer">
             <div class="divItemList">
                 <p>Conteúdo do item da Lista</p>
                     <button class="buttonsItemList feitoButton"></button>

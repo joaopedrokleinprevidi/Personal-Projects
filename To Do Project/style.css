@@ -25,18 +25,14 @@ header {
     flex: 1;
 }
 
-header > h1#tituloSite {
+header > h1.tituloSite {
     color: rgb(120, 255, 255);
     padding: 5px;
 }
 
-header > h2#subTituloSite {
+header > h2.subTituloSite {
     color: rgb(120, 255, 255);
     margin: 0px 0px 20px 0px;
-}
-
-header > .displayNoneFormListHeader { 
-    display: none;
 }
 
 header > .formListHeader {
@@ -46,51 +42,64 @@ header > .formListHeader {
     flex-direction: column;
 }
 
+header.invisibleFormListHeader > .formListHeader {
+    display: none;
+}
+
 header > .formListHeader > .containersInput {
     margin: 5px;
 }
 
-header > .formListHeader > #containerInputSelectRadioAlarm > p {
+header > .formListHeader > .containerInputSelectRadioAlarm > p {
     display: inline-block;
     padding: 3px 0px;
     margin: 0px;
 }
 
-header > .formListHeader > .containersInput > #colorInput {
+header > .formListHeader > .containersInput > .colorInput {
     margin-left: 15px;
     width: 166px;
 }
 
-header > .formListHeader > .containersInput > #valueInput {
+header > .formListHeader > .containersInput > .valueInput {
     margin-left: 3px;
 }
 
-header > .formListHeader > .containersInput > #hourInput {
+header > .formListHeader > .containersInput > .hourInput {
     width: 155px;
 }
 
-header > .formListHeader > .containersInput > #dateInput {
+header > .formListHeader > .containersInput > .dateInput {
     width: 106px;
 }
 
-header > .adicionarButton {
+header.invisibleFormListHeader > .adicionarButton {
+    display: block;
+}
+
+header > .formListHeader > .adicionarButton {
+    display: none;
+}
+
+.styleButtons {
     padding: 2px 4px;
     margin: 5px 0px 10px 0px;
     cursor: pointer;
 }
 
-
-header > .selectForm > #paiContainerSubmitButton > .submitButton {
-    padding: 2px 4px;
-    margin: 10px 0px 10px 0px;
-    cursor: pointer;
-}
-
-header > .esconderButton {
+header > .formListHeader > .submitButtonCreateItens, .submitButtonEditItens {
     display: none;
 }
 
-main > div#ListItensContainer {
+header > .createItensFormListHeader > .submitButtonCreateItens {
+    display: block;
+}
+
+header > .editItensFormListHeader > .submitButtonEditItens {
+    display: block;
+}
+
+main > div.ListItensContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,7 +109,7 @@ main > div#ListItensContainer {
     background-color: rgba(120, 255, 255, 0.550);
 }
 
-main > div#ListItensContainer > .divItemList {
+main > div.ListItensContainer > .divItemList {
     width: 60vw;
     height: 100%;
     background-color:rgb(255, 255, 255);
@@ -119,17 +128,17 @@ main > div#ListItensContainer > .divItemList {
     padding: 10px;
 }
 
-main > div#ListItensContainer > .divItemList > p {
+main > div.ListItensContainer > .divItemList > p {
     flex: 1;
     font-size: 0.9rem;    
 }
 
-main > div#ListItensContainer > .divItemList > .buttonsItemList {
+main > div.ListItensContainer > .divItemList > .buttonsItemList {
     margin-left: 0.4rem;
     
 }
 
-main > div#ListItensContainer > .divItemList > .feitoButton {
+main > div.ListItensContainer > .divItemList > .feitoButton {
     background-color: #ffffff00;
     border: none;
     background-image: url('archives/Concluido.png');
@@ -139,12 +148,12 @@ main > div#ListItensContainer > .divItemList > .feitoButton {
     height: 25px;
 }
 
-main > div#ListItensContainer > .divItemList > .feitoButton:hover {
+main > div.ListItensContainer > .divItemList > .feitoButton:hover {
     border: 1px solid rgba(255, 255, 255, 0);
     cursor: pointer;
 }
 
-main > div#ListItensContainer > .divItemList > .editarButton {
+main > div.ListItensContainer > .divItemList > .editarButton {
     background-color: #ffffff00;
     border: none;
     background-image: url('archives/Editar.png');
@@ -157,12 +166,12 @@ main > div#ListItensContainer > .divItemList > .editarButton {
     transform: translatey(-1px);
 }
 
-main > div#ListItensContainer > .divItemList > .editarButton:hover {
+main > div.ListItensContainer > .divItemList > .editarButton:hover {
     border: 1px solid #ffffff00;
     cursor: pointer;
 }
 
-main > div#ListItensContainer > .divItemList > .removerButton {
+main > div.ListItensContainer > .divItemList > .removerButton {
     background-color: #ffffff00;
     border: none;
     background-image: url('archives/Remover.png');
@@ -172,7 +181,7 @@ main > div#ListItensContainer > .divItemList > .removerButton {
     height: 23px;   
 }
 
-main > div#ListItensContainer > .divItemList > .removerButton:hover {
+main > div.ListItensContainer > .divItemList > .removerButton:hover {
     border: 1px solid #ffffff00;
     cursor: pointer;
 }
