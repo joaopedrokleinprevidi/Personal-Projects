@@ -77,7 +77,7 @@ header.invisibleFormListHeader > .adicionarButton {
     display: block;
 }
 
-header > .formListHeader > .adicionarButton {
+header > .adicionarButton {
     display: none;
 }
 
@@ -87,7 +87,7 @@ header > .formListHeader > .adicionarButton {
     cursor: pointer;
 }
 
-header > .formListHeader > .submitButtonCreateItens, .submitButtonEditItens {
+.submitButtonCreateItens, .submitButtonEditItens {
     display: none;
 }
 
