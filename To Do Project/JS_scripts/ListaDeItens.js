@@ -6,6 +6,7 @@ function ListaDeItens () {
         const tarefaFinalizada = false;
 
         listaDeItens[id] = { ...dataItem, id, tarefaFinalizada }
+        console.log(listaDeItens[id])
     }
 
     function deleteItem( id ) {
@@ -13,8 +14,11 @@ function ListaDeItens () {
     }
 
     function editItem( id, edited ) {
-        if ( id in listaDeItens ) listaDeItens[id] = { ...edited }
-        else return false
+        if ( id in listaDeItens ) {
+            const itemAtual = listaDeItens[id]
+            listaDeItens[id] = { ...itemAtual, ...edited }
+        }
+        else return false        
     }
 
     function mudarStatusDoItem ( id ) {

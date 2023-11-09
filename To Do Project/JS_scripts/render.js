@@ -1,9 +1,13 @@
 function RenderizarItem ( mudarStatusDaTarefa, editarTarefa, removerTarefa ) {
     const listItensContainer = document.querySelector('.ListItensContainer')
 
-    function createElement ( nome, id ) {
+    function createElement ( nome, id, cor ) {
         const elementPai = document.createElement('div')
         elementPai.classList.add('divItemList')
+
+        const bolinhaCorTarefa = document.createElement('span')
+        bolinhaCorTarefa.classList.add('corTarefaBolinha');
+        bolinhaCorTarefa.style.backgroundColor = cor
 
         const paragrafo = document.createElement('p')
         paragrafo.innerText = nome
@@ -14,13 +18,13 @@ function RenderizarItem ( mudarStatusDaTarefa, editarTarefa, removerTarefa ) {
         
         const editarButton = document.createElement('button')
         editarButton.classList.add('editarButton', 'buttonsItemList')
-        editarButton.addEventListener('click', () => editarTarefa(id))
+        editarButton.addEventListener('click', () => editarTarefa(id) )
 
         const removerButton = document.createElement('button')
         removerButton.classList.add('removerButton', 'buttonsItemList')
         removerButton.addEventListener('click', () => removerTarefa(id))
 
-        elementPai.append(paragrafo, feitoButton, editarButton, removerButton)
+        elementPai.append(bolinhaCorTarefa, paragrafo, feitoButton, editarButton, removerButton)
 
         return elementPai
     }
@@ -30,8 +34,8 @@ function RenderizarItem ( mudarStatusDaTarefa, editarTarefa, removerTarefa ) {
 
         listItensContainer.innerHTML = ''
 
-        itens.forEach( ({ nome, id }) => { 
-            const newElement = createElement( nome, id )
+        itens.forEach( ({ nome, id, cor }) => { 
+            const newElement = createElement( nome, id, cor )
             itemFragment.appendChild(newElement)
         })
         

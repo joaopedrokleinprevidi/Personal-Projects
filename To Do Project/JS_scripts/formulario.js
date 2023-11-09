@@ -15,6 +15,9 @@ function formulario () {
 
     function ocultarFormulario(){
         selectFormHeader.classList.add('invisibleFormListHeader');
+
+        selectForm.dataset['id'] = ''
+        selectForm.reset()
     }
 
     function mostrarFormulario() { 
@@ -25,16 +28,16 @@ function formulario () {
         const nomeInputValue = selectForm.nome.value;
         const corInputValue = selectForm.cor.value
         const precoInputValue = selectForm.preco.value;
+        const horarioInputValue = selectForm.horario.value;
         const dataInputValue = selectForm.data.value;
         const alarmeInputValue = selectForm.selector[0].checked;
         //ALARME: true == ativado || false == desativado
-
-        console.log(alarmeInputValue)
 
         return {
             nome: nomeInputValue,
             cor: corInputValue,
             preco: precoInputValue,
+            horario: horarioInputValue,
             data: dataInputValue,
             alarme: alarmeInputValue 
         }
@@ -50,19 +53,19 @@ function formulario () {
         else { editarItem(dataOfForm) }
         
         ocultarFormulario()
-        selectForm.reset()
+        updateItens()
     };
 
     function createItem( dataOfForm ) {
         listaDeItens.createItem( dataOfForm )
-    
-        updateItens()
     }
 
     function editarItem( dataOfForm ) {
-        listaDeItens.editItem( dataOfForm )
-        
-        updateItens()
+        const id = selectForm.dataset['id']
+
+        listaDeItens.editItem(id, dataOfForm)
+
+        createItemListMode()
     }
 
     function updateItens () {
@@ -79,24 +82,24 @@ function formulario () {
         const item = listaDeItens.getItem(id)
 
         mostrarFormulario()
-        swapCreateOrEditFormMode()
-        showInfoOfForm( item )
-
-        ocultarFormulario()
-        
+        editItemListMode()
+        showInfoOfForm(item)
     }
 
     function showInfoOfForm ( dataOfForm ) {
+        selectForm.dataset['id'] = dataOfForm.id
         selectForm.nome.value = dataOfForm.nome
         selectForm.cor.value = dataOfForm.cor
         selectForm.preco.value = dataOfForm.preco
+        selectForm.horario.value = dataOfForm.horario
         selectForm.data.value = dataOfForm.data
-        
+
         const optionsInputRadio = selectForm.selector
         const radioYes = optionsInputRadio[0]
         const radioNo = optionsInputRadio[1]
+
         
-        if ( radioYes.checked ) radioYes.checked = true
+        if ( dataOfForm.alarme ) radioYes.checked = true
         else radioNo.checked = true 
     }
 
@@ -104,18 +107,18 @@ function formulario () {
        listaDeItens.deleteItem(id)
 
        updateItens()
+       ocultarFormulario()
+       createItemListMode()
     }
 
-    function swapCreateOrEditFormMode() {
-        const formCreateMode = selectForm.classList.contains('createItensFormListHeader')
+    function editItemListMode(){
+        selectForm.classList.remove('createItensFormListHeader');
+        selectForm.classList.add('editItensFormListHeader');
+    }
 
-        if ( formCreateMode ) {
-            selectForm.classList.remove('createItensFormListHeader');
-            selectForm.classList.add('editItensFormListHeader');
-        } else {
-            selectForm.classList.remove('editItensFormListHeader');
-            selectForm.classList.add('createItensFormListHeader')
-        }
+    function createItemListMode(){
+        selectForm.classList.remove('editItensFormListHeader');
+        selectForm.classList.add('createItensFormListHeader')
     }
 }
 
