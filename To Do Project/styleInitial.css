@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #5EEBBE;
+}
+
+/*
+Pequenas telas: até 600px.
+Celular: de 600px até 768px.
+Tablet: 769px até 992px.
+Desktop: 992px até 1200px.
+Grandes telas: acima de 1200px.
+*/
+
+@media all {
+
+.painel_listas {
+    height: 100vh;
+    background-color: #5EBCEB;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.pai_cabeçalho_painelListas {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border_cabeçalho_painelListas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid #5EEB8D;
+
+    padding: 1rem;
+
+}
+
+
+
+.btn_criarListas {
+   width: 20px;
+   height: 20px; 
+}
+
+.listas_selector {
+    width: 100%;
+    margin: 0.5rem;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+    
+    .painel_listas {
+        width: 55vw;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+
+    .painel_listas {
+        width: 20vw;    
+    }
+}
