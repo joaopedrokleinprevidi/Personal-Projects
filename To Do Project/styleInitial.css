@@ -7,7 +7,10 @@
 }
 
 body {
-    background-color: #5EEBBE;
+    background-image: url("./archives/body-wallpaper-1920x1200.jpeg");
+
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /*
@@ -53,20 +56,67 @@ Grandes telas: acima de 1200px.
 
 }
 
-
-.btn_criarListas {
-    width: 27px;
-    height: 27px;
+.buttons_listaSelector {
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-   }
+    border: none;
 
-.btn_criarListas:hover {
-    width: 27px;
-    border: 1px solid #5EEB8D;
-    height: 27px;
+}
+
+.buttons_listaSelector:hover {
+    border: 1px solid black;
     cursor: pointer;
 }
 
+.btn_criarListas {
+    background-image: url("./archives/mais-adicionar.png");
+   }
+
+.renomearListaSelector_button {
+    background-image: url("./archives/lapis-renomear.png");
+}
+
+.removerListaSelector_button {
+    background-image: url("./archives/excluir.png");
+}
+
+.buttons_section {
+    width: 50px;
+    height: 100vh;
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.buttonsOfListaSelector {
+    margin: 10px 0px 10px 10px;
+}
+
+.apresentaçao_buttonListaSelector {
+    background-image: url("./archives/info.png");
+    position: relative;
+    transform: translate(-1px, 23px);
+}
+
+.ocultar_buttonListaSelector {
+    background-image: url("./archives/seta-esquerda.png");
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+
+    position: relative;
+    transform: translateX(-27px);
+}
+
+.ocultar_buttonListaSelector:hover {
+    border: 1px solid black;
+    cursor: pointer;
+}
 
 .container_all_listas_selector {
     margin: 0px 0px 0px 21px;
@@ -93,22 +143,83 @@ Grandes telas: acima de 1200px.
 
 .paragrafo_listaSelector {
     color: black;
+    font-size: 1.5rem;
 }
 
 }
 
-
-@media screen and (max-width: 768px) {
+/* TODOS APARELHOS MÓVEIS: PEQUENAS TELAS, CELULARES E TABLETS.  */
+@media screen and (max-width: 993px){
+    .container_all_listas_selector {
+        margin: 0px;
+        width: 95%;
+    }
     
+    .buttons_listaSelector {
+        width: 32px;
+        height: 32px;
+    }
+
+    .btn_criarListas {
+        background-image: url('./archives/mais-adicionar-celular.png');
+    }
+
+    .renomearListaSelector_button {
+        background-image: url('./archives/lapis-renomear-celular.png');
+    }
+
+    .removerListaSelector_button {
+        background-image: url('./archives/excluir-celular.png');
+    }
+
+    .apresentaçao_buttonListaSelector {
+        background-image: url('./archives/info-celular.png');
+    }
+}
+
+/* PEQUENAS TELAS */
+@media screen and (max-width: 599px) {
+
+    .painel_listas {
+        width: 60vw;    
+    }
+
+}
+
+/* CELULAR */
+@media screen and (min-width: 600px) and (max-width: 768px) {
+
     .painel_listas {
         width: 55vw;
     }
 
 }
 
-@media screen and (min-width: 769px) and (max-width: 1200px) {
+/* TABLET */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+    .painel_listas {
+        width: 35vw;    
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+
+    .painel_listas {
+        width: 32vw;    
+    }
+}
+
+/* GRANDES TELAS */
+@media screen and (min-width: 1201px) {
 
     .painel_listas {
         width: 20vw;    
+    }
+
+    .apresentaçao_buttonListaSelector {
+        position: relative;
+        transform: translate(20px, 25px);
     }
 }
