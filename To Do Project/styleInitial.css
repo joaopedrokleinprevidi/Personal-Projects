@@ -22,7 +22,7 @@ Grandes telas: acima de 1200px.
 
 .painel_listas {
     height: 100vh;
-    background-color: rgb(65, 185, 255);
+    background-color: #80eafd;
 
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@ Grandes telas: acima de 1200px.
 
 
 .btn_criarListas {
-    width: 26px;
+    width: 27px;
     height: 27px;
     border-radius: 50%;
    }
@@ -89,6 +89,10 @@ Grandes telas: acima de 1200px.
 
 .buttons_listaSelector {
     margin: 0px 5px;
+}
+
+.paragrafo_listaSelector {
+    color: black;
 }
 
 }
