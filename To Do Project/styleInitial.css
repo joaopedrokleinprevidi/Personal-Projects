@@ -105,19 +105,11 @@ Grandes telas: acima de 1200px.
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
     z-index: 51;
 }
 
 .buttonsOfListaSelector {
     margin: 10px 0px 10px 10px;
-}
-
-.apresentaçao_buttonListaSelector {
-    background-image: url("./archives/info.png");
-    position: relative;
-    transform: translate(-1px, 23px);
-    transition: 0.8s cubic-bezier(0.19, 0.675, 0.55, 0.55);
 }
 
 .ocultar_buttonListaSelector {
@@ -128,7 +120,7 @@ Grandes telas: acima de 1200px.
     border-radius: 50%;
 
     position: relative;
-    transform: translateX(-27px);
+    transform: translateX(-26px);
     transition: 0.8s cubic-bezier(0.19, 0.675, 0.55, 0.55);
 }
 
@@ -183,7 +175,7 @@ Grandes telas: acima de 1200px.
     border: 5px solid black;
 }
 
-.section._apresentaçaoAnimation {
+.section_apresentaçaoAnimation {
     z-index: 1;
 }
 
@@ -217,15 +209,17 @@ Grandes telas: acima de 1200px.
     transition: 0.2s linear;
 }
 
+
+
 .section_lists {
     background-color: blue;
     width: calc(100% - 20vw);
     height: 100vh;
 
     position: absolute;
+    z-index: 1;
     right: 0; 
     top: 0;
-    transition: 0.8s cubic-bezier(0.19, 0.675, 0.55, 0.55);
 }
 
 }
@@ -338,10 +332,7 @@ Grandes telas: acima de 1200px.
         transform: translateX(-320px);
         transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
-
-    .buttons_section {
-        display: none;
-    }
+    
 }
 
 /* GRANDES TELAS */
@@ -360,9 +351,6 @@ Grandes telas: acima de 1200px.
         transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
 
-    .buttons_section {
-        display: none;
-    }
 }
 
 @media screen and (min-width: 1900px) {
@@ -380,7 +368,4 @@ Grandes telas: acima de 1200px.
         transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
 
-    .buttons_section {
-        display: none;
-    }
 }

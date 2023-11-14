@@ -1,6 +1,7 @@
 let buttonOcultarPainelEscolherListas = document.querySelector('#painelSelectListas_ocultarButton');
 let buttonInfoApresentaçao = document.querySelector('#painelSelectListas_infoButton');
 let sectionInfoApresentaçao = document.querySelector('#apresentation_section_info');
+let sectionApresentaçao_iniciarApp_button = document.querySelector('#sectionApresentaçao_iniciarApp_button');
 let painelEscolherListas = document.querySelector('#painelDeEscolherListas')
 let painelEscolherListas_buttonDeOcultar = document.querySelector('#painelSelectListas_ocultarButton');
 let painelEscolherListas_buttonDeInfoApresentaçao = document.querySelector('#painelSelectListas_infoButton')
@@ -17,6 +18,10 @@ function toggleOcultarOuMostrar_PainelEscolherListas() {
 
 buttonOcultarPainelEscolherListas.addEventListener('click', toggleOcultarOuMostrar_PainelEscolherListas)
 buttonInfoApresentaçao.addEventListener('click', ()=> {
-    sectionInfoApresentaçao.classList.toggle('section._apresentaçaoAnimation')
+    sectionInfoApresentaçao.classList.toggle('section_apresentaçaoAnimation')
+})
+sectionApresentaçao_iniciarApp_button.addEventListener('click', ()=> {
+    painelLista.classList.add('section_lists')
+    sectionInfoApresentaçao.classList.remove('section_apresentaçao')
 })
 
