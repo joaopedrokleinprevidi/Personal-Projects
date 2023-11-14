@@ -11,14 +11,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
-
-body {
-    background-image: url("./archives/body-wallpaper-1920x1200.jpeg");
-
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    z-index: 0;
 }
 
 /*
@@ -31,6 +24,15 @@ Grandes telas: acima de 1200px.
 
 @media all {
 
+    .body_with_lists {
+        background-image: url("./archives/body-wallpaper-1920x1200.jpeg");
+    
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+    }
+
 .painel_listas {
     height: 100vh;
     background-color: #80eafd;
@@ -38,6 +40,7 @@ Grandes telas: acima de 1200px.
     display: flex;
     flex-direction: column;
     transition: 0.8s cubic-bezier(0.19, 0.675, 0.55, 0.55);
+    z-index: 50;
 }
 
 .painel_listasAnimationOcultar {
@@ -103,6 +106,7 @@ Grandes telas: acima de 1200px.
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    z-index: 51;
 }
 
 .buttonsOfListaSelector {
@@ -177,7 +181,10 @@ Grandes telas: acima de 1200px.
 
     background-color: white;
     border: 5px solid black;
+}
 
+.section._apresentaçaoAnimation {
+    z-index: 1;
 }
 
 .paragrafo_apresentaçao {
@@ -185,6 +192,7 @@ Grandes telas: acima de 1200px.
     word-break: break-word;
     font-family: 'Apresentation';
     font-size: 2rem;
+
 }
 
 .começarAgora_iniciarApp {
@@ -207,6 +215,17 @@ Grandes telas: acima de 1200px.
     cursor: pointer;
     font-size: 2.1rem;
     transition: 0.2s linear;
+}
+
+.section_lists {
+    background-color: blue;
+    width: calc(100% - 20vw);
+    height: 100vh;
+
+    position: absolute;
+    right: 0; 
+    top: 0;
+    transition: 0.8s cubic-bezier(0.19, 0.675, 0.55, 0.55);
 }
 
 }
@@ -238,6 +257,17 @@ Grandes telas: acima de 1200px.
     .apresentaçao_buttonListaSelector {
         background-image: url('./archives/info-celular.png');
     }
+
+    .section_lists_animation {
+        background-color: blue;
+        width: 100vw;
+        height: 100vh;
+    
+        position: absolute;
+        right: 0; 
+        top: 0;
+        transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
 }
 
 /* PEQUENAS TELAS */
@@ -245,6 +275,10 @@ Grandes telas: acima de 1200px.
 
     .painel_listas {
         width: 60vw;    
+    }
+
+    .section_lists {
+        width: calc(100% - 60vw);
     }
 
     .Animation_buttonListaSelector {
@@ -261,6 +295,10 @@ Grandes telas: acima de 1200px.
         width: 55vw;
     }
 
+    .section_lists {
+        width: calc(100% - 55vw);
+    }
+
     .Animation_buttonListaSelector {
         transform: translateX(-330px);
         transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -273,6 +311,10 @@ Grandes telas: acima de 1200px.
 
     .painel_listas {
         width: 35vw;    
+    }
+
+    .section_lists {
+        width: calc(100% - 35vw);
     }
 
     .Animation_buttonListaSelector {
@@ -288,9 +330,17 @@ Grandes telas: acima de 1200px.
         width: 32vw;    
     }
 
+    .section_lists {
+        width: calc(100% - 32vw);
+    }
+
     .Animation_buttonListaSelector {
         transform: translateX(-320px);
         transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    .buttons_section {
+        display: none;
     }
 }
 
@@ -301,9 +351,17 @@ Grandes telas: acima de 1200px.
         width: 20vw;    
     }
 
+    .section_lists {
+        width: calc(100% - 20vw);
+    }
+
     .Animation_buttonListaSelector {
         transform: translateX(-240px);
         transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    .buttons_section {
+        display: none;
     }
 }
 
@@ -313,8 +371,16 @@ Grandes telas: acima de 1200px.
         width: 20vw;
     }
 
+    .section_lists {
+        width: calc(100% - 20vw);
+    }
+
     .Animation_buttonListaSelector {
         transform: translateX(-390px);
         transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    .buttons_section {
+        display: none;
     }
 }
