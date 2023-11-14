@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleInitial.css">
+    <script src="JS_scripts/interfaces.js" defer></script>
     <title>Home</title>
 </head>
 <body>
-    <header class="painel_listas">
+    <header id="painelDeEscolherListas" class="painel_listas">
 
-        <span class="pai_cabeçalho_painelListas">
-            <span class="border_cabeçalho_painelListas">
+        <span id="pai_cabeçalho_painelListasID" class="pai_cabeçalho_painelListas">
+            <span id="border_cabeçalho_painelListasID" class="border_cabeçalho_painelListas">
                 <p class="paragrafo_listaSelector">Listas</p>
                 <button id="btn_criarNovaLista" class="btn_criarListas buttons_listaSelector"></button>
             </span>
         </span>
         
 
-        <span class="container_all_listas_selector">
+        <span id="container_all_listas" class="container_all_listas_selector">
             
-            <span class="listas_selector">
+            <span id="listasSelect" class="listas_selector">
                 <p class="paragrafo_listaSelector"> Lista 1 </p>
                 <span>
                     <button class="renomearListaSelector_button buttons_listaSelector"></button>
@@ -49,32 +50,31 @@
 
     <section class="buttons_section">
 
-        <button class="buttonsOfListaSelector buttons_listaSelector apresentaçao_buttonListaSelector"></button>
-        <button class="buttonsOfListaSelector ocultar_buttonListaSelector"></button></span>
+        <button id="painelSelectListas_infoButton" class="buttonsOfListaSelector buttons_listaSelector apresentaçao_buttonListaSelector"></button>
+        <button id="painelSelectListas_ocultarButton" class="buttonsOfListaSelector ocultar_buttonListaSelector"></button></span>
    
     </section>
 
     <section class="section_apresentaçao">
 
-        <!--  
+        <div>
+            <p class="paragrafo_apresentaçao p1_apresentaçao">
+                Seja bem vindo ao maior aplicativo de Listas!
+                Aqui você pode criar várias listas ao mesmo tempo e ter elas salvas para quando precisar.
+                Você pode gerenciar sua rotina, suas reuniões, suas compras no mercado, e muito mais!
+            </p>
+            
+            <p class="paragrafo_apresentaçao p3_apresentaçao">
+                Este aplicativo permite que você adicione itens a lista apenas dando um nome a eles,
+                mas se você quiser também pode definir preços, datas e horas, se deseja que toque alarme no horário selecionado, e também personalizar categorias por cores!
+            </p>
 
+            <p class="paragrafo_apresentaçao p2_apresentaçao">Sua imaginação é o limite, torne se uma pessoa organizada hoje mesmo!</p>
+        </div>
 
-        <p class="paragrafo_apresentaçao p1_apresentaçao">
-            Seja bem vindo ao maior aplicativo de Listas!
-            Aqui você pode criar várias listas ao mesmo tempo e ter elas salvas para quando precisar.
-            Você pode gerenciar sua rotina, suas reuniões, suas compras no mercado, e muito mais!
-        </p>
-
-        <p class="paragrafo_apresentaçao p2_apresentaçao">Sua imaginação é o limite, torne se uma pessoa organizada hoje mesmo!</p>
-
-        <p class="paragrafo_apresentaçao p3_apresentaçao">
-            Este aplicativo permite que você adicione itens apenas nomeando eles,
-            mas você também pode definir valores, data, horário, se deseja alarme, e personalizar categorias por cores!
-        </p>
-
+        <button class="começarAgora_iniciarApp">Começar agora!</button>
     </section>
     
-
-        -->
+    
 </body>
 </html>
