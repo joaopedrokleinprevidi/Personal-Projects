@@ -7,9 +7,20 @@
     font-style: regular;
 }
 
+:root {
+    --corTextoPrincipal: #1e0b20;
+    --corTextoSecundaria: white;
+    
+    --color1: #9552b5;
+    --color2: #af6ac8;
+    --color3: #c982da;
+    --color4: #e299ed;
+    --color5: #fcb1ff;    
+}
+
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     z-index: 0;
 }
@@ -22,30 +33,85 @@ Desktop: 992px até 1200px.
 Grandes telas: acima de 1200px.
 */
 
+body, html {
+    background-image: url("./archives/body-wallpaper-1920x1200.jpeg");
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.painel-de-listas {
+    color: var(--corTextoPrincipal);
+    text-align: center;
+
+    background-color: var(--color3);
+
+    width: 30vw;
+    height: 100vh;
+    padding: 1.3rem;    
+}
+
+.button-estilo {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border: none;
+}
+
+.button-criar-nova-lista {
+    background-image: url("")
+}
+
+
+
+.section-apresentacao {
+    
+}
+
+.section-lista {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media all {
 
-    .body_with_lists {
-        background-image: url("./archives/body-wallpaper-1920x1200.jpeg");
-    
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
-    }
-
-.painel_listas {
+.painel-listas--visivel {
     height: 100vh;
     background-color: #80eafd;
 
+    position: relative;
     display: flex;
     flex-direction: column;
     transition: 0.8s cubic-bezier(0.19, 0.675, 0.55, 0.55);
-    z-index: 50;
+    z-index: 51;
+}
+
+.painel-lista {
+    display: none;
 }
 
 .painel_listasAnimationOcultar {
-    transform: translateX(-450px);
-    transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    left: -20%;
 }
 
 /* rgb(0, 162, 255);    rgb(120, 255, 255);*/
@@ -97,35 +163,23 @@ Grandes telas: acima de 1200px.
     background-image: url("./archives/excluir.png");
 }
 
-.buttons_section {
-    width: 50px;
-    height: 100vh;
-    background-color: transparent;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 51;
-}
-
-.buttonsOfListaSelector {
-    margin: 10px 0px 10px 10px;
-}
-
 .ocultar_buttonListaSelector {
     background-image: url("./archives/seta-esquerda.png");
     width: 32px;
     height: 32px;
     border: none;
     border-radius: 50%;
+    margin: 10px 0px 10px 10px;
 
-    position: relative;
-    transform: translateX(-26px);
+    position: absolute;
+    right: -15px;
     transition: 0.8s cubic-bezier(0.19, 0.675, 0.55, 0.55);
 }
 
 .Animation_buttonListaSelector {
-    transform: translateX(-290px);
+    position: absolute;
+    left: -80%;
+    transform: rotate(-180deg);
     transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
@@ -209,8 +263,6 @@ Grandes telas: acima de 1200px.
     transition: 0.2s linear;
 }
 
-
-
 .section_lists {
     background-color: blue;
     width: calc(100% - 20vw);
@@ -248,10 +300,6 @@ Grandes telas: acima de 1200px.
         background-image: url('./archives/excluir-celular.png');
     }
 
-    .apresentaçao_buttonListaSelector {
-        background-image: url('./archives/info-celular.png');
-    }
-
     .section_lists_animation {
         background-color: blue;
         width: 100vw;
@@ -261,6 +309,14 @@ Grandes telas: acima de 1200px.
         right: 0; 
         top: 0;
         transition: 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    .section_apresentaçao {
+        width: 350px;
+        height: 600px;
+    }
+
+    .paragrafo_apresentaçao {
+        font-size: 1.2rem;
     }
 }
 

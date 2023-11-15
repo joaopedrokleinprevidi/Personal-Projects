@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Home</title>
+</head>
+<body>
+
+    <header id="painelDeEscolherListas" class="painel-de-listas">
+
+        <h1>Listas</h1>
+        <button id="buttonCriarNovaLista" class="button-criar-nova-lista button-estilo"></button>
+    
+        <div id="containerDasListas" class="container-das-listas">
+            
+            <div class="lista">
+                <p>Lista de exemplo</p>
+                <div>
+                    <button class="button-renomear-lista button-estilo"></button>
+                    <button class="button-remover-lista button-estilo"></button>
+                </div>
+            </div>
+            
+        </div>
+
+        <button id="buttonOcultarPainelDeListas" class="button-ocultar-painel-de-listas"></button>
+
+    </header>
+    
+    <section class="section-apresentacao">
+        <div>
+            <p>
+                Seja bem vindo ao maior aplicativo de Listas!
+                Aqui você pode criar várias listas ao mesmo tempo e ter elas salvas para quando precisar.
+                Você pode gerenciar sua rotina, suas reuniões, suas compras no mercado, e muito mais!
+            </p>
+    
+            <p>
+                Este aplicativo permite que você adicione itens a lista apenas dando um nome a eles,
+                mas se você quiser também pode definir preços, datas e horas, se deseja que toque alarme no horário selecionado, e também personalizar categorias por cores!
+            </p>
+
+            <p>
+                Sua imaginação é o limite, torne se uma pessoa organizada hoje mesmo!
+            </p>
+        </div>
+        
+        <button id="buttonIniciarAplicativo" class="button-iniciar-aplicativo">Começar agora!</button>
+    </section>
+
+    <section id="sectionDaLista" class="section-lista">
+
+        <button id="buttonAbrirSectionLista" class="button-abrir-section-lista"></button>
+
+        <h1>Titulo da lista</h1>
+
+        <div class="tarefas">
+
+            <div class="tarefa">
+                <input type="checkbox" id="finalizar-tarefa">
+                
+                <span class="cor"></span>
+
+                <p>Tarefa de exemplo</p>
+
+                <button class="button-editar-tarefa"></button>
+                <button class="button-remover-tarefa"></button>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
