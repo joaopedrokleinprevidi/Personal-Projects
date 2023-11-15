@@ -4,29 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
+    <script src="./scripts/interfaces.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <title>Home</title>
 </head>
 <body>
 
     <header id="painelDeEscolherListas" class="painel-de-listas">
+        
+        <button id="buttonOcultarPainelDeListas" class="button-ocultar-painel-de-listas button-estilo">
+            <i class="bi bi-arrow-left-short icon-configs"></i>
+        </button>
 
         <h1>Listas</h1>
-        <button id="buttonCriarNovaLista" class="button-criar-nova-lista button-estilo"></button>
-    
+        
         <div id="containerDasListas" class="container-das-listas">
             
             <div class="lista">
+                <p>Lista de exemplo Lista de exemplo Lista de exemplo Lista de exemplo Lista de exemplo Lista de exemplo</p>
+                <div class="buttons">
+                    <button class="button-renomear-lista button-estilo"> <i class="bi bi-pencil icon-configs"></i> </button>
+                    <button class="button-remover-lista button-estilo"> <i class="bi bi-trash icon-configs"></i> </button>
+                </div>
+            </div>
+
+            <div class="lista">
                 <p>Lista de exemplo</p>
-                <div>
-                    <button class="button-renomear-lista button-estilo"></button>
-                    <button class="button-remover-lista button-estilo"></button>
+                <div class="buttons">
+                    <button class="button-renomear-lista button-estilo"> <i class="bi bi-pencil icon-configs"></i> </button>
+                    <button class="button-remover-lista button-estilo"> <i class="bi bi-trash icon-configs"></i> </button>
+                </div>
+            </div>
+
+            <div class="lista">
+                <p>Lista de exemplo</p>
+                <div class="buttons">
+                    <button class="button-renomear-lista button-estilo"> <i class="bi bi-pencil icon-configs"></i> </button>
+                    <button class="button-remover-lista button-estilo"> <i class="bi bi-trash icon-configs"></i> </button>
                 </div>
             </div>
             
         </div>
-
-        <button id="buttonOcultarPainelDeListas" class="button-ocultar-painel-de-listas"></button>
-
+        
+        <button id="buttonCriarNovaLista" class="button-criar-nova-lista button-estilo">
+            <i class="bi bi-plus icon-configs"></i>
+        </button>
+        
     </header>
     
     <section class="section-apresentacao">
