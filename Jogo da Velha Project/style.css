@@ -35,22 +35,91 @@ h1 {
 hr {
     width: 100%;
 }
+/* rgb(205, 202, 250); */
 
-.game {
+.painel-game {
     width: 25rem;
     height: 25rem;
-    background-color: lightgreen;
-    display: grid;
-    grid-template-columns: 5rem 5rem 5rem;
-    grid-template-rows: 5rem 5rem 5rem;
-    grid-gap: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    border-radius: 1rem;
+}
+
+.modal-interface {
+    width: 25rem;
+    height: 8rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    background-color: rgb(177, 177, 234);
+    border-radius: .4rem;
+
+}
+
+.modal-interface > .pai-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+}
+
+.modal-interface > button {
+    background-color: rgb(0, 0, 0);
+
+}
+
+.pai-interface {
+    display: flex;
+    justify-content: space-around;
     align-items: center;
 }
 
-.game > div {
+.pai-interface > .interfaces {
+    background-color: lightsalmon;
+    padding: 1rem;
+    border-radius: .4rem;
+    text-align: center;
+}
+
+.pai-interface > .interfaces > .user {
+    margin-bottom: 0.4rem;
+    background-color: lightsalmon;
+}
+
+.pai-interface > .interfaces > p {
+    font-size: 1.2rem;
+}
+
+.jogo-da-velha {
+    background-color: black;
+}
+
+.game-configs {
+    display: grid;
+    grid-template-columns: 5rem 5rem 5rem;
+    grid-template-rows: 5rem 5rem 5rem;
+    grid-gap: 15px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* rgb(251, 251, 84); */
+.game-configs > div {
     width: 5rem;
     height: 5rem;
-    background-color: red;
-    margin: auto;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.game-configs > div:hover {
+    background-color: rgb(245, 245, 245)
+}
+
+.painel-game > .jogador-da-vez {
+    font-size: 1.5rem;
+    margin-top: 2rem;
 }
