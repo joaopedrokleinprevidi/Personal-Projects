@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecalho {
+    width: 25rem;
+    height: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+ 
+
+}
+
+h1 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+}
+
+hr {
+    width: 100%;
+}
+
+.game {
+    width: 25rem;
+    height: 25rem;
+    background-color: lightgreen;
+    display: grid;
+    grid-template-columns: 5rem 5rem 5rem;
+    grid-template-rows: 5rem 5rem 5rem;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.game > div {
+    width: 5rem;
+    height: 5rem;
+    background-color: red;
+    margin: auto;
+}
