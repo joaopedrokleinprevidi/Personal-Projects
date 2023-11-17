@@ -15,6 +15,10 @@ const colunaTresLinhaDois = document.querySelector('#3-2');
 const colunaTresLinhaTres = document.querySelector('#3-3');
 */
 
+let selecionado = []
+//aqui vai o data selecionado
+//se bater o data com o array de possiveis vitorias, encerra o game e o last player vence
+
 const possiveisVitorias = [
     [1, 2, 3],
     [4, 5, 6],
