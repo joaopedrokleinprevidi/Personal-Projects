@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Jogo da Velha</title>
 </head>
 <body>
@@ -11,7 +12,6 @@
     <main>
         <div class="cabecalho">
             <h1>Jogo da Velha</h1>
-            <hr>
         </div>
 
         <div class="painel-game">
@@ -23,30 +23,29 @@
                         <p class="p-win-or-lose">Venceu: 0</p>
                         <p class="p-win-or-lose">Perdeu: 0</p>
                     </div>
+                    <button>RESETAR</button>
                     <div class="interfaces">
                         <p class="user">O</p>
                         <p class="p-win-or-lose">Venceu: 0</p>
                         <p class="p-win-or-lose">Perdeu: 0</p>
                     </div>
                 </div>
-                <div class="pai-button">
-                    <button>RESETAR</button>
-                </div>
+                <hr>
             </div>
 
             <div class="jogo-da-velha">
                 <div class="game-configs">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div data-i="1" class="optionPlay"></div>
+                    <div data-i="2" class="optionPlay"></div>
+                    <div data-i="3" class="optionPlay"></div>
                     
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div data-i="4" class="optionPlay"></div>
+                    <div data-i="5" class="optionPlay"></div>
+                    <div data-i="6" class="optionPlay"></div>
                     
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div data-i="7" class="optionPlay"></div>
+                    <div data-i="8" class="optionPlay"></div>
+                    <div data-i="9" class="optionPlay"></div>
                 </div>
             </div>
             <p id="jogadorDaVez" class="jogador-da-vez">Jogador da vez: X</p>
