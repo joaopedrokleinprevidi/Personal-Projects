@@ -57,6 +57,13 @@ function adicionarJogada(element) {
     paragrafo.classList.add('paragrafoOptionPlay');
     paragrafo.textContent = jogadorAtual;
     element.appendChild(paragrafo);
+    const index = element.getAttribute("data-i");
+    selecionado[index] = jogadorAtual;
+    console.log(selecionado);
+
+    setTimeout(() => {
+        verificarVencedor();
+    }, [100]);
 }
 
 function alternarJogador() {
@@ -67,7 +74,25 @@ function atualizarMensagem() {
     jogadorDaVezElement.innerText = `Jogador da Vez: ${jogadorAtual}`;
 }
 
-function verificarJogador(element) {
-     
+function verificarVencedor() {
+     let ultimoJogador = (jogadorAtual === "X") ? "O" : "X";
+
+     const item = selecionado
+     .map((item, i) => [item, i])
+     .filter((item) => item[0] === ultimoJogador)
+     .map((item) => item[1]);
+
+     for (pos of possiveisVitorias) {
+        if(pos.every((item) => selecionado[item] === ultimoJogador)) {
+            alert("O JOGADOR " + ultimoJogador + " GANHOU!");
+            selected = []
+            return;
+        }
+     }
+     if (selecionado.filter((item) => item).length === 9 ){
+        alert("DEU EMPATE!");
+        selected = []
+        return;
+     }
 }
 
