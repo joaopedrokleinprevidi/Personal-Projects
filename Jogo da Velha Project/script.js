@@ -70,3 +70,7 @@ function verificarVencedor() {
      }
 }
 
+// estudar os métodos: map, filter, every, reduce...
+//entender todos de cabo a rabo, anotar tudo!!!!!! sério mesmo! anote tudo e pesquise!
+// se nao tiver com paciencia vá fazer outra coisa!
+//após ter entendido cada linha de código... ai sim! dar continuidade
