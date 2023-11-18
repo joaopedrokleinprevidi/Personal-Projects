@@ -1,23 +1,7 @@
 const optionPlayElements = document.querySelectorAll(".optionPlay");
 const jogadorDaVezElement = document.querySelector('#jogadorDaVez');
 
-/*
-const colunaUmLinhaUm = document.querySelector('#1-1');
-const columaUmLinhaDois = document.querySelector('#1-2');
-const colunaUmLinhaTres = document.querySelector('#1-3');
-
-const colunaDoisLinhaUm = document.querySelector('#2-1');
-const colunaDoisLinhaDois = document.querySelector('#2-2');
-const colunaDoisLinhaTres = document.querySelector('#2-3');
-
-const colunaTresLinhaUm = document.querySelector('#3-1');
-const colunaTresLinhaDois = document.querySelector('#3-2');
-const colunaTresLinhaTres = document.querySelector('#3-3');
-*/
-
 let selecionado = []
-//aqui vai o data selecionado
-//se bater o data com o array de possiveis vitorias, encerra o game e o last player vence
 
 const possiveisVitorias = [
     [1, 2, 3],
@@ -29,10 +13,6 @@ const possiveisVitorias = [
     [1, 5, 9],
     [3, 5, 7],
 ];
-//trabalhando com data-* do html ... 
-//preciso retornar o valor em alguma function
-// e verificar se ta tendo vitoria
-// e de quem é a vitória (verificando o ultimo a jogar)
 
 let jogadorAtual = 'X';
 
@@ -48,9 +28,7 @@ optionPlayElements.forEach(element => {
     });
 });
 
-function temParagrafo(element) {
-    return element.querySelector('.paragrafoOptionPlay') !== null;
-}
+function temParagrafo(element) { return element.querySelector('.paragrafoOptionPlay') !== null; }
 
 function adicionarJogada(element) {
     const paragrafo = document.createElement("p");
@@ -66,13 +44,9 @@ function adicionarJogada(element) {
     }, [100]);
 }
 
-function alternarJogador() {
-    jogadorAtual = (jogadorAtual === 'X') ? 'O' : 'X';
-}
+function alternarJogador() { jogadorAtual = (jogadorAtual === 'X') ? 'O' : 'X'; }
 
-function atualizarMensagem() {
-    jogadorDaVezElement.innerText = `Jogador da Vez: ${jogadorAtual}`;
-}
+function atualizarMensagem() { jogadorDaVezElement.innerText = `Jogador da Vez: ${jogadorAtual}`; }
 
 function verificarVencedor() {
      let ultimoJogador = (jogadorAtual === "X") ? "O" : "X";
