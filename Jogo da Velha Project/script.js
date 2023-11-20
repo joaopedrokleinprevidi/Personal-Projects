@@ -1,5 +1,14 @@
 const optionPlayElements = document.querySelectorAll(".optionPlay");
 const jogadorDaVezElement = document.querySelector('#jogadorDaVez');
+const winUserX = document.querySelector('#winUserX');
+const defeatUserX = document.querySelector('#defeatUserX');
+const winUserO = document.querySelector('#winUserO');
+const defeatUserO = document.querySelector('#defeatUserO');
+
+let userScoreWinX = 0;
+let userScoreDefeatX = 0;
+let userScoreWinO = 0;
+let userScoreDefeatO = 0;
 
 let selecionado = []
 
@@ -37,40 +46,55 @@ function adicionarJogada(element) {
     element.appendChild(paragrafo);
     const index = element.getAttribute("data-i");
     selecionado[index] = jogadorAtual;
-    console.log(selecionado);
 
     setTimeout(() => {
         verificarVencedor();
-    }, [100]);
-}
+    }, [100]); }
+
+function reiniciarJogo() {
+    optionPlayElements.forEach(element => { while(element.firstChild) { element.removeChild(element.firstChild) } }) }
 
 function alternarJogador() { jogadorAtual = (jogadorAtual === 'X') ? 'O' : 'X'; }
 
 function atualizarMensagem() { jogadorDaVezElement.innerText = `Jogador da Vez: ${jogadorAtual}`; }
 
+function ultimoJogador() { let ultimoJogador = (jogadorAtual === "X") ? "O" : "X"; return ultimoJogador; }
+
+function score() {
+    if (ultimoJogador() == "X") { winUserX.textContent = `Venceu: ${++userScoreWinX}`; defeatUserO.textContent = `Perdeu: ${++userScoreDefeatO}` }
+    if (ultimoJogador() == "O") { winUserO.textContent = `Venceu: ${++userScoreWinO}`; defeatUserX.textContent = `Perdeu: ${++userScoreDefeatX}` } 
+}
+
+function resetScore() {
+    userScoreWinX = 0;
+    userScoreDefeatX = 0;
+    userScoreWinO = 0;
+    userScoreDefeatO = 0;
+
+    winUserO.textContent = `Venceu: ${userScoreWinO}`
+    winUserX.textContent = `Venceu: ${userScoreWinX}`
+    defeatUserX.textContent = `Perdeu: ${userScoreDefeatX}`
+    defeatUserO.textContent = `Perdeu: ${userScoreDefeatO}` }
+
 function verificarVencedor() {
-     let ultimoJogador = (jogadorAtual === "X") ? "O" : "X";
 
      const item = selecionado
      .map((item, i) => [item, i])
-     .filter((item) => item[0] === ultimoJogador)
+     .filter((item) => item[0] === ultimoJogador())
      .map((item) => item[1]);
 
      for (pos of possiveisVitorias) {
-        if(pos.every((item) => selecionado[item] === ultimoJogador)) {
-            alert("O JOGADOR " + ultimoJogador + " GANHOU!");
-            selected = []
+        if(pos.every((item) => selecionado[item] === ultimoJogador())) {
+            alert("O JOGADOR " + ultimoJogador() + " GANHOU!");
+            score()
+            selecionado = []
+            reiniciarJogo()
             return;
-        }
-     }
+        } }
+
      if (selecionado.filter((item) => item).length === 9 ){
         alert("DEU EMPATE!");
-        selected = []
+        selecionado = []
+        reiniciarJogo()
         return;
-     }
-}
-
-// estudar os métodos: map, filter, every, reduce...
-//entender todos de cabo a rabo, anotar tudo!!!!!! sério mesmo! anote tudo e pesquise!
-// se nao tiver com paciencia vá fazer outra coisa!
-//após ter entendido cada linha de código... ai sim! dar continuidade
+     } }
