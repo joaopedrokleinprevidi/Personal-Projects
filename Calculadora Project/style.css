@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body { 
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculadora {
+    background-color: rgb(39, 39, 39);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+
+    width: 16rem;
+    height: 23rem;
+}
+
+h1 {
+    color: rgb(226, 225, 225);
+}
+
+.display-da-calculadora {
+    background-color: rgb(226, 225, 225);
+    height: 70px;
+    width: 82%;
+    margin: 1rem;
+    border-radius: 0.1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.p-display {
+    font-size: 2rem;
+    margin: 0.5rem;
+}
+
+.buttons-da-calculadora {
+    display: grid;  
+    grid-template-columns: repeat(4, 3rem);
+    grid-template-rows: repeat(5, 2.3rem);
+    grid-gap: 0.4rem;
+}
+
+.content-buttons {
+    font-size: 1.1rem;
+}
+
+.all-buttons {
+    width: 3rem;
+    height: 2.3rem;
+    background-color: rgb(226, 225, 225);
+    border: none;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.all-buttons:hover {
+    background-color:rgb(158, 158, 158);
+    transition: .1s linear;
+}
+
+.sinal-de-igual {
+    grid-row: span 2 / auto;
+    min-height: 100%;
+}
+
+.number-zero {
+    grid-column: span 2 / auto;
+    min-width: 100%;
+
+}
