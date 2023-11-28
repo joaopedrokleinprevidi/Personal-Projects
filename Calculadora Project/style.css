@@ -74,6 +74,12 @@ h1 {
 .sinal-de-igual {
     grid-row: span 2 / auto;
     min-height: 100%;
+    cursor: pointer;
+}
+
+.sinal-de-igual:hover {
+    background-color:rgb(158, 158, 158);
+    transition: .1s linear;
 }
 
 .number-zero {
