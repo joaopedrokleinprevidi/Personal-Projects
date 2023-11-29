@@ -10,33 +10,26 @@ let sinalRecebido = null;
 allButtons.forEach( (element) => {
     element.addEventListener('click', (event) => {
         pegarDadosDoElemento(event)
+
     })
 })
 
-sinalDeIgual.addEventListener('click', calcular())
+sinalDeIgual.addEventListener('click', calcular)
 
 function pegarDadosDoElemento(event) {
     const clickedElement = event.currentTarget;
     const dadoDoElemento = clickedElement.getAttribute('data-i')
 
-
     if (!isNaN(dadoDoElemento)){
-        //faça algo se o dado do elemento for número
+        //faça algo se o dado do elemento FOR um número
         exibirDadosNoDisplay(dadoDoElemento);
-        
-        numbers = [numbers + dadoDoElemento];
+        tratamentoDeDadosParaNumeros(dadoDoElemento);
     }
     else {
         //faça algo se o dado do elemento NÃO for número
         exibirDadosNoDisplay(dadoDoElemento);
-        
-        const sequenciaNumericaDeCalculo = Number(numbers)
-        calculo.push(sequenciaNumericaDeCalculo)
-        numbers = []
-
-        sinalRecebido = dadoDoElemento;
+        tratamentoDeDadosParaSinais(dadoDoElemento);
     }
-
 }
 
 function exibirDadosNoDisplay(dado) {
@@ -44,29 +37,59 @@ function exibirDadosNoDisplay(dado) {
     paragrafoDisplay.innerHTML = conteudoAtualDoDisplay + ' ' + dado;
 }
 
+function tratamentoDeDadosParaNumeros(dado){ 
+    if (!(dado === '0' && numbers.length === 0)) {
+        numbers.push(dado);
+    };
+     console.log("numbers = " + numbers) }
+
+function tratamentoDeDadosParaSinais(dado){
+    console.log("dado = " + dado)
+
+    const sequenciaNumericaDeCalculo = Number(numbers.join(''))
+    calculo.push(sequenciaNumericaDeCalculo)
+    console.log("calculo = " + calculo)
+    
+    numbers = [];
+
+    obterSinal(dado); 
+}
+
+function obterSinal(dado){
+    return sinalRecebido = dado
+}
+
 function exibirResultadoFinal(dado){
     paragrafoDisplay.innerHTML = dado;
 }
 
 function calcular(){
-    switch (sinalRecebido){
+    const sequenciaNumericaDeCalculo = Number(numbers)
+    calculo.push(sequenciaNumericaDeCalculo)
+    console.log("calculo = " + calculo)
+    numbers = []
+
+    let sinal = obterSinal(sinalRecebido)
+
+    if (calculo.length >= 2) {
+        let resultado;
+    switch (sinal){
         case '+':
-            let somaPositivo = calculo.reduce((valorPrevio, valorAtual) => valorPrevio + valorAtual);
-            exibirResultadoFinal(somaPositivo)
+            resultado = calculo.reduce((valorPrevio, valorAtual) => valorPrevio + valorAtual);
             break
         case '-':
-            let somaNegativo = calculo.reduce((valorPrevio, valorAtual) => valorPrevio - valorAtual);
-            exibirResultadoFinal(somaNegativo)
+            resultado = calculo.reduce((valorPrevio, valorAtual) => valorPrevio - valorAtual);
             break
         case '*':
-            let somaMultiplicacao = calculo.reduce((valorPrevio, valorAtual) => valorPrevio * valorAtual);
-            exibirResultadoFinal(somaMultiplicacao)
+            resultado = calculo.reduce((valorPrevio, valorAtual) => valorPrevio * valorAtual);
             break 
         case '/':
-            let somaDivisao = calculo.reduce((valorPrevio, valorAtual) => valorPrevio / valorAtual);
-            exibirResultadoFinal(somaDivisao)
+            resultado = calculo.reduce((valorPrevio, valorAtual) => valorPrevio / valorAtual);
             break
         }
-    
+        console.log("calculei = " + calculo)
+        exibirResultadoFinal(resultado)
+        calculo = [resultado]
+    }
 }
 
