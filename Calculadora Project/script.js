@@ -3,8 +3,8 @@ const allButtons = document.querySelectorAll(".all-buttons")
 const paragrafoDisplay = document.querySelector("#p-do-display")
 const sinalDeIgual = document.querySelector('#sinalDeIgual')
 
-let numbers = [];
-let calculo = [];
+let operacoes = [null];
+let sequenciaDeOperacoes = [];
 let sinalRecebido = null;
 
 allButtons.forEach( (element) => {
@@ -32,64 +32,71 @@ function pegarDadosDoElemento(event) {
     }
 }
 
-function exibirDadosNoDisplay(dado) {
-    const conteudoAtualDoDisplay = paragrafoDisplay.innerHTML;
-    paragrafoDisplay.innerHTML = conteudoAtualDoDisplay + ' ' + dado;
-}
+function exibirDadosNoDisplay(dado) { const conteudoAtualDoDisplay = paragrafoDisplay.innerHTML; paragrafoDisplay.innerHTML = conteudoAtualDoDisplay + ' ' + dado; }
 
-function tratamentoDeDadosParaNumeros(dado){ 
-    if (!(dado === '0' && numbers.length === 0)) {
-        numbers.push(dado);
-    };
-     console.log("numbers = " + numbers) }
+
+
+function tratamentoDeDadosParaNumeros(dado){ operacoes = [operacoes + dado]; }
 
 function tratamentoDeDadosParaSinais(dado){
-    console.log("dado = " + dado)
+    sequenciaDasOperacoesDoCalculo()
+    obterSinal(String(dado));
+}
 
-    const sequenciaNumericaDeCalculo = Number(numbers.join(''))
-    calculo.push(sequenciaNumericaDeCalculo)
-    console.log("calculo = " + calculo)
+function sequenciaDasOperacoesDoCalculo(){ 
+    const sequenciaNumericaDeCalculo = Number(operacoes.join(''))
+    console.log(sequenciaNumericaDeCalculo)
+    sequenciaDeOperacoes.push(sequenciaNumericaDeCalculo)
+    console.log("1", sequenciaNumericaDeCalculo)
+    console.log("2", sequenciaDeOperacoes)
     
-    numbers = [];
-
-    obterSinal(dado); 
+    operacoes = [null];
 }
 
-function obterSinal(dado){
-    return sinalRecebido = dado
-}
+function obterSinal(dado){ return sinalRecebido = dado }
 
-function exibirResultadoFinal(dado){
-    paragrafoDisplay.innerHTML = dado;
-}
+function exibirResultadoFinal(dado) { paragrafoDisplay.innerHTML = dado; }
 
 function calcular(){
-    const sequenciaNumericaDeCalculo = Number(numbers)
-    calculo.push(sequenciaNumericaDeCalculo)
-    console.log("calculo = " + calculo)
-    numbers = []
+    sequenciaDasOperacoesDoCalculo()
 
     let sinal = obterSinal(sinalRecebido)
 
-    if (calculo.length >= 2) {
+    if (sequenciaDeOperacoes.length >= 2) {
         let resultado;
     switch (sinal){
         case '+':
-            resultado = calculo.reduce((valorPrevio, valorAtual) => valorPrevio + valorAtual);
+            resultado = sequenciaDeOperacoes.reduce((valorPrevio, valorAtual) => valorPrevio + valorAtual);
             break
         case '-':
-            resultado = calculo.reduce((valorPrevio, valorAtual) => valorPrevio - valorAtual);
+            resultado = sequenciaDeOperacoes.reduce((valorPrevio, valorAtual) => valorPrevio - valorAtual);
             break
         case '*':
-            resultado = calculo.reduce((valorPrevio, valorAtual) => valorPrevio * valorAtual);
+            resultado = sequenciaDeOperacoes.reduce((valorPrevio, valorAtual) => valorPrevio * valorAtual);
             break 
         case '/':
-            resultado = calculo.reduce((valorPrevio, valorAtual) => valorPrevio / valorAtual);
+            resultado = sequenciaDeOperacoes.reduce((valorPrevio, valorAtual) => valorPrevio / valorAtual);
             break
         }
-        console.log("calculei = " + calculo)
         exibirResultadoFinal(resultado)
-        calculo = [resultado]
+        sequenciaDeOperacoes = [resultado]
+        operacoes = [null]
+        console.log(sequenciaDeOperacoes);
     }
 }
 
+
+
+//utilizar o eval para resolver a operação
+//tenho que ter 3 variaveis
+//1 contendo o primeiro valor
+//2 contendo o sinal aritmetico
+//3 contendo o segundo valor
+//chamar funçao calcular para realizar calculo a partir da 2 variavel (sinal aritmetico)
+/*
+`${primeiroValor} ${sinalAritmetico} ${segundoValor}`
+*/
+//essa template so é executada quando a pessoa clicar no sinal de igual
+//usando o EVAL essa String contendo os valores e o sinal é calculada automaticamente
+
+//sera necessario uma quarta variavel para salvar o resultado dos calculos
