@@ -2,88 +2,93 @@ const sectionButtonsDaCalculadora = document.querySelector('#calculadoraButtons'
 const allButtons = document.querySelectorAll(".all-buttons")
 const paragrafoDisplay = document.querySelector("#p-do-display")
 const sinalDeIgual = document.querySelector('#sinalDeIgual')
+const clear = document.querySelector('#clearAllText')
+const back = document.querySelector('#backText')
 
-let operacoes = [null];
-let sequenciaDeOperacoes = [];
-let sinalRecebido = null;
+
+let primeiroValor = '';
+let segundoValor = '';
+let sinalAritmetico = '';
+let resultado = '';
+
 
 allButtons.forEach( (element) => {
     element.addEventListener('click', (event) => {
         pegarDadosDoElemento(event)
-
+        console.log("1", primeiroValor)
+        console.log("2", segundoValor)
     })
 })
 
 sinalDeIgual.addEventListener('click', calcular)
+clear.addEventListener('click', clearAllText)
+back.addEventListener('click', backText)
 
 function pegarDadosDoElemento(event) {
     const clickedElement = event.currentTarget;
     const dadoDoElemento = clickedElement.getAttribute('data-i')
 
     if (!isNaN(dadoDoElemento)){
-        //faça algo se o dado do elemento FOR um número
         exibirDadosNoDisplay(dadoDoElemento);
         tratamentoDeDadosParaNumeros(dadoDoElemento);
     }
     else {
-        //faça algo se o dado do elemento NÃO for número
         exibirDadosNoDisplay(dadoDoElemento);
         tratamentoDeDadosParaSinais(dadoDoElemento);
     }
 }
 
-function exibirDadosNoDisplay(dado) { const conteudoAtualDoDisplay = paragrafoDisplay.innerHTML; paragrafoDisplay.innerHTML = conteudoAtualDoDisplay + ' ' + dado; }
+function exibirDadosNoDisplay(dado) {  const conteudoAtualDoDisplay = paragrafoDisplay.innerHTML; paragrafoDisplay.innerHTML = conteudoAtualDoDisplay + dado; }
 
-
-
-function tratamentoDeDadosParaNumeros(dado){ operacoes = [operacoes + dado]; }
-
-function tratamentoDeDadosParaSinais(dado){
-    sequenciaDasOperacoesDoCalculo()
-    obterSinal(String(dado));
+function tratamentoDeDadosParaNumeros(dado){ 
+    if (sinalAritmetico == ''){ primeiroValor = primeiroValor + dado; }
+    else { segundoValor = segundoValor + dado; }    
 }
 
-function sequenciaDasOperacoesDoCalculo(){ 
-    const sequenciaNumericaDeCalculo = Number(operacoes.join(''))
-    console.log(sequenciaNumericaDeCalculo)
-    sequenciaDeOperacoes.push(sequenciaNumericaDeCalculo)
-    console.log("1", sequenciaNumericaDeCalculo)
-    console.log("2", sequenciaDeOperacoes)
-    
-    operacoes = [null];
-}
+function tratamentoDeDadosParaSinais(dado){ sinalAritmetico = dado; }
 
 function obterSinal(dado){ return sinalRecebido = dado }
 
 function exibirResultadoFinal(dado) { paragrafoDisplay.innerHTML = dado; }
 
 function calcular(){
-    sequenciaDasOperacoesDoCalculo()
+    resultado = eval(`${primeiroValor} ${sinalAritmetico} ${segundoValor}`);
+    exibirResultadoFinal(resultado)
 
-    let sinal = obterSinal(sinalRecebido)
-
-    if (sequenciaDeOperacoes.length >= 2) {
-        let resultado;
-    switch (sinal){
-        case '+':
-            resultado = sequenciaDeOperacoes.reduce((valorPrevio, valorAtual) => valorPrevio + valorAtual);
-            break
-        case '-':
-            resultado = sequenciaDeOperacoes.reduce((valorPrevio, valorAtual) => valorPrevio - valorAtual);
-            break
-        case '*':
-            resultado = sequenciaDeOperacoes.reduce((valorPrevio, valorAtual) => valorPrevio * valorAtual);
-            break 
-        case '/':
-            resultado = sequenciaDeOperacoes.reduce((valorPrevio, valorAtual) => valorPrevio / valorAtual);
-            break
-        }
-        exibirResultadoFinal(resultado)
-        sequenciaDeOperacoes = [resultado]
-        operacoes = [null]
-        console.log(sequenciaDeOperacoes);
+    sinalAritmetico = ''
+    segundoValor = ''
+    primeiroValor = resultado;
     }
+
+function clearAllText() {
+    paragrafoDisplay.innerHTML = '';
+    sinalAritmetico = '';
+    primeiroValor = '';
+    segundoValor = '';
+    resultado = '';
 }
+
+function backText() {
+    const texto = paragrafoDisplay.textContent;
+
+    if(!resultado == ''){
+        paragrafoDisplay.textContent = texto.substring(0, texto.length - 1);
+        resultado = resultado.toString().substring(0, resultado.length - 1);
+    }
+    else if(segundoValor !== ''){
+    paragrafoDisplay.textContent = texto.substring(0, texto.length - 1);
+    segundoValor = segundoValor.toString().substring(0, segundoValor.length - 1);
+    }else if(sinalAritmetico !== ''){
+    paragrafoDisplay.textContent = texto.substring(0, texto.length - 1);
+    sinalAritmetico = ''
+    }else {
+    paragrafoDisplay.textContent = texto.substring(0, texto.length - 1);
+    primeiroValor = primeiroValor.toString().substring(0, primeiroValor.length - 1);
+    }
+    console.log("1", primeiroValor)
+    console.log("2", segundoValor)
+}
+
 
 
 
