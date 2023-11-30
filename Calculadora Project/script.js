@@ -48,6 +48,10 @@ function exibirDadosNoDisplay(dado) {
         conteudoAtualDoDisplay = conteudoAtualDoDisplay.substring(0, conteudoAtualDoDisplay.length - 1)
         paragrafoDisplay.innerHTML = conteudoAtualDoDisplay + dado;
     } 
+    if((conteudoAtualDoDisplay.endsWith(".")) && (dado == ".")){
+        return null
+    }
+
     paragrafoDisplay.innerHTML = conteudoAtualDoDisplay + dado;
     console.log("p", paragrafoDisplay)
 }
@@ -64,9 +68,14 @@ function exibirResultadoFinal(dado) { paragrafoDisplay.innerHTML = dado; }
 function calcular(){
     resultado = eval(`${primeiroValor} ${sinalAritmetico} ${segundoValor}`);
     let resultadoNumerico = Number(resultado);
-    exibirResultadoFinal(resultadoNumerico.toFixed(2))
     resultado = String(resultado)
 
+    if (resultado.includes('.')){
+        exibirResultadoFinal(resultadoNumerico.toFixed(2))
+    }else {
+        exibirResultadoFinal(resultado)
+    }
+    
     sinalAritmetico = ''
     segundoValor = ''
     primeiroValor = resultado;
