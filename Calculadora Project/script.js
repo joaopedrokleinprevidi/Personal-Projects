@@ -6,11 +6,8 @@ const clear = document.querySelector('#clearAllText')
 const back = document.querySelector('#backText')
 const displayDaCalculadora = document.querySelector('#display')
 
-//falta apenas o evento de scroll no display
-//e adicionar no css para caso o texto extrapole a box ele nao apareça
-//verificar também sobre a adição de dois pontos seguidamente na hora do calculo
-//e é isto, dai o projeto ta pronto
-//parabens lek, continue na missao, tu é FODA ! 
+//falta verificar para impedir o usuario de tentar 3 calculos
+// e permitir que o usuario faça calculos com numeros negativos
 
 let primeiroValor = '';
 let segundoValor = '';
