@@ -6,9 +6,6 @@ const clear = document.querySelector('#clearAllText')
 const back = document.querySelector('#backText')
 const displayDaCalculadora = document.querySelector('#display')
 
-//falta verificar para impedir o usuario de tentar 3 calculos
-// e permitir que o usuario faça calculos com numeros negativos
-
 let primeiroValor = '';
 let segundoValor = '';
 let sinalAritmetico = '';
@@ -29,19 +26,19 @@ function pegarDadosDoElemento(event) {
     const clickedElement = event.currentTarget;
     const dadoDoElemento = clickedElement.getAttribute('data-i')
 
-    if (!isNaN(dadoDoElemento) || dadoDoElemento == '.'){
+    if (!isNaN(dadoDoElemento) || dadoDoElemento == '.' ){
         exibirDadosNoDisplay(dadoDoElemento);
         tratamentoDeDadosParaNumeros(dadoDoElemento);
     }
     else {
-        tratamentoDeDadosParaSinais(dadoDoElemento);
         exibirDadosNoDisplay(sinalAritmetico);
+        tratamentoDeDadosParaSinais(dadoDoElemento);
     }
 }
 
 function exibirDadosNoDisplay(dado) {  
     let conteudoAtualDoDisplay = paragrafoDisplay.innerHTML; 
-    if((conteudoAtualDoDisplay.includes("+") || conteudoAtualDoDisplay.includes("-") || conteudoAtualDoDisplay.includes("/") || conteudoAtualDoDisplay.includes("*")) && (dado == "-" || dado == "/" || dado == "*" || dado == "+")){
+    if((conteudoAtualDoDisplay.endsWith("+") || conteudoAtualDoDisplay.endsWith("-") || conteudoAtualDoDisplay.endsWith("/") || conteudoAtualDoDisplay.endsWith("*")) && (dado == "-" || dado == "/" || dado == "*" || dado == "+")){
         conteudoAtualDoDisplay = conteudoAtualDoDisplay.substring(0, conteudoAtualDoDisplay.length - 1)
         paragrafoDisplay.innerHTML = conteudoAtualDoDisplay + dado;
     } 
@@ -54,11 +51,19 @@ function exibirDadosNoDisplay(dado) {
 }
 
 function tratamentoDeDadosParaNumeros(dado){ 
-    if (sinalAritmetico == ''){ primeiroValor = primeiroValor + dado; }
-    else { segundoValor = segundoValor + dado; }    
+    if (sinalAritmetico === '') {
+            primeiroValor = primeiroValor + dado;
+    } else{
+            segundoValor = segundoValor + dado;
+    }    
+    console.log("1", primeiroValor)
+    console.log('1', segundoValor)
 }
 
-function tratamentoDeDadosParaSinais(dado){ sinalAritmetico = dado; console.log(sinalAritmetico)}
+function tratamentoDeDadosParaSinais(dado){ 
+
+    if(sinalAritmetico == '') { sinalAritmetico = dado;}
+    else{ calcular();} }
 
 function exibirResultadoFinal(dado) { paragrafoDisplay.innerHTML = dado; }
 
@@ -68,7 +73,7 @@ function calcular(){
     resultado = String(resultado)
 
     if (resultado.includes('.')){
-        exibirResultadoFinal(resultadoNumerico.toFixed(2))
+        exibirResultadoFinal(resultadoNumerico.toFixed(2) )
     }else {
         exibirResultadoFinal(resultado)
     }

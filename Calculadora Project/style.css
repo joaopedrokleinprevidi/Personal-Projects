@@ -40,14 +40,13 @@ h1 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    overflow: auto;
 }
 
 .p-display {
     font-size: 2rem;
     margin: 0.5rem;
-    word-wrap: break-word;
-
+    overflow-y: auto;
+    letter-spacing: .3rem;
 }
 
 .buttons-da-calculadora {
