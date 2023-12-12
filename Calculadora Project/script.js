@@ -21,7 +21,7 @@ sinalDeIgual.addEventListener('click', calcular)
 clear.addEventListener('click', clearAllText)
 back.addEventListener('click', backText)
 displayDaCalculadora.addEventListener('scroll', ()=> {console.log("scrollando???")})
-
+/* */
 function pegarDadosDoElemento(event) {
     const clickedElement = event.currentTarget;
     const dadoDoElemento = clickedElement.getAttribute('data-i')
