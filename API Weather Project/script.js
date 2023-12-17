@@ -12,8 +12,8 @@ buttonProcurar.addEventListener('click', () =>{
     nomeDaCidade = inputCidade.value;
     weather(nomeDaCidade)
     if (!nomeDaCidade == ''){
-    containerPrincipal.classList.toggle('principal-content-container')
-    containerPrincipal.classList.toggle('display-none')
+    containerPrincipal.classList.add('principal-content-container')
+    containerPrincipal.classList.remove('display-none')
     }
 
     inputCidade.value = '';
