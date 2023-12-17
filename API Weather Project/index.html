@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <title>API Weather</title>
 </head>
 <body>
 
-    <div>
+    <div class="info-container">
         <label for="name">Digite a cidade: </label>
-        <input type="text">
+        <input id="nomeDaCidade" name="name" type="text">
+        <box-icon id="iconSearch" class="icon-search" name='search-alt-2'></box-icon>
     </div>
-    <div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <div id="principalContainer" class="principal-content-container">
+        <div>
+            <div id="cidadeEscolhida" class="cidade">Cidade</div>
+            <div id="temperaturaDaCidade" class="temperatura-graus-celsius">Temperatura</div>
+            <div id="velocidadeDoVento" class="velocidade-do-vento">Vento</div>
+        </div>
+        <div>  <p>img aqui</p><img src="" alt=""></div>
     </div>
     
 </body>

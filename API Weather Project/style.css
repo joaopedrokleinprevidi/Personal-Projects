@@ -6,7 +6,53 @@
 }
 
 body { 
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.info-container {
+    margin: 5px;
+    padding: 7px;
+    background-color:antiquewhite;
+}
+
+input {
+    font-size: 20px;
+}
+
+.icon-search {
+    position: relative;
+    bottom: -5px;
+    cursor: pointer;
+}
+
+
+.principal-content-container {
+    margin: 5px;
+    padding: 7px;
+    height: 150px;
+    width: 400px;
+    background-color: antiquewhite;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cidade {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.temperatura-graus-celsius {
+    font-size: 1.8rem;
+}
+
+.velocidade-do-vento {
+    font-size: 1.8rem;
 }
