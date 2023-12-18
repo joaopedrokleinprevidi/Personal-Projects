@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+* {
+    margin: 0rem;
+    padding: 0rem;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.genius {
+    display: grid;
+    grid-template-columns: 8.5rem 8.5rem;
+    grid-template-rows: 8.5rem 8.5rem;
+}
+
+.coresDoJogo {
+    cursor: pointer;
+}
+
+.blue-color {
+    background-color: blue;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.yellow-color {
+    background-color: yellow;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.green-color {
+    background-color: green;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.red-color {
+    background-color: red;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+@keyframes animationColorBlue {
+    0% { background-color: blue;}   25% { background-color: rgb(204, 204, 250); }
+    50% { background-color: rgb(204, 204, 250);}   100% { background-color: blue; }
+}
+.animationColorBlue { animation: animationColorBlue .5s; }
+
+@keyframes animationColorYellow {
+    0% { background-color: yellow;}   25% { background-color: rgb(190, 190, 81); }
+    50% { background-color: rgb(190, 190, 81);}   100%{ background-color: yellow; }
+}
+.animationColorYellow { animation: animationColorYellow .5s; }
+
+@keyframes animationColorGreen {
+    0% { background-color: green;}   25% { background-color: lightgreen; }
+    50% { background-color: lightgreen;}   100% { background-color: green;}
+}
+.animationColorGreen { animation: animationColorGreen .5s; }
+
+@keyframes animationColorRed {
+    0% { background-color: red;}   25% { background-color: rgb(184, 98, 98); }
+    50% { background-color: rgb(143, 63, 63);}   100% { background-color: red; }
+}
+.animationColorRed { animation: animationColorRed .5s; }
+
+button {
+    margin-top: 2rem;
+    width: 8rem;
+    height: 2.5rem;
+    background-color: rgb(247, 141, 141);
+    border: .1rem solid red;
+    border-radius: .7rem;
+    font-size: 1.4rem;
+    color: rgb(97, 60, 60);
+    cursor: pointer;
+}
