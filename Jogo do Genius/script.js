@@ -4,21 +4,29 @@ const corAzul = document.querySelector('#blueColor')
 const corAmarela = document.querySelector('#yellowColor')
 const corVerde = document.querySelector('#greenColor')
 const corVermelha = document.querySelector('#redColor')
+const audio1 = document.querySelector("#audio1")
+const audio2 = document.querySelector("#audio2")
+const audio3 = document.querySelector("#audio3")
+const audio4 = document.querySelector("#audio4")
+const audioDoJogo = document.querySelector('#audioDoJogo')
 
 let coresEscolhidasPelaMaquina = [];
 let coresEscolhidasPeloUsuario = [];
 let quantidadeDeVezesPraMaquinaJogar = 2;
 let quantidadeDeVezesQueMaquinaJaJogou = 0;
 
-buttonJogar.addEventListener('click', rodarJogo)
+buttonJogar.addEventListener('click', ()=>{
+    rodarJogo()
+    musicaDoJogo(true, false)
+    buttonJogar.classList.add('button-display-none')
+})
 
 coresDoJogo.forEach( (elemento) => {
     elemento.addEventListener('click', ()=> {
         const corEscolhida = elemento.getAttribute('data-i');
-        console.log("corEscolhida: ", corEscolhida)
 
         coresEscolhidasPeloUsuario = coresEscolhidasPeloUsuario + corEscolhida;
-        console.log("Total de cores Escolhidas pelo usuário: ", coresEscolhidasPeloUsuario)
+        
 
         rodarAnimacaoDeCores(corEscolhida)
     })
@@ -27,27 +35,25 @@ coresDoJogo.forEach( (elemento) => {
 function rodarAnimacaoDeCores(cor){
     if(cor == 0) {
         corAzul.classList.add('animationColorBlue')
-        corAzul.addEventListener('animationend', function onAnimationBlueEnd() { corAzul.classList.remove('animationColorBlue'); corAzul.removeEventListener('animationend', onAnimationBlueEnd); })  }
+        corAzul.addEventListener('animationend', function onAnimationBlueEnd() { corAzul.classList.remove('animationColorBlue'); corAzul.removeEventListener('animationend', onAnimationBlueEnd); }); efeitosSonoros(true, false, false, false) }
     if(cor == 1) {
         corAmarela.classList.add('animationColorYellow')
-        corAmarela.addEventListener('animationend', function onAnimationYellowEnd() { corAmarela.classList.remove('animationColorYellow'); corAmarela.removeEventListener('animationend', onAnimationYellowEnd); }) }
+        corAmarela.addEventListener('animationend', function onAnimationYellowEnd() { corAmarela.classList.remove('animationColorYellow'); corAmarela.removeEventListener('animationend', onAnimationYellowEnd); }); efeitosSonoros(false, true, false, false) }
     if(cor == 2) {
         corVerde.classList.add('animationColorGreen')
-        corVerde.addEventListener('animationend', function onAnimationGreenEnd() { corVerde.classList.remove('animationColorGreen'); corAmarela.removeEventListener('animationend', onAnimationGreenEnd); }) }
+        corVerde.addEventListener('animationend', function onAnimationGreenEnd() { corVerde.classList.remove('animationColorGreen'); corVerde.removeEventListener('animationend', onAnimationGreenEnd); }); efeitosSonoros(false, false, true, false) }
     if(cor == 3) {
         corVermelha.classList.add('animationColorRed')
-        corVermelha.addEventListener('animationend', function onAnimationRedEnd() { corVermelha.classList.remove('animationColorRed'); corVermelha.removeEventListener('animationend', onAnimationRedEnd); }) }
+        corVermelha.addEventListener('animationend', function onAnimationRedEnd() {  corVermelha.classList.remove('animationColorRed'); corVermelha.removeEventListener('animationend', onAnimationRedEnd); }); efeitosSonoros(false, false, false, true) }
 }
 
 
 function gerarCoresEscolhidasPelaMaquina() {
     const corAleatoria = parseInt(Math.random() * 4)
-    console.log(corAleatoria)
 
     rodarAnimacaoDeCores(corAleatoria)
 
     coresEscolhidasPelaMaquina = coresEscolhidasPelaMaquina + corAleatoria;
-    console.log("coresDaMaquina: ", coresEscolhidasPelaMaquina)
 }
 
 function rodarJogo() {
@@ -57,15 +63,24 @@ function rodarJogo() {
         gerarCoresEscolhidasPelaMaquina();
         quantidadeDeVezesQueMaquinaJaJogou++;
 
-        if(quantidadeDeVezesPraMaquinaJogar <= quantidadeDeVezesQueMaquinaJaJogou){ clearInterval(intervaloDasJodadasDaMaquina) }
+        if(quantidadeDeVezesPraMaquinaJogar <= quantidadeDeVezesQueMaquinaJaJogou){
+             clearInterval(intervaloDasJodadasDaMaquina) 
+             setTimeout( () => {
+                verificarSeJogoContinuaOuReseta()
+                }, Number(`${quantidadeDeVezesQueMaquinaJaJogou}999`))
+            }}, 650 )
+        
 
-    }, 750 )
+
 }
 
 function verificarSeJogoContinuaOuReseta() {
     // return true para jogo continua (arrays iguais)
     if( arraysPossuemMesmoConteudo(coresEscolhidasPelaMaquina, coresEscolhidasPeloUsuario) ) {
         quantidadeDeVezesPraMaquinaJogar = quantidadeDeVezesPraMaquinaJogar + 1;
+        quantidadeDeVezesQueMaquinaJaJogou = 0; 
+        coresEscolhidasPelaMaquina = []; coresEscolhidasPeloUsuario = [];
+        rodarJogo()
     }else {
         resetarJogo()
     }
@@ -82,20 +97,25 @@ function arraysPossuemMesmoConteudo(array1, array2){
 }
 
 function resetarJogo() {
+    console.log("Cores escolhidas pelo usuário: ", coresEscolhidasPeloUsuario)
+    console.log("Cores escolhidas pela máquina: ", coresEscolhidasPelaMaquina)
     coresEscolhidasPelaMaquina = [];
     coresEscolhidasPeloUsuario = [];
     quantidadeDeVezesPraMaquinaJogar = 2;
     quantidadeDeVezesQueMaquinaJaJogou = 0;
+    buttonJogar.classList.remove('button-display-none')
+    alert("Você errou ou demorou muito para jogar, o jogo foi resetado. Clique novamente em jogar.")
+    musicaDoJogo(false, true)
 }
 
-//1- config o botao do jogar, pra iniciar o jogo, e o botao sumir
-//2- config como vai ser feita a analise pra saber se o jogador venceu ... 
-//3- config para o botao do jogo voltar, caso o usuario perca
+function efeitosSonoros(a, b, c, d){
+    if(a){ audio1.play() }
+    if(b){ audio2.play() }
+    if(c){ audio3.play() }
+    if(d){ audio4.play() }
+}
 
-// adds:
-//4- adicionar som ao jogo, para cada cor e caso perca
-//5- adicionar interface de vitórias/derrotas??
-
-
-//... 2: Pode ser feito com um tempo, ex tem 5 vezes pra maquina jogar, entao o usuario tem 7s pra jogar...
-//ao final da animation do 
+function musicaDoJogo(a,b){
+    if(a) { audioDoJogo.play(); audioDoJogo.volume = 0.1; }
+    if(b) { audioDoJogo.pause(); audioDoJogo.currentTime = 0; }
+}

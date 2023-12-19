@@ -26,54 +26,56 @@ body {
 }
 
 .blue-color {
-    background-color: blue;
+    background-color: rgb(165, 165, 255);
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
 }
 
 .yellow-color {
-    background-color: yellow;
+    background-color: rgba(255, 255, 164, 0.695);
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
 }
 
+/* yellow padrao rgb(255, 255, 164);  */
+
 .green-color {
-    background-color: green;
+    background-color: rgb(158, 255, 158);
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
 }
 
 .red-color {
-    background-color: red;
+    background-color: rgb(255, 156, 156);
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
 }
 
 @keyframes animationColorBlue {
-    0% { background-color: blue;}   25% { background-color: rgb(204, 204, 250); }
-    50% { background-color: rgb(204, 204, 250);}   100% { background-color: blue; }
+    0% { background-color: rgb(165, 165, 255);}   25% { background-color: blue; }
+    50% { background-color: blue;}   100% { background-color: rgb(165, 165, 255);}
 }
-.animationColorBlue { animation: animationColorBlue .5s; }
+.animationColorBlue { animation: animationColorBlue .2s; }
 
 @keyframes animationColorYellow {
-    0% { background-color: yellow;}   25% { background-color: rgb(190, 190, 81); }
-    50% { background-color: rgb(190, 190, 81);}   100%{ background-color: yellow; }
+    0% { background-color: rgb(255, 255, 164, 0.695);}   25% { background-color: yellow; }
+    50% { background-color: yellow;}   100%{ background-color: rgb(255, 255, 164, 0.695); }
 }
-.animationColorYellow { animation: animationColorYellow .5s; }
+.animationColorYellow { animation: animationColorYellow .2s; }
 
 @keyframes animationColorGreen {
-    0% { background-color: green;}   25% { background-color: lightgreen; }
-    50% { background-color: lightgreen;}   100% { background-color: green;}
+    0% { background-color: rgb(158, 255, 158);}   25% { background-color: green; }
+    50% { background-color: green;}   100% { background-color: rgb(158, 255, 158);}
 }
-.animationColorGreen { animation: animationColorGreen .5s; }
+.animationColorGreen { animation: animationColorGreen .2s; }
 
 @keyframes animationColorRed {
-    0% { background-color: red;}   25% { background-color: rgb(184, 98, 98); }
-    50% { background-color: rgb(143, 63, 63);}   100% { background-color: red; }
+    0% { background-color: rgb(255, 156, 156);}   25% { background-color: red; }
+    50% { background-color: red;}   100% { background-color: rgb(255, 156, 156); }
 }
-.animationColorRed { animation: animationColorRed .5s; }
+.animationColorRed { animation: animationColorRed .2s; }
 
-button {
+.button-style {
     margin-top: 2rem;
     width: 8rem;
     height: 2.5rem;
@@ -83,4 +85,8 @@ button {
     font-size: 1.4rem;
     color: rgb(97, 60, 60);
     cursor: pointer;
+}
+
+.button-display-none {
+    display: none;
 }
