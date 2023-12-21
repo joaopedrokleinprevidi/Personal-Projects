@@ -22,6 +22,8 @@ buttonJogar.addEventListener("click", () => {
   buttonJogar.classList.add("button-display-none");
 });
 
+// é ne pai
+
 coresDoJogo.forEach((elemento) => {
   elemento.addEventListener("click", () => {
     const corEscolhida = elemento.getAttribute("data-i");
