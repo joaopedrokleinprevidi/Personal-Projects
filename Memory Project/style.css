@@ -82,16 +82,13 @@ header {
     grid-gap: .5rem;
 }
 
-.container-game > div > div {
-    background-color: lightblue;
-    width: 100%;
-    height: 100%;
-
+.container-game > div.paiDoAllButtons > div.allButtons {
+    background-color: lightcyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container-game > div > div.test {
-    animation: rodarAnimacao 1s;
-}   
 
 @keyframes rodarAnimacao {
     from {
@@ -108,5 +105,9 @@ header {
 o valor do card em si, deve ser exposto após essa animação. 
 pode ser feito oque: aplicar uma classe css aonde a carta esteja escondida
 rodar a animação, e ao final da animação
-remover a classe antiga(aonde a carta estava escondida) e apicar uma nova classe, aonde a carta esta sendo exibida
-*\
+remover a classe antiga(aonde a carta estava escondida) e apicar uma nova classe, aonde a carta esta sendo exibida */
+
+
+.paragrafoCard {
+    font-size: 3rem;
+}
