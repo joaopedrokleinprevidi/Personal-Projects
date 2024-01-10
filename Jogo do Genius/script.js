@@ -22,7 +22,7 @@ buttonJogar.addEventListener("click", () => {
   buttonJogar.classList.add("button-display-none");
 });
 
-// é ne pai
+// é ne pai seloko
 
 coresDoJogo.forEach((elemento) => {
   elemento.addEventListener("click", () => {
