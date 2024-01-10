@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(89, 143, 245);
+    border-radius: 1rem;
+}
+
+.header-cabeçalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    margin: .5rem
+}
+
+.header-cabeçalho > h1 {
+    font-size: 2.3rem;
+    margin-bottom: .6rem;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+.header-cabeçalho > h2 {
+    font-size: 1.7rem;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+.header-interface {
+    background-color: rgb(135, 215, 252);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .7rem;
+    padding: .5rem;
+    margin: .7rem;
+    width: 60%;
+}
+
+.header-interface > p {
+    color: black;
+    font-size: 1.2rem;
+}
+
+.container-game {
+    background-color: rgb(22, 22, 22);
+    width: 23rem;
+    height: 22.4rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.container-game > div {
+    display: grid;
+    grid-auto-columns: 5rem;
+    grid-auto-rows: 5.1rem;
+    grid-template-columns: repeat(4, 4.5rem);
+    grid-template-rows: repeat(4, 5rem);
+    grid-gap: .5rem;
+}
+
+.container-game > div.paiDoAllButtons > div.allButtons {
+    background-color: lightcyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@keyframes rodarAnimacao {
+    from {
+        transfom: rotate(0deg)
+    }
+
+    to {
+        background-color: white;
+        transform: rotateY(185deg);
+    }
+}
+
+/* 
+o valor do card em si, deve ser exposto após essa animação. 
+pode ser feito oque: aplicar uma classe css aonde a carta esteja escondida
+rodar a animação, e ao final da animação
+remover a classe antiga(aonde a carta estava escondida) e apicar uma nova classe, aonde a carta esta sendo exibida */
+
+
+.paragrafoCard {
+    font-size: 3rem;
+}
