@@ -84,19 +84,3 @@ function calcular(){
         console.log(sequenciaDeOperacoes);
     }
 }
-
-
-
-//utilizar o eval para resolver a operação
-//tenho que ter 3 variaveis
-//1 contendo o primeiro valor
-//2 contendo o sinal aritmetico
-//3 contendo o segundo valor
-//chamar funçao calcular para realizar calculo a partir da 2 variavel (sinal aritmetico)
-/*
-`${primeiroValor} ${sinalAritmetico} ${segundoValor}`
-*/
-//essa template so é executada quando a pessoa clicar no sinal de igual
-//usando o EVAL essa String contendo os valores e o sinal é calculada automaticamente
-
-//sera necessario uma quarta variavel para salvar o resultado dos calculos
