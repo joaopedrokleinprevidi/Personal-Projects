@@ -6,16 +6,15 @@ import { SyntheticEvent, useState } from "react";
 export default function Home() {
   const [user, setUser] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const router = useRouter();
 
   function handleLoginGitHub() {
     signIn("github", { callbackUrl: "/dashboard" });
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  async function handleLoginCredentials(event: SyntheticEvent) {
+  function handleLoginCredentials(event: SyntheticEvent) {
     event.preventDefault();
-    await signIn("credentials", {
+    signIn("credentials", {
       username: user,
       password: password,
     });

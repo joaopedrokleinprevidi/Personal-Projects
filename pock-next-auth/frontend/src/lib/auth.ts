@@ -1,14 +1,15 @@
-import Credentials from "next-auth/providers/credentials";
+import { NextAuthOptions } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
 import GitHubProvider from "next-auth/providers/github";
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     GitHubProvider({
       //chaves necessarias para fazer login pelo gihub, o name aqui deste provider é "github"
       clientId: process.env.GITHUB_ID ?? "",
       clientSecret: process.env.GITHUB_SECRET ?? "",
     }),
-    Credentials({
+    CredentialsProvider({
       name: "credentials", // obrigatório passar o nome aqui, e quando usar este metodo para fazer login, chamar este nome no metodo signin, o primeiro parametro
       credentials: {
         // aqui estou dizendo o que vou receber para fazer o login (o que vai ter no campo input)
