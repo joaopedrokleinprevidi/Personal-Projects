@@ -8,7 +8,9 @@ export default function NextAuthSessionProvider({
 }) {
   return (
     <>
-      <SessionProvider>{children}</SessionProvider>
+      <SessionProvider baseUrl="http://localhost:3000">
+        {children}
+      </SessionProvider>
     </>
   );
 }

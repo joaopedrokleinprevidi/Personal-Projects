@@ -16,6 +16,7 @@ export const authOptions = {
         password: { label: "Senha", type: "password", placeholder: "Senha" },
       },
       async authorize(credentials) {
+        console.log(credentials);
         // método onde implementamos de fato a chamada para a API onde vamos fazer a autenticação, ou podemos consultar também diretamente no DB, com o Next
         const response = await fetch("http://localhost:3003/login", {
           method: "POST", // método para login (enviar dados)
@@ -54,6 +55,10 @@ export const authOptions = {
   },
   pages: {
     signIn: "/", // página onde o usuário vai se autenticar (pagina de login)
+  },
+  redirect({ baseUrl }) {
+    //redireciona o usuario usando a baseUrl que foi definida em session provider
+    return `${baseUrl}/dashboard`;
   },
 
   // Lembrando que para o next auth funcionar, eu preciso ter algumas variaveis .ENV configuradas, como NEXTAUTH_URL, NEXTAUTH_SECRET, e se usarmos algum provider que precise, como github, as variaveis de ambiente deles tambem sao necessarias

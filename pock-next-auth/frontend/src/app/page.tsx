@@ -15,18 +15,10 @@ export default function Home() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async function handleLoginCredentials(event: SyntheticEvent) {
     event.preventDefault();
-    const result = await signIn("credentials", {
+    await signIn("credentials", {
       username: user,
-      password,
-      redirect: false, //quando o login é feito ele redireciona para uma pagina especifica, como eu quero controlar isto para fazer verificações, eu vou deixar false
+      password: password,
     });
-
-    if (result?.error) {
-      console.log(result);
-      return;
-    }
-
-    router.replace("dashboard");
   }
 
   return (
