@@ -1,3 +1,4 @@
+import NextAuthSessionProvider from "@/providers/sessionProviders";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,7 +8,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <NextAuthSessionProvider>{children}</NextAuthSessionProvider>{" "}
+        {/* aqui dou acesso a toda minha aplicaçao, ao contexto do next auth, assim consigo acessar em qualquer parte dados da sessão do usuario */}
+      </body>
     </html>
   );
 }

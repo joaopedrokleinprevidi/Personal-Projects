@@ -21,7 +21,7 @@ app.post("/login", (req, res) => {
   // Validando dados do usuário (de forma simplificada, apenas para testes)
   if (username === "user" && password === "1234") {
     // Dados do usuário para incluir no token
-    const payload = { username: "gabriel", sub: "56asd465as4d" };
+    const payload = { username: "João", sub: "56asd465as4d" };
 
     // Gerando o token com uma validade de 1 hora
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
@@ -64,5 +64,5 @@ app.get("/protected", authenticateToken, (req, res) => {
 
 // Inicia o servidor
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor rodando na porta http://localhost:${PORT}`);
 });
